@@ -1,6 +1,6 @@
 MIT License
 
-Copyright (c) 2024 Harry Min Khant
+Copyright (c) 2024&beyond Harry Min Khant
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal

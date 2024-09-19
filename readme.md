@@ -8,7 +8,10 @@ A Zola theme designed for accessibility rather than visual.
 
 ## Extra variables
 Can be accessed using `extra` object.
+* `nav`: a list of navigation, see config.toml for more info.
 
-### Page frontmadder extra
-The following variables are to be set in the `extra` frontmadder in your page or section.
-* `include_pagination`: toggles whether the pagination should be enabled on the current. This variable can only be used in sections.
+## Blocks
+* `extrahead`: use to add head meta, including your JS scripts.
+* `title`: title, default to config.
+* `header`: use before the main content.
+* `footer`: use after the content.

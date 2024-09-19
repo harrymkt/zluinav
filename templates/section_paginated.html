@@ -1,4 +1,4 @@
-{%- extends "index.html" %}
+{%- extends "base.html" %}
 {%-block title-%}
 {{section.title}}{%if paginator.current_index>1%} (page {{paginator.current_index}}){%endif%} - {{super()}}
 {%-endblock title-%}
@@ -12,4 +12,5 @@
 <h3><a href="{{post.permalink | safe}}">{{posttitle}}</a></h3>
 <p>Published on: {{post.date}}.</p>
 {% endfor %}
+{% include "pagination.html" %}
 {% endblock content %}
