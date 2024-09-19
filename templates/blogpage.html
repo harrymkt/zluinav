@@ -1,7 +1,13 @@
 {%extends "base.html"%}
 {%-block title-%}
-{%- set section=get_section(path="blog/_index.md") -%}
-{{page.title}} - {{section.title}} - {{super()}}{%endblock title%}
+{%- set section=get_section(path=page.ancestors | last) -%}
+{{page.title}} - {{section.title}} - {{super()}}
+{%-endblock title-%}
 {%-block content%}
+<h1>{{page.title}}</h1>
+{%if page.updated%}<p>Updated: {{page.updated}}</p>{%endif%}
+<p>Published on: {{page.date}}</p>
+<p>Total words: {{page.word_count}}</p>
+<br>
 {{page.content | safe}}
 {%-endblock content%}
