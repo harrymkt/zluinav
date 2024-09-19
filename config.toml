@@ -1,0 +1,15 @@
+title="UI Navigation"
+base_url="/"
+compile_sass = false
+
+build_search_index = true
+
+[slugify]
+paths = "on"
+taxonomies = "off"
+anchors = "off"
+[extra]
+nav=[
+{name="Home", url="/"},
+{name="Blog", url="/blog/"}
+]

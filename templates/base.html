@@ -1,0 +1,43 @@
+<!doctype html>
+<html>
+<head>
+{%block extrahead-%}
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+{%-endblock extrahead-%}
+<title>{%block title%}{{config.title}}{%endblock title%}</title>
+</head>
+<body>
+{%block header-%}
+<h1>Accessibility links</h1>
+<a href="#mainc" class="skip-link">Skip to main content</a>
+<a href="#navigation" class="skip-link">Skip to navigation</a>
+<a href="#footersection" class="skip-link">Skip to footer</a>
+<script>navstart();</script>
+<nav id="navigation" role="navigation" aria-label="Main menu">
+<h1>Main Menu</h1>
+<ul style="list-style-type:none;">
+{%-if config.extra.nav-%}
+{%-for pn in config.extra.nav%}
+<li><a {%if current_path | safe==pn.url | safe%}aria-current="page" {%endif%}href="{{pn.url | safe}}">{{pn.name}}</a></li>
+{%-endfor-%}
+{%-else-%}
+<p>No navigation page available.</p>
+{%-endif%}
+</ul>
+</nav>
+{%-endblock header%}
+<main>
+<div id="mainc">
+{%-block content%}
+
+{%-endblock content-%}
+{%if section.extra.include_pagination%}{%include "pagination.html"%}{%endif%}
+</div>
+</main>
+{%block footer-%}
+<footer>
+<p>Powered by UI Navigation, theme created by Harry Min Khant.</p>
+{%-endblock footer%}
+</body>
+</html>
