@@ -1,0 +1,8 @@
+{%-macro post_preview(post)%}
+{%-set posttitle=post.title-%}
+{%-if post.description and post.description!=""-%}
+{%- set posttitle = posttitle ~ " (" ~ post.description ~ ")" -%}
+{%-endif-%}
+<h3><a href="{{post.permalink | safe}}">{{posttitle}}</a></h3>
+<p>Published on: {{post.date}}.</p>
+{%-endmacro post_preview %}
