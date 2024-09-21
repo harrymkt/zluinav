@@ -16,6 +16,8 @@ Can be accessed using `extra` object.
 * `nav`: a list of inline tables for navigation, see config.toml for more info. Each navigation item has the following properties:
 	* `name`: the name to display (required).
 	* `url`: the URL to navigate (required). Slashes should be used for internal paths , for example, `/`, `/blog/`
+	
+	If you set the nav as empty or do not set at all, the navigation menu will be disabled, as well as skip to navigation link.
 
 ### Blocks
 * `extrahead`: use to add head meta, including your JS scripts.

@@ -5,39 +5,36 @@
 {%block extrahead-%}
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-{%-endblock extrahead-%}
+{%-endblock extrahead%}
 <title>{%block title%}{{config.title}}{%endblock title%}</title>
 </head>
 <body>
 {%block header-%}
 <h1>Accessibility links</h1>
 <a href="#mainc" class="skip-link">Skip to main content</a>
-<a href="#navigation" class="skip-link">Skip to navigation</a>
+{%if config.extra.nav%}<a href="#navigation" class="skip-link">Skip to navigation</a>{%endif%}
 <a href="#footersection" class="skip-link">Skip to footer</a>
+{%-if config.extra.nav%}
 <nav id="navigation" role="navigation" aria-label="Main menu">
 <h1>Main Menu</h1>
 <ul style="list-style-type:none;">
-{%-if config.extra.nav-%}
 {%-for pn in config.extra.nav%}
 <li><a {%if current_path and current_path | safe==pn.url | safe%}aria-current="page" {%endif%}href="{{pn.url | safe}}">{{pn.name}}</a></li>
-{%-endfor-%}
-{%-else-%}
-<p>No navigation page available.</p>
-{%-endif%}
+{%-endfor%}
 </ul>
 </nav>
+{%-endif-%}
 {%-endblock header%}
 <main>
 <div id="mainc">
-{%-block content%}
-
+{%block content-%}
 {%-endblock content-%}
-
 </div>
 </main>
 {%block footer-%}
 <footer>
 <p>Powered by <a href="https://github.com/harrymkt/zluinav">UI Navigation</a> theme, created by <a href="https://harrymkt.github.io">Harry Min Khant</a>.</p>
+</footer>
 {%-endblock footer%}
 </body>
 </html>

@@ -1,13 +1,14 @@
 {%-if paginator.previous or paginator.next-%}
 <nav aria-label="Pagination">
 <h4>Pagination</h4>
-{% if paginator.previous %}
+{%- if paginator.previous %}
 <a href="{{paginator.first | safe}}">First page</a>
 <a href="{{paginator.previous | safe}}">Previous page</a>
-{% endif%}
+{%- endif%}
 <p>Page {{ paginator.current_index }} / {{ paginator.number_pagers }}</p>
-{% if paginator.next %}
+{%- if paginator.next %}
 <a href="{{paginator.next | safe}}">Next page</a>
 <a href="{{paginator.last | safe}}">Last page</a>
-{% endif%}
+{%- endif%}
+</nav>
 {%- endif -%}

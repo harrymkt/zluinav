@@ -1,11 +1,11 @@
-{%- extends "base.html" %}
+{%- extends "base.html" -%}
 {%-block title-%}
 {{section.title}}{%if paginator.current_index>1%} (page {{paginator.current_index}}){%endif%} - {{super()}}
 {%-endblock title-%}
-{% block content %}
-{{super()}}
-{% for post in paginator.pages %}
+{%- block content -%}
+{{section.content | safe}}
+{%- for post in paginator.pages %}
 {{ppv::post_preview(post=post)}}
-{% endfor %}
-{% include "pagination.html" %}
-{% endblock content %}
+{%- endfor -%}
+{% include "pagination.html" -%}
+{%- endblock content -%}
