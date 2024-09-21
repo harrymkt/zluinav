@@ -16,13 +16,16 @@ Can be accessed using `extra` object.
 * `nav`: a list of inline tables for navigation, see config.toml for more info. Each navigation item has the following properties:
 	* `name`: the name to display (required).
 	* `url`: the URL to navigate (required). Slashes should be used for internal paths , for example, `/`, `/blog/`
+	* `key`(optional): the access key for the item.
+	* `title`(optional): the title to set on the title attribute.
 	
 	If you set the nav as empty or do not set at all, the navigation menu will be disabled, as well as skip to navigation link.
 
 ### Blocks
-* `extrahead`: use to add head meta, including your JS scripts.
+* `extrahead`: use to add head meta, including your JS scripts. The charset and viewport are already added, so you can call `{{super()}}` before you add content to this block.
 * `title`: title, default to config. This is best to call `{{super()}}` after the title set to also add your config site title.
-* `header`: use before the main content.
+* `header`: use before the main content. By default, this block contains accessibility skip links such as skip to main content, navigation, and footer.
+* `nav`: navigation. This block contains the title called main menu. Rebase the block if you want to modify
 * `content`: the content itself.
 * `footer`: use after the content.
 

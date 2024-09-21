@@ -14,17 +14,19 @@
 <a href="#mainc" class="skip-link">Skip to main content</a>
 {%if config.extra.nav%}<a href="#navigation" class="skip-link">Skip to navigation</a>{%endif%}
 <a href="#footersection" class="skip-link">Skip to footer</a>
+{%-endblock header%}
+{%-block nav%}
 {%-if config.extra.nav%}
 <nav id="navigation" role="navigation" aria-label="Main menu">
 <h1>Main Menu</h1>
 <ul style="list-style-type:none;">
 {%-for pn in config.extra.nav%}
-<li><a {%if current_path and current_path | safe==pn.url | safe%}aria-current="page" {%endif%}href="{{pn.url | safe}}">{{pn.name}}</a></li>
+<li><a {%if current_path and current_path | safe==pn.url | safe%}aria-current="page" {%endif%}href="{{pn.url | safe}}"{%if pn.title%} title="{{pn.title}}"{%endif%}{%if pn.key%} accesskey="{{pn.key}}"{%endif%}>{{pn.name}}</a></li>
 {%-endfor%}
 </ul>
 </nav>
 {%-endif-%}
-{%-endblock header%}
+{%-endblock nav%}
 <main>
 <div id="mainc">
 {%block content-%}

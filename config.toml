@@ -11,6 +11,6 @@ taxonomies = "off"
 anchors = "off"
 [extra]
 nav=[
-{name="Home", url="/"},
-{name="Blog", url="/blog/"}
+{name="Home", url="/", key="H"},
+{name="Blog", url="/blog/", title="Read the latest news"}
 ]
