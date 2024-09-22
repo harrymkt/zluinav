@@ -36,11 +36,22 @@ These are a list of files available in the templates folder.
 * `base.html`: template for site base. It is where all blocks live, so you can rebase the template by overwriting in your templates folder.
 * `blogpage.html`: the blog page. You can use the frontmadder `page_template="blogpage.html"` to set in your section.
 * `pagination.html`: this is an include template for pagination navigation. This is usually included by include statement in the section_paginated.html.
-* `post_preview.html`: this is a macro defineing the function to preview the post, for example, in posts list. This is made so you can overwrite post previewing template without modifying a section templates.
-	
-	The macro requires the post parameter and it must be the page object, see section_paginated.html. Please note that you will still need to modify the `blogpage.html` for displaying a full post content, should you wish to add your own.
 * `section_paginated.html`: used to display paginated sections. Use `template` frontmadder to set it.
 * `index.html`, `page.html`, and `section.html` are for index home page, other pages, and sections, respectively.
 * `404.html`: a custom 404 error page.
 
 All templates can be rebased by copying in your templates directory. And in the base.html file of your own templates folder, make sure to extend "zluinav/base.html", not base.html.
+
+### Macros
+This is a list of available macros that are located in mcs directory. Use heading level 4 to navigate each macro file, and level 5 to navigate available functions.
+
+#### post.html
+This is a macro defineing the function to preview the post, for example, in posts list. This is made so you can overwrite post previewing template without modifying a section templates.
+
+##### post_preview
+This function previews the post, useful in the forloop list.
+* `post`(object) required: an object pointing to a post page.
+
+##### show_authors
+This method shows the authors of a page. If the page doesn't have set the authors, it will use config page author. If the config still doesn't have set, it will return empty.
+* `post`(object) required: an object pointing to a post page.

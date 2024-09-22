@@ -5,7 +5,7 @@
 {%- block content -%}
 {{section.content | safe}}
 {%- for post in paginator.pages %}
-{{ppv::post_preview(post=post)}}
+{{postmc::post_preview(post=post)}}
 {%- endfor -%}
 {% include "pagination.html" -%}
 {%- endblock content -%}
