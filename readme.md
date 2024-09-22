@@ -13,7 +13,9 @@ Zola is a fast site generator written in Rust powered by tera as its templating 
 
 ### Extra variables
 Can be accessed using `extra` object.
-* `nav`: a list of inline tables for navigation, see config.toml for more info. Each navigation item has the following properties:
+* `nav`: a list of inline tables for navigation, see config.toml for more info.
+	
+	Each navigation item has the following properties:
 	* `name`: the name to display (required).
 	* `url`: the URL to navigate (required). Slashes should be used for internal paths , for example, `/`, `/blog/`
 	* `key`(optional): the access key for the item.
@@ -30,12 +32,15 @@ Can be accessed using `extra` object.
 * `footer`: use after the content.
 
 ### Templates
+These are a list of files available in the templates folder.
 * `base.html`: template for site base. It is where all blocks live, so you can rebase the template by overwriting in your templates folder.
 * `blogpage.html`: the blog page. You can use the frontmadder `page_template="blogpage.html"` to set in your section.
 * `pagination.html`: this is an include template for pagination navigation. This is usually included by include statement in the section_paginated.html.
-* `post_preview.html`: this is a macro defineing the function to preview the post, for example, in posts list. This is made so you can overwrite post previewing template without modifying a hole section templates. The macro requires the post parameter and it must be the page object, see section_paginated.html. Please note that you will still need to modify the `blogpage.html` for displaying a full post content, should you wish to add your own.
+* `post_preview.html`: this is a macro defineing the function to preview the post, for example, in posts list. This is made so you can overwrite post previewing template without modifying a section templates.
+	
+	The macro requires the post parameter and it must be the page object, see section_paginated.html. Please note that you will still need to modify the `blogpage.html` for displaying a full post content, should you wish to add your own.
 * `section_paginated.html`: used to display paginated sections. Use `template` frontmadder to set it.
-* `index.html`, `page.html`, `section.html` are for index home page, other pages, and sections, respectively.
+* `index.html`, `page.html`, and `section.html` are for index home page, other pages, and sections, respectively.
 * `404.html`: a custom 404 error page.
 
-All templates can be rebased by copying in your templates directory. And in the base file of your templates folder, make sure to extend "zluinav/base.html", not base.html.
+All templates can be rebased by copying in your templates directory. And in the base.html file of your own templates folder, make sure to extend "zluinav/base.html", not base.html.

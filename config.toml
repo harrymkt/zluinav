@@ -1,8 +1,9 @@
 output_dir="HTML"
 title="UI Navigation"
 base_url="/"
+author="Harry Min Khant"
+feed_filenames = ["rss.xml"]
 compile_sass = false
-
 build_search_index = false
 
 [slugify]
