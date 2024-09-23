@@ -56,10 +56,12 @@ This is a macro defineing the function to preview the post, for example, in post
 ##### post_preview
 This function previews the post, useful in the forloop list.
 * `post`(object) required: an object pointing to a post page.
+* `tr`(object) optional: the object pointing to the datafile for the language.
 
 ##### show_authors
 This method shows the authors of a page. If the page doesn't have set the authors, it will use config page author. If the config still doesn't have set, it will return empty.
 * `post`(object) required: an object pointing to a post page.
+* `tr`(object) optional: the object pointing to the datafile for the language.
 
 #### translator.html
 This macro defines functions for custom translation.

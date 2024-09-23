@@ -1,17 +1,18 @@
-{%-macro post_preview(post)-%}
+{%-macro post_preview(post, tr="")-%}
 {%-set postdesc=""-%}
 {%-if post.description and post.description!=""-%}
 {%- set postdesc=post.description -%}
 {%-endif-%}
 <h3><a href="{{post.permalink | safe}}">{{post.title}}</a>{%if not postdesc==""%}{{postdesc}}{%endif%}</h3>
-{{self::show_post_authors(post=post)}}
-<p>Published on: {{post.date}}.</p>
+{{self::show_post_authors(post=post, tr=tr)}}
+<p>{{tran::get(tr=tr, key="published", def="Published on")}}: {{post.date}}.</p>
 {%-endmacro post_preview -%}
-{%-macro show_post_authors(post)-%}
+{%-macro show_post_authors(post, tr="")-%}
 {%-if post.authors-%}{%-set authors=post.authors-%}
 {%-elif config.author-%}{%-set authors=[config.author]-%}
 {%-endif-%}
 {%-if authors-%}
-<p>Author{{authors | length | pluralize}}: {{authors | join(sep=", ")}}</p>
+{%-set authorkey="author"-%}{%-if authors | length>1-%}{%-set authorkey=authorkey~"s"-%}{%-endif-%}
+<p>{{tran::get(tr=tr, key=authorkey, def=authorkey | capitalize)}}: {{authors | join(sep=", ")}}</p>
 {%-endif-%}
 {%-endmacro show_post_authors-%}
