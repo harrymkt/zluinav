@@ -1,6 +1,6 @@
 output_dir="HTML"
 title="UI Navigation"
-base_url="/"
+base_url="https://harrymkt.github.io/zluinav"
 author="Harry Min Khant"
 feed_filenames = ["rss.xml"]
 compile_sass = false

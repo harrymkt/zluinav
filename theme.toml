@@ -4,7 +4,7 @@ license = "MIT"
 homepage = "https://github.com/harrymkt/zluinav"
 # The minimum version of Zola required
 min_version = "0.4.0"
-demo = "https://harrymkt.github.io"
+demo = "https://harrymkt.github.io/zluinav"
 
 [extra]
 # The theme author info.
