@@ -7,6 +7,7 @@ min_version = "0.4.0"
 demo = "https://harrymkt.github.io/zluinav"
 
 [extra]
+tr_path="langs"
 # The theme author info.
 [author]
 name = "Harry Min Khant"

@@ -60,3 +60,20 @@ This function previews the post, useful in the forloop list.
 ##### show_authors
 This method shows the authors of a page. If the page doesn't have set the authors, it will use config page author. If the config still doesn't have set, it will return empty.
 * `post`(object) required: an object pointing to a post page.
+
+#### translator.html
+This macro defines functions for custom translation.
+
+##### get
+This method will search the TOML file containing translation for each language set in the config. The folder to search is base on the `config.extra.tr_path`. By default, it's langs. Directory searching is as follows:
+* Searches in the directory where the config.toml file is located.
+* If it is not found, Searches in the static directory.
+* If it is still not found, searches in the theme directory. The theme directory means the directory which your current theme lives.
+
+This macro has the following properties to pass:
+* `key`(string) required: the key to translate, set in your language TOML file.
+* `def`(string) optional: the default text if the key could not be translated.
+* `tr`(object) optional: the object pointing to the datafile for the language.
+* `language`(string) optional: a string containing the language name defined in config languages if different from the current language, useful to display names in a list, for instance, `en`
+
+Please see the base.html for more information related to its usage.

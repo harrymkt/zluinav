@@ -1,0 +1,4 @@
+{%-macro get(key="", def="", tr="", language="")-%}
+{%-if not tr and language and language!=""-%}{%-set tr=load_data(path=config.extra.tr_path~"/"~language~".toml", required=false)-%}{%-endif-%}
+{{-tr[key] | default(value=def)-}}
+{%-endmacro get -%}

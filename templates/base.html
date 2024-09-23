@@ -1,4 +1,6 @@
 {%-import "mcs/post.html" as postmc-%}
+{%-import "mcs/translator.html" as tran-%}
+{%-set tr=load_data(path=config.extra.tr_path~"/"~lang~".toml", required=false)-%}
 <!doctype html>
 <html>
 <head>
@@ -10,16 +12,17 @@
 </head>
 <body>
 {%block header-%}
-<h1>{{trans(lang=lang, key="acc_title")}}</h1>
+<p>{{lang}}</p>
+<h1>{{tran::get(tr=tr, key="acc_title", def="Accessibility links")}}</h1>
 {%if config.languages | length>0%}<a href="/lang">Change language</a>{%endif%}
-<a href="#mainc" class="skip-link">{{trans(lang=lang, key="acc_skip_main")}}</a>
-{%if config.extra.nav%}<a href="#navigation" class="skip-link">{{trans(lang=lang, key="acc_skip_nav")}}</a>{%endif%}
-<a href="#footersection" class="skip-link">{{trans(lang=lang, key="acc_skip_footer")}}</a>
+<a href="#mainc" class="skip-link">{{tran::get(tr=tr, key="acc_skip_main", def="Skip to main content")}}</a>
+{%if config.extra.nav%}<a href="#navigation" class="skip-link">{{tran::get(tr=tr, key="acc_skip_nav", def="Skip to navigation")}}</a>{%endif%}
+<a href="#footersection" class="skip-link">{{tran::get(tr=tr, key="acc_skip_footer", def="Skip to footer")}}</a>
 {%-endblock header%}
 {%-block nav%}
 {%-if config.extra.nav%}
-<nav id="navigation" role="navigation" aria-label="{{trans(lang=lang, key="main_menu")}}">
-<h1>{{trans(lang=lang, key="main_menu")}}</h1>
+<nav id="navigation" role="navigation" aria-label="{{tran::get(tr=tr, key="main_menu", def="Main menu")}}">
+<h1>{{tran::get(tr=tr, key="main_menu", def="Main menu")}}</h1>
 <ul style="list-style-type:none;">
 {%-for pn in config.extra.nav%}
 {%-set nurl=pn.url-%}
@@ -32,7 +35,7 @@
 {%-endif-%}
 {%-endif-%}
 {%-if pn.id-%}
-{%-set nname=trans(lang=lang, key=pn.id)-%}
+{%-set nname=tran::get(tr=tr, key=pn.id, def=pn.name)-%}
 {%-else-%}
 {%-set nname=pn.name-%}
 {%-endif%}

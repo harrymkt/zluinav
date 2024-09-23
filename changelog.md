@@ -1,6 +1,6 @@
 # UI Navigation theme changelog
 ## New on Monday, September 23, 2024
-* Added multilingual support.
+* Added multilingual support, using custom TOML datafiles.
 
 ## New on Sunday, September 22, 2024
 * Moved post_preview.html to mcs directory inside the templates for future macro files. It also got renamed to post.html.
