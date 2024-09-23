@@ -1,0 +1,30 @@
+{%-extends "base.html"-%}
+{%-block title-%}{{page.title}} - {{super()}}{%-endblock title-%}
+{%-block footer-%}
+{{super()}}
+<script>
+function goToLanguage()
+{
+var selectedLanguage = document.getElementById("language").value;
+if (selectedLanguage)
+{
+window.location.href = selectedLanguage;
+}
+}
+</script>
+{%-endblock footer-%}
+{%-block content-%}
+<h2>Select Your Language</h2>
+<form onsubmit="goToLanguage(); return false;">
+<label for="language">Choose a language:</label>
+<select id="language" name="language">
+<option value="">--Select--</option>
+<option value="{{get_url(path="index.html")}}">{{trans(key="name")}}</option>
+{%-for lname, language in config.languages%}
+<option value="{{get_url(path="", lang=lname)}}">{{trans(lang=lname, key="name")}}</option>
+{%-endfor-%}
+</select>
+<br><br>
+<input type="submit" value="Change">
+</form>
+{%-endblock content-%}

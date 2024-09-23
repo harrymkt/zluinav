@@ -1,14 +1,14 @@
 {%-if paginator.previous or paginator.next-%}
-<nav aria-label="Pagination">
-<h4>Pagination</h4>
+<nav aria-label="{{trans(lang=lang, key="pagination_title")}}">
+<h4>{{trans(lang=lang, key="pagination_title")}}</h4>
 {%- if paginator.previous %}
-<a href="{{paginator.first | safe}}">First page</a>
-<a href="{{paginator.previous | safe}}">Previous page</a>
+<a href="{{paginator.first | safe}}">{{trans(lang=lang, key="pagination_first")}}</a>
+<a href="{{paginator.previous | safe}}">{{trans(lang=lang, key="pagination_previous")}}</a>
 {%- endif%}
 <p>Page {{ paginator.current_index }} / {{ paginator.number_pagers }}</p>
 {%- if paginator.next %}
-<a href="{{paginator.next | safe}}">Next page</a>
-<a href="{{paginator.last | safe}}">Last page</a>
+<a href="{{paginator.next | safe}}">{{trans(lang=lang, key="pagination_next")}}</a>
+<a href="{{paginator.last | safe}}">{{trans(lang=lang, key="pagination_last")}}</a>
 {%- endif%}
 </nav>
 {%- endif -%}

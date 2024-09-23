@@ -10,18 +10,34 @@
 </head>
 <body>
 {%block header-%}
-<h1>Accessibility links</h1>
-<a href="#mainc" class="skip-link">Skip to main content</a>
-{%if config.extra.nav%}<a href="#navigation" class="skip-link">Skip to navigation</a>{%endif%}
-<a href="#footersection" class="skip-link">Skip to footer</a>
+<h1>{{trans(lang=lang, key="acc_title")}}</h1>
+{%if config.languages | length>0%}<a href="/lang">Change language</a>{%endif%}
+<a href="#mainc" class="skip-link">{{trans(lang=lang, key="acc_skip_main")}}</a>
+{%if config.extra.nav%}<a href="#navigation" class="skip-link">{{trans(lang=lang, key="acc_skip_nav")}}</a>{%endif%}
+<a href="#footersection" class="skip-link">{{trans(lang=lang, key="acc_skip_footer")}}</a>
 {%-endblock header%}
 {%-block nav%}
 {%-if config.extra.nav%}
-<nav id="navigation" role="navigation" aria-label="Main menu">
-<h1>Main Menu</h1>
+<nav id="navigation" role="navigation" aria-label="{{trans(lang=lang, key="main_menu")}}">
+<h1>{{trans(lang=lang, key="main_menu")}}</h1>
 <ul style="list-style-type:none;">
 {%-for pn in config.extra.nav%}
-<li><a {%if current_path and current_path | safe==pn.url | safe%}aria-current="page" {%endif%}href="{{pn.url | safe}}"{%if pn.title%} title="{{pn.title}}"{%endif%}{%if pn.key%} accesskey="{{pn.key}}"{%endif%}>{{pn.name}}</a></li>
+{%-set nurl=pn.url-%}
+{%-set ncurl=""-%}
+{%-if current_path-%}{%-set ncurl=current_path-%}{%-endif-%}
+{%-if ncurl and not ncurl=="" and not ncurl is starting_with("/")-%}{%-set ncurl="/"~ncurl-%}{%-endif-%}
+{%-if config.default_language-%}
+{%-if lang and lang==config.default_language-%}{%-set nurl=pn.url | replace(from=".l./", to="")-%}
+{%-else-%}{%-set nurl=pn.url | replace(from=".l.", to=lang)-%}
+{%-endif-%}
+{%-endif-%}
+<p>{{nurl}}, as {{ncurl}}</p>
+{%-if pn.id-%}
+{%-set nname=trans(lang=lang, key=pn.id)-%}
+{%-else-%}
+{%-set nname=pn.name-%}
+{%-endif%}
+<li><a {%if ncurl and ncurl | safe==nurl | safe%}aria-current="page" {%endif%}href="{{nurl | safe}}"{%if pn.title%} title="{{pn.title}}"{%endif%}{%if pn.key%} accesskey="{{pn.key}}"{%endif%}>{{nname}}</a></li>
 {%-endfor%}
 </ul>
 </nav>

@@ -5,6 +5,7 @@ Zola is a fast site generator written in Rust powered by tera as its templating 
 
 ## Features of zluinav theme
 * Blog with pagination enabled; multiple blogs can be created by copying the blog directory in the content folder to the new directory for a new blog. This means that you can have multiple blogs in one site. In fact, Zola doesn't have its build-in posts, but it is possible using sections.
+* Multilingual; build your site in multiple languages. By default, English and Burmese have been provided as demo.
 * Custom navigation; can be set via `config.extra.nav`.
 * Customizable extrahead, header, and footer by base templates.
 * Fast; Zola generates within a few milliseconds. This is because not much CSS is used as well as JavaScript. Zluinav is built with HTML using aria whenever possible for accessibility with assistive screen reader. You can rebase the templates, should you wish to add your own CSS or JavaScript content.
@@ -20,6 +21,7 @@ Can be accessed using `extra` object.
 	* `url`: the URL to navigate (required). Slashes should be used for internal paths , for example, `/`, `/blog/`
 	* `key`(optional): the access key for the item.
 	* `title`(optional): the title to set on the title attribute.
+	* `id`(optional): the translation ID. If this is not provided, the name will be used instead.
 	
 	If you set the nav as empty or do not set at all, the navigation menu will be disabled, as well as skip to navigation link.
 
@@ -35,6 +37,7 @@ Can be accessed using `extra` object.
 These are a list of files available in the templates folder.
 * `base.html`: template for site base. It is where all blocks live, so you can rebase the template by overwriting in your templates folder.
 * `blogpage.html`: the blog page. You can use the frontmadder `page_template="blogpage.html"` to set in your section.
+* `language_changer.html`: used as a template for change language page
 * `pagination.html`: this is an include template for pagination navigation. This is usually included by include statement in the section_paginated.html.
 * `section_paginated.html`: used to display paginated sections. Use `template` frontmadder to set it.
 * `index.html`, `page.html`, and `section.html` are for index home page, other pages, and sections, respectively.
