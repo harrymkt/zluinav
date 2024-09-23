@@ -18,7 +18,9 @@ Can be accessed using `extra` object.
 	
 	Each navigation item has the following properties:
 	* `name`: the name to display (required).
-	* `url`: the URL to navigate (required). Slashes should be used for internal paths , for example, `/`, `/blog/`
+	* `url`: the URL to navigate (required). Slashes should be used for internal paths.
+		
+		Use `.l.` to reference the current language, for instance, `/.l./blog`
 	* `key`(optional): the access key for the item.
 	* `title`(optional): the title to set on the title attribute.
 	* `id`(optional): the translation ID. If this is not provided, the name will be used instead.

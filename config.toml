@@ -5,6 +5,40 @@ author="Harry Min Khant"
 feed_filenames = ["rss.xml"]
 compile_sass = false
 build_search_index = false
+default_language="en"
+[translations]
+# For default language.
+name="English"
+acc_title="Accessibility links"
+acc_skip_main="Skip to main content"
+acc_skip_nav="Skip to navigation"
+acc_skip_footer="Skip to footer"
+main_menu="Main menu"
+pagination_title="Pagination"
+pagination_first="First page"
+pagination_previous="Previous page"
+pagination_next="Next page"
+pagination_last="Last page"
+nav_home="Home"
+nav_blog="Blog"
+
+[languages.my]
+# Burmese
+title="UI Navigation"
+[languages.my.translations]
+name="Burmese"
+acc_title="သုံးစွဲနိုင်မှုလင့်ခ်များ"
+acc_skip_main="အဓိကအကြောင်းအရာသို့ ကျော်သွားပါ။"
+acc_skip_nav="လမ်းညွှန်မှုသို့ ကျော်သွားပါ။"
+acc_skip_footer="အောက်ခြေမှတ်စုသို့ ကျော်သွားပါ။"
+main_menu="ပင်မမီနူး"
+pagination_title="Pagination"
+pagination_first="ပထမစာမျက်နှာ"
+pagination_previous="ယခင်စာမျက်နှာ"
+pagination_next="နောက်စာမျက်နှာ"
+pagination_last="နောက်ဆုံးစာမျက်နှာ"
+nav_home="အဓိက"
+nav_blog="ဘလော့"
 
 [slugify]
 paths = "on"
@@ -12,6 +46,6 @@ taxonomies = "off"
 anchors = "off"
 [extra]
 nav=[
-{name="Home", url="/", key="H"},
-{name="Blog", url="/blog/", title="Read the latest news"}
+{name="Home", url="/.l./", key="H", id="nav_home"},
+{name="Blog", url="/.l./blog/", title="Read the latest news", id="nav_blog"}
 ]

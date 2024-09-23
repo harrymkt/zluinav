@@ -19,7 +19,7 @@ window.location.href = selectedLanguage;
 <label for="language">Choose a language:</label>
 <select id="language" name="language">
 <option value="">--Select--</option>
-<option value="{{get_url(path="index.html")}}">{{trans(key="name")}}</option>
+<option value="{{get_url(path="", lang=config.default_language)}}">{{trans(key="name")}}</option>
 {%-for lname, language in config.languages%}
 <option value="{{get_url(path="", lang=lname)}}">{{trans(lang=lname, key="name")}}</option>
 {%-endfor-%}
