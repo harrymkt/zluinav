@@ -36,7 +36,7 @@
 {%-else-%}
 {%-set nname=pn.name-%}
 {%-endif%}
-<li><a {%if ncurl and ncurl | safe==nurl | safe%}aria-current="page" {%endif%}href="{{nurl | safe}}"{%if pn.title%} title="{{pn.title}}"{%endif%}{%if pn.key%} accesskey="{{pn.key}}"{%endif%}>{{nname}}</a></li>
+<li><a {%if ncurl and ncurl | safe==nurl | safe%}aria-current="page" {%endif%}href="{%if nurl is starting_with("/")%}{{get_url(path=nurl) | safe}}{%else%}{{nurl}}{%endif%}"{%if pn.title%} title="{{pn.title}}"{%endif%}{%if pn.key%} accesskey="{{pn.key}}"{%endif%}>{{nname}}</a></li>
 {%-endfor%}
 </ul>
 </nav>
