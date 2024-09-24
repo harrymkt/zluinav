@@ -1,6 +1,8 @@
 output_dir="HTML"
 title="UI Navigation"
-base_url="https://harrymkt.github.io/zluinav"
+# Uncomment below line if you want to use as test purpose, and make sure to recomment after testing and back to your base url.
+base_url="/"
+#base_url="https://harrymkt.github.io/zluinav"
 author="Harry Min Khant"
 feed_filenames = ["rss.xml"]
 compile_sass = false
@@ -8,7 +10,7 @@ build_search_index = false
 default_language="en"
 [languages.my]
 # Burmese
-title="UI Navigation"
+title="UI လမ်းညွှန်"
 [slugify]
 paths = "on"
 taxonomies = "off"
