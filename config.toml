@@ -1,8 +1,8 @@
 output_dir="HTML"
 title="UI Navigation"
 # Uncomment below line if you want to use as test purpose, and make sure to recomment after testing and back to your base url.
-base_url="/"
-#base_url="https://harrymkt.github.io/zluinav"
+#base_url="/"
+base_url="https://harrymkt.github.io/zluinav"
 author="Harry Min Khant"
 feed_filenames = ["rss.xml"]
 compile_sass = false
