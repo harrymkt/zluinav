@@ -1,6 +1,7 @@
 {%-import "mcs/post.html" as postmc-%}
 {%-import "mcs/translator.html" as tran-%}
 {%-set tr=load_data(path=config.extra.tr_path~"/"~lang~".toml", required=false)-%}
+{%-if not tr-%}{%-set tr=load_data(path="themes/zluinav/"~config.extra.tr_path~"/"~lang~".toml", required=false)-%}{%-endif-%}
 <!doctype html>
 <html>
 <head>
