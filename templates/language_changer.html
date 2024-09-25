@@ -1,5 +1,5 @@
 {%-extends "base.html"-%}
-{%-block title-%}{{page.title}} - {{super()}}{%-endblock title-%}
+{%-block title-%}{{page.title}}{{config.extra.title_sep}}{{super()}}{%-endblock title-%}
 {%-block footer-%}
 {{super()}}
 <script>

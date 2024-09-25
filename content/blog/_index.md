@@ -6,6 +6,6 @@ template="section_paginated.html"
 page_template="blogpage.html"
 +++
 # Blog
-Here I will share my useful posts
+Here I will share my useful posts so keep an eye out!
 
 ## posts

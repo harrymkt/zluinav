@@ -1,7 +1,7 @@
 {%extends "base.html"%}
 {%-block title-%}
 {%- set section=get_section(path=page.ancestors | last) -%}
-{{page.title}} - {{section.title}} - {{super()}}
+{{page.title}}{{config.extra.title_sep}}{{section.title}}{{config.extra.title_sep}}{{super()}}
 {%-endblock title-%}
 {%-block content-%}
 <h1>{{page.title}}</h1>

@@ -17,6 +17,7 @@ taxonomies = "off"
 anchors = "off"
 [extra]
 tr_path="langs"
+title_sep=" - "
 nav=[
 {name="Home", url="/.l./", key="H", id="nav1"},
 {name="Blog", url="/.l./blog/", title="Read the latest news", id="nav2"}

@@ -8,6 +8,7 @@ demo = "https://harrymkt.github.io/zluinav"
 
 [extra]
 tr_path="langs"
+title_sep=" - "
 # The theme author info.
 [author]
 name = "Harry Min Khant"
