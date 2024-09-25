@@ -39,7 +39,7 @@
 {%-else-%}
 {%-set nname=pn.name-%}
 {%-endif%}
-<li><a {%if ncurl and ncurl | safe==nurl | safe%}aria-current="page" {%endif%}href="{%if nurl is starting_with("/")%}{{get_url(path=nurl) | safe}}{%else%}{{nurl}}{%endif%}"{%if pn.title%} title="{{pn.title}}"{%endif%}{%if pn.key%} accesskey="{{pn.key}}"{%endif%}>{{nname}}</a></li>
+<li><a {%if ncurl and ncurl | safe==nurl | safe%}aria-current="page" {%endif%}href="{%if nurl is starting_with("/") and not config.base_url is starting_with("/")%}{{get_url(path=nurl) | safe}}{%else%}{{nurl}}{%endif%}"{%if pn.title%} title="{{pn.title}}"{%endif%}{%if pn.key%} accesskey="{{pn.key}}"{%endif%}>{{nname}}</a></li>
 {%-endfor%}
 </ul>
 </nav>
@@ -57,7 +57,7 @@
 </footer>
 {%-endblock footer%}
 {%block extrafoot-%}
-<script src="{{get_url(path="js/copy.js")}}"></script>
+<script src="{{get_url(path="scripts/copy.js")}}"></script>
 {%-endblock extrafoot%}
 </body>
 </html>
