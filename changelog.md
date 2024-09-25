@@ -1,4 +1,7 @@
 # UI Navigation theme changelog
+## New on Wednesday, September 25, 2024
+* Added shortcodes as well as documentation.
+
 ## New on Tuesday, September 24, 2024
 * Added a JS script that lets you copy code blocks with a button. The script tag is included in the `extrafoot` block.
 
