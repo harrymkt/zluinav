@@ -7,7 +7,7 @@
 <h1>{{page.title}}</h1>
 {%if page.updated%}<p>{{tran::get(tr=tr, key="updated", def="Updated on")}}: {{page.updated}}</p>{%endif%}
 {{postmc::show_post_authors(post=page, tr=tr)}}
-<p>Published on: {{page.date}}</p>
+<p>{{tran::get(tr=tr, key="published", def="Published on")}}: {{page.date}}</p>
 <p>Total words: {{page.word_count}}</p>
 <br>
 {{page.content | safe}}
