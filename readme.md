@@ -23,7 +23,7 @@ Can be accessed using `extra` object.
 	* `name`(string) required: the name to display.
 	* `url`(string) required: the URL to navigate. Slashes should be used for internal paths.
 		
-		Use `.l.` to reference the current language, for instance, `/.l./blog`
+		Use `.l.` to reference the current language, for instance, `/.l./blog/`
 	* `key`(string) optional: the access key for the item.
 	* `title`(string) optional: the title to set on the title attribute.
 	* `id`(string) optional: the translation ID. If this is not provided, the name will be used instead.
