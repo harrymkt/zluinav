@@ -7,6 +7,7 @@ authors=["Harry Min Khant", "ဥပမာ စာရေးသူ ၂"]
 +++
 
 Test4
+<!--more-->
 
 # h1
 ## h2
