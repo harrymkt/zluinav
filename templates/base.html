@@ -16,7 +16,7 @@
 {%if config.languages | length>0%}<a href="{{get_url(path="lang") | safe}}">Change language</a>{%endif%}
 <a href="#mainc" class="skip-link">{{tran::get(tr=tr, key="acc_skip_main", def="Skip to main content")}}</a>
 {%if config.extra.nav%}<a href="#navigation" class="skip-link">{{tran::get(tr=tr, key="acc_skip_nav", def="Skip to navigation")}}</a>{%endif%}
-<a href="#footersection" class="skip-link">{{tran::get(tr=tr, key="acc_skip_footer", def="Skip to footer")}}</a>
+<a href="#zlfooter" class="skip-link">{{tran::get(tr=tr, key="acc_skip_footer", def="Skip to footer")}}</a>
 {%-endblock header%}
 {%-block nav%}
 {%-if config.extra.nav%}
@@ -50,11 +50,13 @@
 {%-endblock content-%}
 </div>
 </main>
+<div id="zlfooter">
 {%block footer-%}
 <footer>
 <p>Powered by <a href="https://github.com/harrymkt/zluinav">UI Navigation</a> theme, created by <a href="https://harrymkt.github.io">Harry Min Khant</a>.</p>
 </footer>
 {%-endblock footer%}
+</div>
 {%block extrafoot-%}
 <script src="{{get_url(path="scripts/copy.js")}}"></script>
 {%-endblock extrafoot%}
