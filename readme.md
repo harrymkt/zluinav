@@ -3,6 +3,10 @@ UI Navigation, or known as zluinav, is a Zola theme designed for accessibility r
 
 Zola is a fast site generator written in Rust powered by tera as its templating engine and has a powerful theme creation feature.
 
+[Theme demo](https://harrymkt.github.io/zluinav)
+
+This theme is licensed under the terms of the [MIT License](https://github.com/harrymkt/zluinav/blob/main/LICENSE.md).
+
 ## Features of zluinav theme
 * Blog with pagination enabled; multiple blogs can be created by copying the blog directory in the content folder to the new directory for a new blog. This means that you can have multiple blogs in one site. In fact, Zola doesn't have its build-in posts, but it is possible using sections.
 * Multilingual; build your site in multiple languages. By default, English and Burmese have been provided as demo.
@@ -11,10 +15,28 @@ Zola is a fast site generator written in Rust powered by tera as its templating 
 * Fast; Zola generates within a few milliseconds. This is because not much CSS is used as well as JavaScript. Zluinav is built with HTML using aria whenever possible for accessibility with assistive screen reader. You can rebase the templates, should you wish to add your own CSS or JavaScript content.
 * Copy code blocks; add code blocks which can then be copied using buttons and display the code language if available, helped by JavaScript.
 
-## Customization
+## Installation
+Using git:
+```bash
+cd themes
+git clone https://github.com/harrymkt/zluinav.git
+```
+Or [download manually](https://github.com/harrymkt/zluinav/archive/refs/heads/main.zip) and paste in the themes directory.
 
+Or, add to the submodule
+```bash
+git submodule add https://github.com/harrymkt/zluinav.git themes/zluinav
+git submodule update --remote
+```
+
+In your config.toml file, add the following
+```toml
+theme="zluinav"
+```
+
+## Customization
 ### Extra variables
-Can be accessed using `extra` object.
+These variables must be set under `extra` object of the config. If they are not set, the default values will be used from the [theme.toml](https://github.com/harrymkt/zluinav/blob/main/theme.toml).
 * `tr_path`: the path where language TOML files are stored, default is "langs".
 * `title_sep`: title separator, default is " - ".
 * `nav`: a list of inline tables for navigation, see config.toml for more info.
