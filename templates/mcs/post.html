@@ -5,7 +5,7 @@
 {%-endif-%}
 <h3><a href="{{post.permalink | safe}}">{{post.title}}</a>{%if not postdesc==""%}{{postdesc}}{%endif%}</h3>
 {{self::show_post_authors(post=post, tr=tr)}}
-<p>{{tran::get(tr=tr, key="published", def="Published on")}}: {{post.date}}.</p>
+<p>{{tran::get(tr=tr, key="published", def="Published on: $date") | replace(from="$date", to=post.date|as_str)}}</p>
 {%if post.summary%}{{post.summary | safe}}{%endif%}
 {%-endmacro post_preview -%}
 {%-macro show_post_authors(post, tr="")-%}

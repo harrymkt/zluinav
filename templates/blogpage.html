@@ -5,10 +5,10 @@
 {%-endblock title-%}
 {%-block content-%}
 <h1>{{page.title}}</h1>
-{%if page.updated%}<p>{{tran::get(tr=tr, key="updated", def="Updated on")}}: {{page.updated}}</p>{%endif%}
+{%if page.updated%}<p>{{tran::get(tr=tr, key="updated", def="Updated on: $date") | replace(from="$date", to=page.updated|as_str)}}</p>{%endif%}
 {{postmc::show_post_authors(post=page, tr=tr)}}
-<p>{{tran::get(tr=tr, key="published", def="Published on")}}: {{page.date}}</p>
-<p>{{tran::get(tr=tr, key="wordcount", def="Total words")}}: {{page.word_count}}</p>
+<p>{{tran::get(tr=tr, key="published", def="Published on: $date") | replace(from="$date", to=page.date|as_str)}}</p>
+<p>{{tran::get(tr=tr, key="wordcount", def="Total words: $count") | replace(from="$count", to=page.word_count|as_str)}}</p>
 <br>
 {{page.content | safe}}
 {%-endblock content-%}
