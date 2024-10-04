@@ -25,7 +25,7 @@ Or [download manually](https://github.com/harrymkt/zluinav/archive/refs/heads/ma
 
 Or, add to the submodule
 ```bash
-git submodule add https://github.com/harrymkt/zluinav.git themes/zluinav
+git submodule add --name zluinav https://github.com/harrymkt/zluinav.git themes/zluinav
 git submodule update --remote
 ```
 
