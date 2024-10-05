@@ -14,6 +14,7 @@ This theme is licensed under the terms of the [MIT License](https://github.com/h
 * Customizable extrahead, header, navigation, and footer by base templates and blocks.
 * Fast; Zola generates within a few milliseconds. This is because not much CSS is used as well as JavaScript. Zluinav is built with HTML using aria whenever possible for accessibility with assistive screen reader. You can rebase the templates, should you wish to add your own CSS or JavaScript content.
 * Copy code blocks; add code blocks which can then be copied using buttons and display the code language if available, helped by JavaScript.
+* Variables; add variables to your page content to be replaced during the site generate.
 
 ## Installation
 Using git:
@@ -33,6 +34,14 @@ In your config.toml file, add the following
 ```toml
 theme="zluinav"
 ```
+## Writing
+In page content, you can add variables that will be replaced with the value when the site builds.
+Variables are defined by `$variable_name$`. For example, `This page is named $title$ and was published on $date$, and was last updated on $updated$.`
+
+Here is a list of supported variables:
+* `title`: title of the page.
+* `date`: the published date of the page, if available.
+* `updated`: the updated date of the page, if available.
 
 ## Customization
 ### Extra variables
@@ -75,23 +84,24 @@ All templates can be rebased by copying in your templates directory. And in the 
 
 ### Macros
 This is a list of available macros that are located in mcs directory. Use heading level 4 to navigate each macro file, and level 5 to navigate available functions.
+#### content.html
+This macro defines content processing, because the theme supports variables. Variables are processed by `$variable_name$`.
+##### process_content
+Returns the content replaced with all supported variables.
+* `page`(object) required: an object pointing to a page to retrieve the content.
 
 #### post.html
 This is a macro defineing the function to preview the post, for example, in posts list. This is made so you can overwrite post previewing template without modifying a section templates.
-
 ##### post_preview
 This function previews the post, useful in the forloop list.
 * `post`(object) required: an object pointing to a post page.
 * `tr`(object) optional: the object pointing to the loaded translation data.
-
 ##### show_authors
 This method shows the authors of a page. If the page doesn't have set the authors, it will use config page author. If the config still doesn't have set, it will return empty.
 * `post`(object) required: an object pointing to a post page.
 * `tr`(object) optional: the object pointing to the loaded translation data.
-
 #### translator.html
 This macro defines functions for custom translation.
-
 ##### get
 This method will search the TOML file containing translation for each language set in the config. The folder to search is base on the `config.extra.tr_path`. By default, it's langs. Directory searching is as follows:
 * Searches in the directory where the config.toml file is located.
@@ -107,7 +117,6 @@ Please see the base.html for more information related to its usage.
 
 ### Shortcodes
 This is a list of available shortcodes that are located in shortcodes directory that can be used in your markdown files to obtain information. Use heading level 4 to navigate each file.
-
 #### geturl.html
 This shortcode allows you to retrieve the URL specified by the path and optionally the language. This is useful to add links to markdown files if they depend on the language, useful for custom partials such as footer and header using markdown files.
 * `p`(string) required: The path to retrieve.

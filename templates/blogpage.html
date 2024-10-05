@@ -10,5 +10,5 @@
 <p>{{tran::get(tr=tr, key="published", def="Published on: $date") | replace(from="$date", to=page.date|as_str)}}</p>
 <p>{{tran::get(tr=tr, key="wordcount", def="Total words: $count") | replace(from="$count", to=page.word_count|as_str)}}</p>
 <br>
-{{page.content | safe}}
+{{content::process(page=page) | safe}}
 {%-endblock content-%}
