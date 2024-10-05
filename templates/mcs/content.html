@@ -1,6 +1,9 @@
-{%-macro process(page)-%}
-{%-set pcontent=page.content|replace(from="$title$", to=page.title)-%}
+{%-macro process(page, option="content")-%}
+{%-set optionval=page[option]|default(value=option)-%}
+{%-set pcontent=optionval|replace(from="$title$", to=page.title)|replace(from="$description$", to=page["description"]|as_str)-%}
+{%-set pcontent=pcontent|replace(from="$link$", to=page["permalink"]|as_str)-%}
 {%-if page.updated-%}{%-set pcontent=pcontent|replace(from="$updated$", to=page.updated|as_str)-%}{%-endif-%}
 {%-if page.date-%}{%-set pcontent=pcontent|replace(from="$date$", to=page.date|as_str)-%}{%-endif-%}
+{%-set pcontent=pcontent|replace(from="$/*", to="$")|replace(from="*/$", to="$")-%}
 {{pcontent|safe}}
 {%-endmacro process-%}

@@ -1,7 +1,7 @@
 /*
-This style file is included in Zluinav theme under the terms of the MIT License.
+This style file is included in Zluinav theme which is distributed under the terms of the MIT License.
 */
-//Skip link to be invisible for sighted visiters
+//Skip link to be invisible for sighted visitors
 .skip-link
 {
 position: absolute;
@@ -12,7 +12,7 @@ height: 1px;
 overflow: hidden;
 z-index: -1;
 }
-//When skip link is focused, visible again.
+//When skip link is focused, make visible again.
 .skip-link:focus
 {
 position: static;

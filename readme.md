@@ -38,8 +38,12 @@ theme="zluinav"
 In page content, you can add variables that will be replaced with the value when the site builds.
 Variables are defined by `$variable_name$`. For example, `This page is named $title$ and was published on $date$, and was last updated on $updated$.`
 
+You can render the variable name itself by prefixing with `/*` and `*/`. For example, `$/*title*/$` will be rendered as `$title$` without replacing its value.
+
 Here is a list of supported variables:
 * `title`: title of the page.
+* `description`: description, if available.
+* `link`: the permalink to the page.
 * `date`: the published date of the page, if available.
 * `updated`: the updated date of the page, if available.
 
@@ -86,9 +90,10 @@ All templates can be rebased by copying in your templates directory. And in the 
 This is a list of available macros that are located in mcs directory. Use heading level 4 to navigate each macro file, and level 5 to navigate available functions.
 #### content.html
 This macro defines content processing, because the theme supports variables. Variables are processed by `$variable_name$`.
-##### process_content
+##### process
 Returns the content replaced with all supported variables.
 * `page`(object) required: an object pointing to a page to retrieve the content.
+* `option`(string) optional: the option to process, default is "content".
 
 #### post.html
 This is a macro defineing the function to preview the post, for example, in posts list. This is made so you can overwrite post previewing template without modifying a section templates.
