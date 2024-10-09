@@ -1,5 +1,5 @@
 <!doctype html>
-<html>
+<html lang="en">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -16,39 +16,13 @@
 <h2>Main menu</h2>
 <ul style="list-style-type:none;">
 <li><a href="https://harrymkt.github.io/zluinav" accesskey="H">Home</a></li>
+<li><a aria-current="page" href="https://harrymkt.github.io/zluinav/docs">Documentation</a></li>
 <li><a href="https://harrymkt.github.io/zluinav/blog" title="Read the latest news">Blog</a></li>
 </ul>
 </nav>
 <main>
 <div id="mainc">
-<h1 id="UI_Navigation">UI Navigation</h1>
-<p>UI Navigation, or known as zluinav, is a Zola theme designed for accessibility rather than visual and made as easy as possible using templates and macros. Since I am a blind developer, I'd like to develop with accessibility as possible so visually impaired users can use them.</p>
-<p>Zola is a fast site generator written in Rust powered by tera as its templating engine and has a powerful theme creation feature.</p>
-<p><a href="https://harrymkt.github.io/zluinav">Theme demo</a></p>
-<p>This theme is licensed under the terms of the <a href="https://github.com/harrymkt/zluinav/blob/main/LICENSE.md">MIT License</a>.</p>
-<h2 id="Features_of_zluinav_theme">Features of zluinav theme</h2>
-<ul>
-<li>Blog with pagination enabled; multiple blogs can be created by copying the blog directory in the content folder to the new directory for a new blog. This means that you can have multiple blogs in one site. In fact, Zola doesn't have its build-in posts, but it is possible using sections.</li>
-<li>Multilingual; build your site in multiple languages. By default, English and Burmese have been provided as demo.</li>
-<li>Custom navigation; can be set via <code>config.extra.nav</code>.</li>
-<li>Customizable extrahead, header, navigation, and footer by base templates and blocks.</li>
-<li>Fast; Zola generates within a few milliseconds. This is because not much CSS is used as well as JavaScript. Zluinav is built with HTML using aria whenever possible for accessibility with assistive screen reader. You can rebase the templates, should you wish to add your own CSS or JavaScript content.</li>
-<li>Copy code blocks; add code blocks which can then be copied using buttons and display the code language if available, helped by JavaScript.</li>
-<li>Variables; add variables to your page content to be replaced during the site generate.</li>
-</ul>
-<h2 id="Installation">Installation</h2>
-<p>Using git:</p>
-<pre data-lang="bash" class="language-bash "><code class="language-bash" data-lang="bash">cd themes
-git clone https:&#x2F;&#x2F;github.com&#x2F;harrymkt&#x2F;zluinav.git
-</code></pre>
-<p>Or <a href="https://github.com/harrymkt/zluinav/archive/refs/heads/main.zip">download manually</a> and paste in the themes directory.</p>
-<p>Or, add to the submodule</p>
-<pre data-lang="bash" class="language-bash "><code class="language-bash" data-lang="bash">git submodule add --name zluinav https:&#x2F;&#x2F;github.com&#x2F;harrymkt&#x2F;zluinav.git themes&#x2F;zluinav
-git submodule update --remote
-</code></pre>
-<p>In your config.toml file, add the following</p>
-<pre data-lang="toml" class="language-toml "><code class="language-toml" data-lang="toml">theme=&quot;zluinav&quot;
-</code></pre>
+<h1 id="Documentation">Documentation</h1>
 <h2 id="Writing">Writing</h2>
 <p>In page content, you can add variables that will be replaced with the value when the site builds.
 Variables are defined by <code>$variable_name$</code>. For example, <code>This page is named $title$ and was published on $date$, and was last updated on $updated$.</code></p>
@@ -62,17 +36,15 @@ Variables are defined by <code>$variable_name$</code>. For example, <code>This p
 <li><code>updated</code>: the updated date of the page, if available.</li>
 </ul>
 <h2 id="Customization">Customization</h2>
+<p>Use heading level 3 to navigate each section, heading level 4 to navigate each property. In some case, such as macros, use heading level 5 to navigate each function.</p>
 <h3 id="Extra_variables">Extra variables</h3>
 <p>These variables must be set under <code>extra</code> object of the config. If they are not set, the default values will be used from the <a href="https://github.com/harrymkt/zluinav/blob/main/theme.toml">theme.toml</a>.</p>
-<ul>
-<li>
-<p><code>tr_path</code>: the path where language TOML files are stored, default is "langs".</p>
-</li>
-<li>
-<p><code>title_sep</code>: title separator, default is " - ".</p>
-</li>
-<li>
-<p><code>nav</code>: a list of inline tables for navigation, see config.toml for more info.</p>
+<h4 id="tr_path">tr_path</h4>
+<p>The path where language TOML files are stored, default is "langs".</p>
+<h4 id="title_sep">title_sep</h4>
+<p>Title separator, default is " - ".</p>
+<h4 id="nav">nav</h4>
+<p>A list of inline tables for navigation.</p>
 <p>Each navigation item has the following properties:</p>
 <ul>
 <li>
@@ -93,8 +65,14 @@ Variables are defined by <code>$variable_name$</code>. For example, <code>This p
 </li>
 </ul>
 <p>If you set the nav as empty or do not set at all, the navigation menu will be disabled, as well as skip to navigation link.</p>
-</li>
-</ul>
+<p>Example navigation:</p>
+<pre data-lang="toml" class="language-toml "><code class="language-toml" data-lang="toml">nav=[
+{name=&quot;Home&quot;, url=&quot;&#x2F;&quot;},
+{name=&quot;Blog&quot;, url=&quot;&#x2F;blog&#x2F;&quot;},
+# Translated page
+{name=&quot;Multilingual&quot;, url=&quot;&#x2F;.l.&#x2F;multilingual&#x2F;&quot;}
+]
+</code></pre>
 <h3 id="Blocks">Blocks</h3>
 <ul>
 <li><code>extrahead</code>: use to add head meta, including your JS scripts. The charset and viewport are already added, so you can call <code>{{super()}}</code> before you add content to this block.</li>
@@ -156,7 +134,11 @@ Variables are defined by <code>$variable_name$</code>. For example, <code>This p
 <li><code>tr</code>(object) optional: the object pointing to the loaded translation data.</li>
 <li><code>language</code>(string) optional: a string containing the language name defined in config languages if different from the current language, useful to display names in a list, for instance, <code>en</code></li>
 </ul>
-<p>Please see the base.html for more information related to its usage.</p>
+<p>Example:</p>
+<pre data-lang="html" class="language-html "><code class="language-html" data-lang="html">{%-import &quot;macros&#x2F;translator.html&quot; as tran-%}
+{%-set translated=tran::get(language=&quot;my&quot;, key=&quot;test&quot;, def=&quot;Testing&quot;)-%}
+{{test}}
+</code></pre>
 <h3 id="Shortcodes">Shortcodes</h3>
 <p>This is a list of available shortcodes that are located in shortcodes directory that can be used in your markdown files to obtain information. Use heading level 4 to navigate each file.</p>
 <h4 id="geturl.html">geturl.html</h4>
@@ -166,7 +148,10 @@ Variables are defined by <code>$variable_name$</code>. For example, <code>This p
 <li><code>lang</code>(string) optional: the language to get as.</li>
 </ul>
 <p>Example:</p>
-<pre data-lang="md" class="language-md "><code class="language-md" data-lang="md">Go to [about]({{geturl(p=&quot;about&quot;)}}) page!
+<pre data-lang="markdown" class="language-markdown "><code class="language-markdown" data-lang="markdown">Go to [about]({{geturl(p=&quot;about&quot;)}}) page!
+</code></pre>
+<p>It may output like:</p>
+<pre data-lang="text" class="language-text "><code class="language-text" data-lang="text">https:&#x2F;&#x2F;harrymkt.github.io&#x2F;zluinav&#x2F;about
 </code></pre>
 </div>
 </main>
