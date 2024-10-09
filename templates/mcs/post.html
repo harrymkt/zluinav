@@ -6,8 +6,8 @@
 <h3><a href="{{post.permalink | safe}}">{{post.title}}</a>{%if not postdesc==""%}{{postdesc}}{%endif%}</h3>
 {{self::show_post_authors(post=post, tr=tr)}}
 {%-if post.updated-%}{%-set updated=post.updated-%}{%-else-%}{%-set updated=post.date-%}{%-endif-%}
-<p>{{tran::get(tr=tr, key="lastmod", def="Last modified: $l$")|replace(from="$l$", to="<script>document.write(ts_to_readable_time(get_timestamp('"~updated~"'), false, ' ago', false));</script>")}}</p>
-<p>{{tran::get(tr=tr, key="published", def="Published on: $date$")|replace(from="$date$", to="<script>document.write(local_datetime_string('"~post.date~"'));</script>")}}</p>
+<p>{{tran::get(tr=tr, key="lastmod", def="Last modified: $l$")|replace(from="$l$", to="<script>document.write(ts_to_readable_time(get_timestamp('"~updated~"'), false, ' ago', false));</script>")|safe}}</p>
+<p>{{tran::get(tr=tr, key="published", def="Published on: $date$")|replace(from="$date$", to="<script>document.write(local_datetime_string('"~post.date~"'));</script>")|safe}}</p>
 {%if post.summary%}{{post.summary | safe}}{%endif%}
 {%-endmacro post_preview -%}
 {%-macro show_post_authors(post, tr="")-%}

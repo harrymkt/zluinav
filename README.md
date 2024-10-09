@@ -5,7 +5,7 @@ Zola is a fast site generator written in Rust powered by tera as its templating 
 
 [Theme demo](https://harrymkt.github.io/zluinav)
 
-This theme is licensed under the terms of the [MIT License](https://github.com/harrymkt/zluinav/blob/main/LICENSE.md).
+This theme is distributed under the terms of the [MIT License](https://github.com/harrymkt/zluinav/blob/main/LICENSE.md).
 
 ## Features of zluinav theme
 * Blog with pagination enabled; multiple blogs can be created by copying the blog directory in the content folder to the new directory for a new blog. This means that you can have multiple blogs in one site. In fact, Zola doesn't have its build-in posts, but it is possible using sections.
@@ -36,3 +36,11 @@ theme="zluinav"
 ```
 ## Customization
 For more customizable options and configurations, please see [documentation](https://harrymkt.github.io/zluinav/docs)
+
+## Contribution
+Contributions to this theme are welcome, provided that the following requirements are meant:
+* Try to use no indentation; HTML, JS, CSS or Tera, neither of them is required strict indentation. Therefore, using indentation is not recommended.
+* Be the templates accessible for visually impaired and/or blind and prefer readability. Don't worry, I will process in case accessibility issues before pull requests are merged.
+* Photos are not required in this theme. You may design with CSS for visual if you so wish.
+
+Thank you!

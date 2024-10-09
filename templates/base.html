@@ -4,7 +4,7 @@
 {%-set tr=load_data(path=config.extra.tr_path~"/"~lang~".toml", required=false)-%}
 {%-if not tr-%}{%-set tr=load_data(path="themes/zluinav/"~config.extra.tr_path~"/"~lang~".toml", required=false)-%}{%-endif-%}
 <!doctype html>
-<html>
+<html lang="{{lang}}">
 <head>
 {%block extrahead-%}
 <meta charset="UTF-8">

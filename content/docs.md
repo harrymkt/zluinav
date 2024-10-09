@@ -1,42 +1,7 @@
 +++
 title="Documentation"
 +++
-# UI Navigation
-UI Navigation, or known as zluinav, is a Zola theme designed for accessibility rather than visual and made as easy as possible using templates and macros. Since I am a blind developer, I'd like to develop with accessibility as possible so visually impaired users can use them.
-
-Zola is a fast site generator written in Rust powered by tera as its templating engine and has a powerful theme creation feature.
-
-[Theme demo](https://harrymkt.github.io/zluinav)
-
-This theme is licensed under the terms of the [MIT License](https://github.com/harrymkt/zluinav/blob/main/LICENSE.md).
-
-## Features of zluinav theme
-* Blog with pagination enabled; multiple blogs can be created by copying the blog directory in the content folder to the new directory for a new blog. This means that you can have multiple blogs in one site. In fact, Zola doesn't have its build-in posts, but it is possible using sections.
-* Multilingual; build your site in multiple languages. By default, English and Burmese have been provided as demo.
-* Custom navigation; can be set via `config.extra.nav`.
-* Customizable extrahead, header, navigation, and footer by base templates and blocks.
-* Fast; Zola generates within a few milliseconds. This is because not much CSS is used as well as JavaScript. Zluinav is built with HTML using aria whenever possible for accessibility with assistive screen reader. You can rebase the templates, should you wish to add your own CSS or JavaScript content.
-* Copy code blocks; add code blocks which can then be copied using buttons and display the code language if available, helped by JavaScript.
-* Variables; add variables to your page content to be replaced during the site generate.
-
-## Installation
-Using git:
-```bash
-cd themes
-git clone https://github.com/harrymkt/zluinav.git
-```
-Or [download manually](https://github.com/harrymkt/zluinav/archive/refs/heads/main.zip) and paste in the themes directory.
-
-Or, add to the submodule
-```bash
-git submodule add --name zluinav https://github.com/harrymkt/zluinav.git themes/zluinav
-git submodule update --remote
-```
-
-In your config.toml file, add the following
-```toml
-theme="zluinav"
-```
+# $title$
 
 ## Writing
 In page content, you can add variables that will be replaced with the value when the site builds.
@@ -52,22 +17,36 @@ Here is a list of supported variables:
 * `updated`: the updated date of the page, if available.
 
 ## Customization
+Use heading level 3 to navigate each section, heading level 4 to navigate each property. In some case, such as macros, use heading level 5 to navigate each function.
 ### Extra variables
 These variables must be set under `extra` object of the config. If they are not set, the default values will be used from the [theme.toml](https://github.com/harrymkt/zluinav/blob/main/theme.toml).
-* `tr_path`: the path where language TOML files are stored, default is "langs".
-* `title_sep`: title separator, default is " - ".
-* `nav`: a list of inline tables for navigation, see config.toml for more info.
+#### tr_path
+The path where language TOML files are stored, default is "langs".
+#### title_sep
+Title separator, default is " - ".
+#### nav
+A list of inline tables for navigation.
+
+Each navigation item has the following properties:
+* `name`(string) required: the name to display.
+* `url`(string) required: the URL to navigate. Slashes should be used for internal paths.
 	
-	Each navigation item has the following properties:
-	* `name`(string) required: the name to display.
-	* `url`(string) required: the URL to navigate. Slashes should be used for internal paths.
-		
-		Use `.l.` to reference the current language, for instance, `/.l./blog/`
-	* `key`(string) optional: the access key for the item.
-	* `title`(string) optional: the title to set on the title attribute.
-	* `id`(string) optional: the translation ID. If this is not provided, the name will be used instead.
-	
-	If you set the nav as empty or do not set at all, the navigation menu will be disabled, as well as skip to navigation link.
+	Use `.l.` to reference the current language, for instance, `/.l./blog/`
+* `key`(string) optional: the access key for the item.
+* `title`(string) optional: the title to set on the title attribute.
+* `id`(string) optional: the translation ID. If this is not provided, the name will be used instead.	
+
+If you set the nav as empty or do not set at all, the navigation menu will be disabled, as well as skip to navigation link.
+
+Example navigation:
+```toml
+nav=[
+{name="Home", url="/"},
+{name="Blog", url="/blog/"},
+# Translated page
+{name="Multilingual", url="/.l./multilingual/"}
+]
+```
 
 ### Blocks
 * `extrahead`: use to add head meta, including your JS scripts. The charset and viewport are already added, so you can call `{{/*super()*/}}` before you add content to this block.
@@ -122,7 +101,12 @@ This macro has the following properties to pass:
 * `tr`(object) optional: the object pointing to the loaded translation data.
 * `language`(string) optional: a string containing the language name defined in config languages if different from the current language, useful to display names in a list, for instance, `en`
 
-Please see the base.html for more information related to its usage.
+Example:
+```html
+{%-import "macros/translator.html" as tran-%}
+{%-set translated=tran::get(language="my", key="test", def="Testing")-%}
+{{test}}
+```
 
 ### Shortcodes
 This is a list of available shortcodes that are located in shortcodes directory that can be used in your markdown files to obtain information. Use heading level 4 to navigate each file.
@@ -132,6 +116,10 @@ This shortcode allows you to retrieve the URL specified by the path and optional
 * `lang`(string) optional: the language to get as.
 
 Example:
-```md
+```markdown
 Go to [about]({{/*geturl(p="about")*/}}) page!
+```
+It may output like:
+```text
+{{geturl(p="about")}}
 ```

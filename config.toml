@@ -20,5 +20,6 @@ tr_path="langs"
 title_sep=" - "
 nav=[
 {name="Home", url="/.l./", key="H", id="nav1"},
-{name="Blog", url="/.l./blog/", title="Read the latest news", id="nav2"}
+{name="Documentation", url="/docs/", id="nav2"},
+{name="Blog", url="/.l./blog/", title="Read the latest news", id="nav3"}
 ]
