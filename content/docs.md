@@ -2,7 +2,7 @@
 title="Documentation"
 +++
 # $title$
-
+Use heading level 2 to navigate each section, heading level 3 to navigate each property. In some case, such as macros, use heading level 4 to navigate each function.
 ## Writing
 In page content, you can add variables that will be replaced with the value when the site builds.
 Variables are defined by `$variable_name$`. For example, `This page is named $/*title*/$ and was published on $/*date*/$, and was last updated on $/*updated*/$.`
@@ -16,15 +16,15 @@ Here is a list of supported variables:
 * `date`: the published date of the page, if available.
 * `updated`: the updated date of the page, if available.
 
-## Customization
-Use heading level 3 to navigate each section, heading level 4 to navigate each property. In some case, such as macros, use heading level 5 to navigate each function.
-### Extra variables
+Returned variable will be empty if the variable is not defined or failed to retrieve, so make sure you know it is defined!
+
+## Extra variables
 These variables must be set under `extra` object of the config. If they are not set, the default values will be used from the [theme.toml](https://github.com/harrymkt/zluinav/blob/main/theme.toml).
-#### tr_path
+### tr_path
 The path where language TOML files are stored, default is "langs".
-#### title_sep
+### title_sep
 Title separator, default is " - ".
-#### nav
+### nav
 A list of inline tables for navigation.
 
 Each navigation item has the following properties:
@@ -48,7 +48,7 @@ nav=[
 ]
 ```
 
-### Blocks
+## Blocks
 * `extrahead`: use to add head meta, including your JS scripts. The charset and viewport are already added, so you can call `{{/*super()*/}}` before you add content to this block.
 * `title`: title, default to config. This is best to call `{{/*super()*/}}` after the title set to also add your config site title.
 * `header`: use before the main content. By default, this block contains accessibility skip links such as skip to main content, navigation, and footer.
@@ -57,7 +57,7 @@ nav=[
 * `footer`: use after the content.
 * `extrafoot`: an extra footer. This block is useful to insert JS scripts if they need to be inserted at the bottom of the footer, like copy.js.
 
-### Templates
+## Templates
 These are a list of files available in the templates folder.
 * `base.html`: template for site base. It is where all blocks live, so you can rebase the template by overwriting in your templates folder.
 * `blogpage.html`: the blog page. You can use the frontmadder `page_template="blogpage.html"` to set in your section.
@@ -69,28 +69,28 @@ These are a list of files available in the templates folder.
 
 All templates can be rebased by copying in your templates directory. And in the base.html file of your own templates folder, make sure to extend "zluinav/templates/base.html", not base.html.
 
-### Macros
+## Macros
 This is a list of available macros that are located in mcs directory. Use heading level 4 to navigate each macro file, and level 5 to navigate available functions.
-#### content.html
+### content.html
 This macro defines content processing, because the theme supports variables. Variables are processed by `$variable_name$`.
-##### process
+#### process
 Returns the content replaced with all supported variables.
 * `page`(object) required: an object pointing to a page to retrieve the content.
 * `option`(string) optional: the option to process, default is "content".
 
-#### post.html
+### post.html
 This is a macro defineing the function to preview the post, for example, in posts list. This is made so you can overwrite post previewing template without modifying a section templates.
-##### post_preview
+#### post_preview
 This function previews the post, useful in the forloop list.
 * `post`(object) required: an object pointing to a post page.
 * `tr`(object) optional: the object pointing to the loaded translation data.
-##### show_authors
+#### show_authors
 This method shows the authors of a page. If the page doesn't have set the authors, it will use config page author. If the config still doesn't have set, it will return empty.
 * `post`(object) required: an object pointing to a post page.
 * `tr`(object) optional: the object pointing to the loaded translation data.
-#### translator.html
+### translator.html
 This macro defines functions for custom translation.
-##### get
+#### get
 This method will search the TOML file containing translation for each language set in the config. The folder to search is base on the `config.extra.tr_path`. By default, it's langs. Directory searching is as follows:
 * Searches in the directory where the config.toml file is located.
 * If it is not found, searches in the theme directory. The theme directory means the directory which your current theme lives.
@@ -99,7 +99,7 @@ This macro has the following properties to pass:
 * `key`(string) required: the key to translate, set in your language TOML file.
 * `def`(string) optional: the default text if the key could not be translated.
 * `tr`(object) optional: the object pointing to the loaded translation data.
-* `language`(string) optional: a string containing the language name defined in config languages if different from the current language, useful to display names in a list, for instance, `en`
+* `language`(string) optional: a string containing the language name defined in config languages if different from the current language, useful to display names in a list, for instance, `en` When specifying the language it will be loaded. As such, `tr` is not required when this is used.
 
 Example:
 ```html
@@ -108,9 +108,9 @@ Example:
 {{test}}
 ```
 
-### Shortcodes
+## Shortcodes
 This is a list of available shortcodes that are located in shortcodes directory that can be used in your markdown files to obtain information. Use heading level 4 to navigate each file.
-#### geturl.html
+### geturl.html
 This shortcode allows you to retrieve the URL specified by the path and optionally the language. This is useful to add links to markdown files if they depend on the language, useful for custom partials such as footer and header using markdown files.
 * `p`(string) required: The path to retrieve.
 * `lang`(string) optional: the language to get as.

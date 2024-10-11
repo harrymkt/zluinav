@@ -1,20 +1,31 @@
+# Build output directory
 output_dir="HTML"
+# Title of the site
 title="UI Navigation"
 # Uncomment below line if you want to use as test purpose, and make sure to recomment after testing and back to your base url.
 #base_url="/"
 base_url="https://harrymkt.github.io/zluinav"
+# Default author to be used if the page does not have set one.
 author="Harry Min Khant"
-feed_filenames = ["rss.xml"]
-compile_sass = false
-build_search_index = false
+# Feed filename
+feed_filenames=["rss.xml"]
+# We don't need Sass
+compile_sass=false
+# Search feature is currently not supported in this theme
+build_search_index=false
+# Default language
 default_language="en"
+# Other languages
 [languages.my]
 # Burmese
 title="UI လမ်းညွှန်"
+
+
 [slugify]
-paths = "on"
-taxonomies = "off"
-anchors = "off"
+paths="on"
+# We don't use Taxonomies for now
+taxonomies="off"
+anchors="off"
 [extra]
 tr_path="langs"
 title_sep=" - "

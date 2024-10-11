@@ -1,4 +1,6 @@
+# Pre or pre directory can be used to save private files which are not to be included in commits
 pre/**
 Pre/**
+# Output directory
 HTML/**
 html/**

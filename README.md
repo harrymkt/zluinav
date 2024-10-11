@@ -12,9 +12,10 @@ This theme is distributed under the terms of the [MIT License](https://github.co
 * Multilingual; build your site in multiple languages. By default, English and Burmese have been provided as demo.
 * Custom navigation; can be set via `config.extra.nav`.
 * Customizable extrahead, header, navigation, and footer by base templates and blocks.
-* Fast; Zola generates within a few milliseconds. This is because not much CSS is used as well as JavaScript. Zluinav is built with HTML using aria whenever possible for accessibility with assistive screen reader. You can rebase the templates, should you wish to add your own CSS or JavaScript content.
+* Fast; Zola generates within a few milliseconds. This is because not much CSS is used as well as JavaScript. Zluinav is built with HTML using aria whenever possible for accessibility with assistive screen reader as well as using little JavaScript as possible. You can rebase the templates, should you wish to add your own CSS or JavaScript content.
 * Copy code blocks; add code blocks which can then be copied using buttons and display the code language if available, helped by JavaScript.
 * Variables; add variables to your page content to be replaced during the site generate.
+* Local date display; display dates in user's local timezone no madder what timezone the date is set.
 
 ## Installation
 Using git:
@@ -24,7 +25,7 @@ git clone https://github.com/harrymkt/zluinav.git
 ```
 Or [download manually](https://github.com/harrymkt/zluinav/archive/refs/heads/main.zip) and paste in the themes directory.
 
-Or, add to the submodule
+Or, add to the Git submodule
 ```bash
 git submodule add --name zluinav https://github.com/harrymkt/zluinav.git themes/zluinav
 git submodule update --remote
@@ -38,7 +39,7 @@ theme="zluinav"
 For more customizable options and configurations, please see [documentation](https://harrymkt.github.io/zluinav/docs)
 
 ## Contribution
-Contributions to this theme are welcome, provided that the following requirements are meant:
+Contributions to this theme are welcome, provided that the following requirements are met:
 * Try to use no indentation; HTML, JS, CSS or Tera, neither of them is required strict indentation. Therefore, using indentation is not recommended.
 * Be the templates accessible for visually impaired and/or blind and prefer readability. Don't worry, I will process in case accessibility issues before pull requests are merged.
 * Photos are not required in this theme. You may design with CSS for visual if you so wish.
