@@ -15,7 +15,7 @@ This theme is distributed under the terms of the [MIT License](https://github.co
 * Fast; Zola generates within a few milliseconds. This is because not much CSS is used as well as JavaScript. Zluinav is built with HTML using aria whenever possible for accessibility with assistive screen reader as well as using little JavaScript as possible. You can rebase the templates, should you wish to add your own CSS or JavaScript content.
 * Copy code blocks; add code blocks which can then be copied using buttons and display the code language if available, helped by JavaScript.
 * Variables; add variables to your page content to be replaced during the site generate.
-* Local date display; display dates in user's local timezone no madder what timezone the date is set.
+* Local date display; display dates in user's local timezone, no madder what timezone the date is set.
 
 ## Installation
 Using git:
