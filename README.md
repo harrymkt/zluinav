@@ -9,6 +9,7 @@ This theme is distributed under the terms of the [MIT License](https://github.co
 
 ## Features of zluinav theme
 * Blog with pagination enabled; multiple blogs can be created by copying the blog directory in the content folder to the new directory for a new blog. This means that you can have multiple blogs in one site. In fact, Zola doesn't have its build-in posts, but it is possible using sections.
+* Documentation site; build accessible documentation sites by using built-in 1subsection templates specifically designed for documentation.
 * Multilingual; build your site in multiple languages. By default, English and Burmese have been provided as demo.
 * Custom navigation; can be set via `config.extra.nav`.
 * Customizable extrahead, header, navigation, and footer by base templates and blocks.
