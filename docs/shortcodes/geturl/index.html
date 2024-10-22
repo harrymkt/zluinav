@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <link href="https://harrymkt.github.io/zluinav/css/theme.css">
 <script src="https://harrymkt.github.io/zluinav/scripts/theme.js"></script>
-<title>Documentation - UI Navigation</title>
+<title>Geturl - Documentation - UI Navigation</title>
 </head>
 <body>
 <a href="https://harrymkt.github.io/zluinav/lang">Change language</a>
@@ -16,7 +16,7 @@
 <h2>Main menu</h2>
 <ul style="list-style-type:none;">
 <li><a href="https://harrymkt.github.io/zluinav" accesskey="H">Home</a></li>
-<li><a aria-current="page" href="https://harrymkt.github.io/zluinav/docs">Documentation</a></li>
+<li><a href="https://harrymkt.github.io/zluinav/docs">Documentation</a></li>
 <li><a href="https://harrymkt.github.io/zluinav/blog" title="Read the latest news">Blog</a></li>
 </ul>
 </nav><nav roll="navigation" aria-label=Documentation>
@@ -34,10 +34,22 @@
 <li><a href="https://harrymkt.github.io/zluinav/docs/macros/post/">Post</a></li>
 </ul><h3>Shortcodes</h3><p>This is a list of available shortcodes that are located in shortcodes directory that can be used in your markdown files to obtain information.</p>
 <ul style="list-style-type:none;">
-<li><a href="https://harrymkt.github.io/zluinav/docs/shortcodes/geturl/">Geturl</a></li>
+<li><a aria-current="page"href="https://harrymkt.github.io/zluinav/docs/shortcodes/geturl/">Geturl</a></li>
 </ul></nav>
 <main>
 <div id="mainc">
+<h1 id="geturl.html">geturl.html</h1>
+<p>This shortcode allows you to retrieve the URL specified by the path and optionally the language. This is useful to add links to markdown files if they depend on the language, useful for custom partials such as footer and header using markdown files.</p>
+<ul>
+<li><code>p</code>(string) required: The path to retrieve.</li>
+<li><code>lang</code>(string) optional: the language to get as.</li>
+</ul>
+<p>Example:</p>
+<pre data-lang="markdown" class="language-markdown "><code class="language-markdown" data-lang="markdown">Go to [about]({{geturl(p=&quot;about&quot;)}}) page!
+</code></pre>
+<p>It may output like:</p>
+<pre data-lang="text" class="language-text "><code class="language-text" data-lang="text">https:&#x2F;&#x2F;harrymkt.github.io&#x2F;zluinav&#x2F;about
+</code></pre>
 </div>
 </main>
 <div id="zlfooter">

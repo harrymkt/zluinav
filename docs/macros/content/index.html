@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <link href="https://harrymkt.github.io/zluinav/css/theme.css">
 <script src="https://harrymkt.github.io/zluinav/scripts/theme.js"></script>
-<title>Documentation - UI Navigation</title>
+<title>Content - Documentation - UI Navigation</title>
 </head>
 <body>
 <a href="https://harrymkt.github.io/zluinav/lang">Change language</a>
@@ -16,7 +16,7 @@
 <h2>Main menu</h2>
 <ul style="list-style-type:none;">
 <li><a href="https://harrymkt.github.io/zluinav" accesskey="H">Home</a></li>
-<li><a aria-current="page" href="https://harrymkt.github.io/zluinav/docs">Documentation</a></li>
+<li><a href="https://harrymkt.github.io/zluinav/docs">Documentation</a></li>
 <li><a href="https://harrymkt.github.io/zluinav/blog" title="Read the latest news">Blog</a></li>
 </ul>
 </nav><nav roll="navigation" aria-label=Documentation>
@@ -30,7 +30,7 @@
 </ul><h3>Macros</h3><p>This is a list of available macros that are located in mcs directory.</p>
 <ul style="list-style-type:none;">
 <li><a href="https://harrymkt.github.io/zluinav/docs/macros/translator/">Translator</a></li>
-<li><a href="https://harrymkt.github.io/zluinav/docs/macros/content/">Content</a></li>
+<li><a aria-current="page"href="https://harrymkt.github.io/zluinav/docs/macros/content/">Content</a></li>
 <li><a href="https://harrymkt.github.io/zluinav/docs/macros/post/">Post</a></li>
 </ul><h3>Shortcodes</h3><p>This is a list of available shortcodes that are located in shortcodes directory that can be used in your markdown files to obtain information.</p>
 <ul style="list-style-type:none;">
@@ -38,6 +38,14 @@
 </ul></nav>
 <main>
 <div id="mainc">
+<h1 id="content.html">content.html</h1>
+<p>This macro defines content processing, because the theme supports variables. Variables are processed by <code>$variable_name$</code>.</p>
+<h2 id="process">process</h2>
+<p>Returns the content replaced with all supported variables.</p>
+<ul>
+<li><code>page</code>(object) required: an object pointing to a page to retrieve the content.</li>
+<li><code>option</code>(string) optional: the option to process, default is "content".</li>
+</ul>
 </div>
 </main>
 <div id="zlfooter">

@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <link href="https://harrymkt.github.io/zluinav/css/theme.css">
 <script src="https://harrymkt.github.io/zluinav/scripts/theme.js"></script>
-<title>Documentation - UI Navigation</title>
+<title>Writing - Documentation - UI Navigation</title>
 </head>
 <body>
 <a href="https://harrymkt.github.io/zluinav/lang">Change language</a>
@@ -16,13 +16,13 @@
 <h2>Main menu</h2>
 <ul style="list-style-type:none;">
 <li><a href="https://harrymkt.github.io/zluinav" accesskey="H">Home</a></li>
-<li><a aria-current="page" href="https://harrymkt.github.io/zluinav/docs">Documentation</a></li>
+<li><a href="https://harrymkt.github.io/zluinav/docs">Documentation</a></li>
 <li><a href="https://harrymkt.github.io/zluinav/blog" title="Read the latest news">Blog</a></li>
 </ul>
 </nav><nav roll="navigation" aria-label=Documentation>
 <h2>Documentation</h2>
 <ul style="list-style-type:none;">
-<li><a href="https://harrymkt.github.io/zluinav/docs/1writing/">Writing</a></li>
+<li><a aria-current="page"href="https://harrymkt.github.io/zluinav/docs/1writing/">Writing</a></li>
 <li><a href="https://harrymkt.github.io/zluinav/docs/2extra-variables/">Extra Variables</a></li>
 <li><a href="https://harrymkt.github.io/zluinav/docs/3blocks/">Blocks</a></li>
 <li><a href="https://harrymkt.github.io/zluinav/docs/4templates/">Templates</a></li>
@@ -38,6 +38,19 @@
 </ul></nav>
 <main>
 <div id="mainc">
+<h1 id="Writing">Writing</h1>
+<p>In page content, you can add variables that will be replaced with the value when the site builds.
+Variables are defined by <code>$variable_name$</code>. For example, <code>This page is named $title$ and was published on $date$, and was last updated on $updated$.</code></p>
+<p>You can render the variable name itself by prefixing with <code>/*</code> and <code>*/</code>. For example, <code>$/*title*/$</code> will be rendered as <code>$title$</code> without replacing its value.</p>
+<p>Here is a list of supported variables:</p>
+<ul>
+<li><code>title</code>: title of the page.</li>
+<li><code>description</code>: description, if available.</li>
+<li><code>link</code>: the permalink to the page.</li>
+<li><code>date</code>: the published date of the page, if available.</li>
+<li><code>updated</code>: the updated date of the page, if available.</li>
+</ul>
+<p>Returned variable will be empty if the variable is not defined or failed to retrieve, so make sure you know it is defined!</p>
 </div>
 </main>
 <div id="zlfooter">
