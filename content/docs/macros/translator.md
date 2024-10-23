@@ -1,5 +1,6 @@
 +++
 title="Translator"
+weight=20
 +++
 # translator.html
 This macro defines functions for custom translation.

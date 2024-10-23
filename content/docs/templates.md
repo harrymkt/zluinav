@@ -1,5 +1,6 @@
 +++
 title="Templates"
+weight=30
 +++
 # Templates
 These are a list of files available in the templates folder.

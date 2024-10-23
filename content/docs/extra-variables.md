@@ -1,12 +1,13 @@
 +++
 title="Extra Variables"
+weight=10
 +++
 # Extra Variables
 These variables must be set under `extra` object of the config. If they are not set, the default values will be used from the [theme.toml](https://github.com/harrymkt/zluinav/blob/main/theme.toml).
 ## tr_path
 The path where language TOML files are stored, default is "langs".
 ## title_sep
-Title separator, default is " - ".
+Title separator, default is " – ".
 ## nav
 A list of inline tables for navigation.
 
