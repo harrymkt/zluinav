@@ -41,7 +41,7 @@ For more customizable options and configurations, please see [documentation](htt
 
 ## Contribution
 Contributions to this theme are welcome, provided that the following requirements are met:
-* Try to use no indentation; HTML, JS, CSS or Tera, neither of them is required strict indentation. Therefore, using indentation is not recommended.
+* Use 2 level space indentation for HTML. Use 1 tab level indentation for CSS and JavaScript. If Markdown files need indentation, use 1 tab.
 * Be the templates accessible for visually impaired and/or blind and prefer readability. Don't worry, I will process in case accessibility issues before pull requests are merged.
 * Photos are not required in this theme. You may design with CSS for visual if you so wish.
 
