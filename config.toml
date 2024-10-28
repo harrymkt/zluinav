@@ -1,37 +1,39 @@
 # Build output directory
-output_dir="HTML"
+output_dir = "HTML"
 # Title of the site
-title="UI Navigation"
+title = "UI Navigation"
 # Uncomment below line if you want to use as test purpose, and make sure to recomment after testing and back to your base url.
-#base_url="/"
-base_url="https://harrymkt.github.io/zluinav"
-#theme="zluinav"
+#base_url = "/"
+base_url = "https://harrymkt.github.io/zluinav"
+#theme = "zluinav"
 # Default author to be used if the page does not have set one.
-author="Harry Min Khant"
+author = "Harry Min Khant"
 # Feed filename
-feed_filenames=["rss.xml"]
+feed_filenames = ["rss.xml"]
 # We don't need Sass
-compile_sass=false
+compile_sass = false
 # Search feature is currently not supported in this theme
-build_search_index=false
+build_search_index = false
 # Default language
-default_language="en"
+default_language = "en"
 # Other languages
 [languages.my]
 # Burmese
-title="UI လမ်းညွှန်"
+title = "UI လမ်းညွှန်"
 
 
 [slugify]
-paths="on"
+paths = "on"
 # We don't use Taxonomies for now
-taxonomies="off"
-anchors="off"
+taxonomies = "off"
+anchors = "off"
 [extra]
-tr_path="langs"
-title_sep=" - "
-nav=[
-{name="Home", url="/.l./", key="H", id="nav1"},
-{name="Documentation", url="/docs/", id="nav2"},
-{name="Blog", url="/.l./blog/", title="Read the latest news", id="nav3"}
+# The language search path
+tr_path = "langs"
+# Title separator, such as dash (-)
+title_sep = " – "
+nav = [
+{name = "Home", url = "/.l./", key = "H", id = "nav1"},
+{name = "Documentation", url = "/docs/", id = "nav2"},
+{name = "Blog", url = "/.l./blog/", title = "Read the latest news", id = "nav3"}
 ]

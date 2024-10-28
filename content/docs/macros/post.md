@@ -1,9 +1,10 @@
 +++
-title="Post"
-weight=10
+title = "Post"
+weight = 10
 +++
 # post.html
-This is a macro defineing the function to preview the post, for example, in posts list. This is made so you can overwrite post previewing template without modifying a section templates.
+This is a macro defineing the function to preview the post, for example, in posts list. This is made so you can overwrite post previewing template without modifying a section template.
+
 ## post_preview
 This function previews the post, useful in the forloop list.
 * `post`(object) required: an object pointing to a post page.

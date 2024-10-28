@@ -1,6 +1,6 @@
 +++
-title="test"
-date=2024-09-18T20:15:00+06:30
+title = "test"
+date = 2024-09-18T20:15:00+06:30
 +++
 
 Hello from the $title$, date is $date$

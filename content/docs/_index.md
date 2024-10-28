@@ -1,6 +1,6 @@
 +++
-title="Documentation"
-template="doc.html"
-page_template="docpage.html"
-sort_by="weight"
+title = "Documentation"
+template = "doc.html"
+page_template = "docpage.html"
+sort_by = "weight"
 +++

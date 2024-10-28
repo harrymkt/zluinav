@@ -7,9 +7,9 @@ demo = "https://harrymkt.github.io/zluinav"
 
 [extra]
 # The language search path
-tr_path="langs"
+tr_path = "langs"
 # Title separator, such as dash (-)
-title_sep=" – "
+title_sep = " – "
 [author]
 name = "Harry Min Khant"
 homepage = "https://harrymkt.github.io"

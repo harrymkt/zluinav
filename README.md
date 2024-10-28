@@ -34,7 +34,7 @@ git submodule update --remote
 
 In your config.toml file, add the following
 ```toml
-theme="zluinav"
+theme = "zluinav"
 ```
 ## Customization
 For more customizable options and configurations, please see [documentation](https://harrymkt.github.io/zluinav/docs)

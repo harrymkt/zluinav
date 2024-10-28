@@ -1,6 +1,6 @@
 +++
-title="Extra Variables"
-weight=10
+title = "Extra Variables"
+weight = 10
 +++
 # Extra Variables
 These variables must be set under `extra` object of the config. If they are not set, the default values will be used from the [theme.toml](https://github.com/harrymkt/zluinav/blob/main/theme.toml).

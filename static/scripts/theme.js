@@ -3,13 +3,13 @@ JS functions for zluinav theme which is distributed under the terms of the MIT L
 */
 function ts_to_readable_time(timestamp, showsecond = false, ltext = '', show_full=true) {
 	/*
-This function converts a given timestamp to human readable format.
-Options:
-timestamp(required): the timestamp to process.
-showsecond(optional): should seconds be shown too even if minute/hour/day is greater than 0? This does not apply on show_full parameter if used.
-ltext(optional): the text after the time. Usually this is recommended to add a space before the text, such as " ago".
-show_full(optional): should the time be fully shown? If false, only the biggest value will be shown.
-*/
+	This function converts a given timestamp to human readable format.
+	Options:
+		timestamp(required): the timestamp to process.
+		showsecond(optional): should seconds be shown too even if minute/hour/day is greater than 0? This does not apply on show_full parameter if used.
+		ltext(optional): the text after the time. Usually this is recommended to add a space before the text, such as " ago".
+		show_full(optional): should the time be fully shown? If false, only the biggest value will be shown.
+	*/
 	var seconds = Math.floor(Date.now() / 1000) - Math.floor(timestamp / 1000);
 	var minutes = Math.floor(seconds / 60);
 	var hours = Math.floor(minutes / 60);
@@ -78,7 +78,7 @@ function normalize_iso_datetime(dateString) {
 	return validDateString;
 }
 function local_datetime_string(date_input) {
-	var r=new Date(date_input);
+	var r = new Date(date_input);
 	if (!r) r = new Date(normalize_iso_datetime(date_input));
 	const options = {
 		weekday: "long", 

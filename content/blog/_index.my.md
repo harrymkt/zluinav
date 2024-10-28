@@ -1,9 +1,9 @@
 +++
-title="ဘလော့"
+title = "ဘလော့"
 paginate_by = 1
 sort_by = "update_date"
-template="section_paginated.html"
-page_template="blogpage.html"
+template = "section_paginated.html"
+page_template = "blogpage.html"
 +++
 # ဘလော့
 ဤနေရာတွင် ကျွန်ုပ်၏ အသုံးဝင်သော ပို့စ်များကို မျှဝေပေးမည်ဖြစ်သောကြောင့် သတိထားကြည့်လိုက်ပါ။

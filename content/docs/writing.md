@@ -1,6 +1,6 @@
 +++
-title="Writing"
-weight=1
+title = "Writing"
+weight = 1
 +++
 # Writing
 In page content, you can add variables that will be replaced with the value when the site builds.
