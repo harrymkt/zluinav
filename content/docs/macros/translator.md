@@ -19,6 +19,6 @@ This macro has the following properties to pass:
 Example:
 ```html
 {%-import "macros/translator.html" as tran-%}
-{%-set translated=tran::get(language="my", key="test", def="Testing")-%}
+{%-set translated = tran::get(language = "my", key = "test", def = "Testing")-%}
 {{test}}
 ```

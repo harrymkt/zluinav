@@ -17,6 +17,7 @@ This theme is distributed under the terms of the [MIT License](https://github.co
 * Copy code blocks; add code blocks which can then be copied using buttons and display the code language if available, helped by JavaScript.
 * Variables; add variables to your page content to be replaced during the site generate.
 * Local date display; display dates in user's local timezone, no madder what timezone the date is set.
+* Use macros and shortcodes to make your content length shorten.
 
 ## Installation
 Using git:

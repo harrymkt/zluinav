@@ -13,5 +13,5 @@ Go to [about]({{/*geturl(p="about")*/}}) page!
 ```
 It may output like:
 ```text
-{{geturl(p="about")}}
+Go to [about]({{geturl(p="about")}})
 ```
