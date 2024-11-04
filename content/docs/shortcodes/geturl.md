@@ -9,9 +9,9 @@ This shortcode allows you to retrieve the URL specified by the path and optional
 
 Example:
 ```markdown
-Go to [about]({{/*geturl(p="about")*/}}) page!
+Go to [about]({{/*geturl(p = "about")*/}}) page!
 ```
 It may output like:
 ```text
-Go to [about]({{geturl(p="about")}})
+Go to [about]({{geturl(p = "about")}})
 ```

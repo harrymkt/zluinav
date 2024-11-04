@@ -24,10 +24,10 @@ If you set the nav as empty or do not set at all, the navigation menu will be di
 
 Example navigation:
 ```toml
-nav=[
-{name="Home", url="/"},
-{name="Blog", url="/blog/"},
+nav = [
+{name = "Home", url = "/"},
+{name = "Blog", url = "/blog/"},
 # Translated page
-{name="Multilingual", url="/.l./multilingual/"}
+{name = "Multilingual", url = "/.l./multilingual/"}
 ]
 ```
