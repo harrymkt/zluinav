@@ -4,6 +4,9 @@ date = 2024-09-20T23:40:00+06:30
 description = "စာမေးပွဲနံပါတ် 4 စာမျက်နှာ။"
 # စိတ်ကြိုက်စာရေးဆရာမျိုးစုံ
 authors = ["Harry Min Khant", "ဥပမာ စာရေးသူ ၂"]
+[extra]
+alt = "Zluinav လိုဂို"
+img = "https://github.com/harrymkt/zluinav/blob/main/screenshot.png"
 +++
 
 Test4

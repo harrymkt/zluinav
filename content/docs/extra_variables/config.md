@@ -1,8 +1,8 @@
 +++
-title = "Extra Variables"
-weight = 10
+title = "Config Variables"
+weight = 20
 +++
-# Extra Variables
+# Extra Config Variables
 These variables must be set under `extra` object of the config. If they are not set, the default values will be used from the [theme.toml](https://github.com/harrymkt/zluinav/blob/main/theme.toml).
 ## tr_path
 The path where language TOML files are stored, default is "langs".
