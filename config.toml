@@ -2,8 +2,6 @@
 output_dir = "HTML"
 # Title of the site
 title = "UI Navigation"
-# Uncomment below line if you want to use as test purpose, and make sure to recomment after testing and back to your base url.
-#base_url = "/"
 base_url = "https://harrymkt.github.io/zluinav"
 #theme = "zluinav"
 # Default author to be used if the page does not have set one.

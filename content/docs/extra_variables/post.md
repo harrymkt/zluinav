@@ -3,7 +3,7 @@ title = "Post Page Variables"
 weight = 40
 +++
 # Extra Post Page Variables
-These variables must be set under `extra` object of the post page.
+These variables must be set under `extra` object of the post page, another word, pages using blogpage.html template.
 
 ## Featured Image Display
 You can display an image as the post's logo.

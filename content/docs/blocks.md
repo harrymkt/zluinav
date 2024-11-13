@@ -9,4 +9,4 @@ weight = 20
 * `nav`: navigation. This block contains the title called main menu. Rebase the block if you want to modify
 * `content`: the content itself.
 * `footer`: use after the content.
-* `extrafoot`: an extra footer. This block is useful to insert JS scripts if they need to be inserted at the bottom of the footer, like copy.js.
+* `extrafoot`: an extra footer. This block is useful to insert JS scripts if they need to be inserted at the bottom of the footer, like copy.js. Therefore, calling {{/*super()*/}} is advised, should you rebase.
