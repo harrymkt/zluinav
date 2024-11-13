@@ -17,15 +17,14 @@ jobs:
         uses: actions/checkout@v4
         with:
           submodules: recursive
-
-      - name: Download and install
+      - name: Install winget
+        uses: Cyberboss/install-winget@v1
+        with:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          wget_release_id: latest
+      - name: Install Zola
         run: |
-          $weburl = "https://github.com/getzola/zola/releases/download/v0.19.2/zola-v0.19.2-x86_64-pc-windows-msvc.zip"
-          Invoke-WebRequest -Uri $weburl -OutFile "webfile.zip"
-          Expand-Archive webfile.zip -DestinationPath "webfile"
-          echo "$PWD\webfile" | Out-File -FilePath $env:GITHUB_PATH -Encoding utf8
-        shell: pwsh
-
+          winget install getzola.zola
       - name: Build the site
         run: zola build
 
