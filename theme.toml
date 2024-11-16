@@ -1,5 +1,5 @@
 name = "UI Navigation"
-description = "A multilingual theme designed for accessibility rather than visual"
+description = "A multilingual theme designed for accessibility rather than visual, available for Hugo too"
 license = "MIT"
 homepage = "https://github.com/harrymkt/zluinav"
 min_version = "0.19.2"
@@ -13,3 +13,7 @@ title_sep = " – "
 [author]
 name = "Harry Min Khant"
 homepage = "https://harrymkt.github.io"
+[original]
+author = "Harry Min Khant"
+homepage = "https://harrymkt.github.io"
+repo = "https://github.com/harrymkt/hguinav"

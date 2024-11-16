@@ -3,18 +3,16 @@
 {%-block footer-%}
 {{super()}}
 <script>
-function goToLanguage()
-{
-var selectedLanguage = document.getElementById("language").value;
-if (selectedLanguage)
-{
-window.location.href = selectedLanguage;
-}
+function goToLanguage() {
+	var selectedLanguage = document.getElementById("language").value;
+	if (selectedLanguage) {
+		window.location.href = selectedLanguage;
+	}
 }
 </script>
 {%-endblock footer-%}
 {%-block content-%}
-<h21Select Your Language</h1>
+<h1>Select Your Language</h1>
 <form onsubmit="goToLanguage(); return false;">
 <label for="language">Choose a language</label>
 <select id="language" name="language">
