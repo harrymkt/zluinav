@@ -1,14 +1,14 @@
-{%-if paginator.previous or paginator.next-%}
+{%- if paginator.previous or paginator.next %}
 <nav aria-label="{{tran::get(tr=tr, key="pagination_title", def="Pagination")}}">
 <h4>{{tran::get(tr=tr, key="pagination_title", def="Pagination")}}</h4>
 {%- if paginator.previous %}
 <a href="{{paginator.first | safe}}">{{tran::get(tr=tr, key="pagination_first", def="First page")}}</a>
 <a href="{{paginator.previous | safe}}">{{tran::get(tr=tr, key="pagination_previous", def="Previous page")}}</a>
-{%- endif%}
+{%- endif %}
 <p>Page {{ paginator.current_index }} / {{ paginator.number_pagers }}</p>
 {%- if paginator.next %}
 <a href="{{paginator.next | safe}}">{{tran::get(tr=tr, key="pagination_next", def="Next page")}}</a>
 <a href="{{paginator.last | safe}}">{{tran::get(tr=tr, key="pagination_last", def="Last page")}}</a>
-{%- endif%}
+{%- endif %}
 </nav>
-{%- endif -%}
+{%- endif %}

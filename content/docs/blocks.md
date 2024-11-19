@@ -1,6 +1,6 @@
 +++
 title = "Blocks"
-weight = 20
+weight = 200
 +++
 # Blocks
 * `extrahead`: use to add head meta, including your JS scripts. The charset and viewport are already added, so you can call `{{/*super()*/}}` before you add content to this block.

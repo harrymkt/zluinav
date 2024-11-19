@@ -1,34 +1,34 @@
-{%-extends "base.html"-%}
+{%- extends "base.html" %}
 {%-block title-%}
 {%-if not docsect-%}{%-set docsect=get_section(path=section["extra"]["section_path"]|default(value="docs/_index.md"))-%}{%-endif-%}
 {{docsect.title}}{{config.extra.title_sep}}{{super()}}
 {%-endblock title-%}
-{%-block nav-%}
-{{super()}}
-{%-if not docsect-%}{%-set docsect=get_section(path=section["extra"]["section_path"]|default(value="docs/_index.md"))-%}{%-endif-%}
+{%- block nav %}
+{{ super() }}
+{%- if not docsect-%}{%-set docsect=get_section(path=section["extra"]["section_path"]|default(value="docs/_index.md"))-%}{%-endif %}
 <nav roll="navigation" aria-label={{docsect.title}}>
 <h2>{{docsect.title}}</h2>
 <ul style="list-style-type:none;">
-{%-for doc in docsect.pages%}
+{%- for doc in docsect.pages %}
 <li><a {%if current_path==doc.path%}aria-current="page"{%endif%}href="{{doc.permalink | safe}}">{{doc.title}}</a></li>
-{%-endfor%}
+{%- endfor %}
 </ul>
-{%-if docsect.subsections-%}
-{%-for subsect in docsect.subsections%}
+{%- if docsect.subsections %}
+{%- for subsect in docsect.subsections %}
 {%-set ss=get_section(path=subsect)-%}
-{%-if ss-%}
+{%- if ss %}
 <h3>{{ss.title}}</h3>
-{%-if ss.content-%}{{content::process(page=ss)}}{%-endif-%}
+{%- if ss.content-%}{{content::process(page=ss)}}{%-endif %}
 <ul style="list-style-type:none;">
-{%-for doc in ss.pages%}
+{%- for doc in ss.pages %}
 <li><a {%if current_path==doc.path%}aria-current="page"{%endif%}href="{{doc.permalink | safe}}">{{doc.title}}</a></li>
-{%-endfor%}
+{%- endfor %}
 </ul>
-{%-endif-%}
-{%-endfor%}
-{%-endif-%}
+{%- endif %}
+{%- endfor %}
+{%- endif %}
 </nav>
-{%-endblock nav-%}
-{%-block content-%}
-{{content::process(page=section)}}
-{%-endblock content-%}
+{%- endblock nav %}
+{%- block content %}
+{{ content::process(page=section) }}
+{%- endblock content %}

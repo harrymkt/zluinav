@@ -1,11 +1,11 @@
-{%- extends "base.html" -%}
-{%-block title-%}
-{{section.title}}{%if paginator.current_index>1%} (page {{paginator.current_index}}){%endif%}{{config.extra.title_sep}}{{super()}}
-{%-endblock title-%}
-{%- block content -%}
+{%- extends "base.html" %}
+{%- block title %}
+{{ section.title}}{%if paginator.current_index>1%} (page {{paginator.current_index}}){%endif%}{{config.extra.title_sep}}{{super() }}
+{%- endblock title %}
+{%- block content %}
 {{content::process(page=section) | safe}}
 {%- for post in paginator.pages %}
 {{postmc::post_preview(post=post, tr=tr)}}
-{%- endfor -%}
-{% include "pagination.html" -%}
-{%- endblock content -%}
+{%- endfor %}
+{% include "pagination.html" %}
+{%- endblock content %}

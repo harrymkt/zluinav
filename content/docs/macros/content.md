@@ -3,7 +3,7 @@ title = "Content"
 weight = 1
 +++
 # content.html
-This macro defines content processing, because the theme supports variables. Variables are processed by `$variable_name$`.
+This macro defines content processing, because the theme supports variables. Variables are processed by `%variable_name%`.
 
 ## process
 Returns the content replaced with all supported variables.
