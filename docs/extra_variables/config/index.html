@@ -8,10 +8,8 @@
 <title>
 Config Variables – Documentation – UI Navigation</title>
 </head>
-<body>
-<a href="https://harrymkt.github.io/zluinav/lang">Change language</a>
-<a href="#mainc" class="skip-link">Skip to main content</a>
-<a href="#navigation" class="skip-link">Skip to navigation</a>
+<body><a href="https://harrymkt.github.io/zluinav/lang">Change language</a>
+<a href="#mainc" class="skip-link">Skip to main content</a><a href="#navigation" class="skip-link">Skip to navigation</a>
 <a href="#zlfooter" class="skip-link">Skip to footer</a>
 
 <nav id="navigation" role="navigation" aria-label="Main menu">
@@ -35,16 +33,15 @@ Config Variables – Documentation – UI Navigation</title>
 <li><a aria-current="page"href="https://harrymkt.github.io/zluinav/docs/extra_variables/config/">Config Variables</a></li>
 <li><a href="https://harrymkt.github.io/zluinav/docs/extra_variables/post/">Post Page Variables</a></li>
 </ul>
-<h3>Macros</h3>
-<p>This is a list of available macros that are located in mcs directory.</p>
+<h3>Macros</h3><p>This is a list of available macros that are located in mcs directory.</p>
 
 <ul style="list-style-type:none;">
+<li><a href="https://harrymkt.github.io/zluinav/docs/macros/general/">General Macro</a></li>
 <li><a href="https://harrymkt.github.io/zluinav/docs/macros/content/">Content</a></li>
 <li><a href="https://harrymkt.github.io/zluinav/docs/macros/post/">Post</a></li>
 <li><a href="https://harrymkt.github.io/zluinav/docs/macros/translator/">Translator</a></li>
 </ul>
-<h3>Shortcodes</h3>
-<p>This is a list of available shortcodes that are located in shortcodes directory that can be used in your markdown files to obtain information.</p>
+<h3>Shortcodes</h3><p>This is a list of available shortcodes that are located in shortcodes directory that can be used in your markdown files to obtain information.</p>
 
 <ul style="list-style-type:none;">
 <li><a href="https://harrymkt.github.io/zluinav/docs/shortcodes/geturl/">Geturl</a></li>
@@ -53,7 +50,6 @@ Config Variables – Documentation – UI Navigation</title>
 </nav>
 <main>
 <div id="mainc">
-
 <h1 id="Extra_Config_Variables">Extra Config Variables</h1>
 <p>These variables must be set under <code>extra</code> object of the config. If they are not set, the default values will be used from the <a href="https://github.com/harrymkt/zluinav/blob/main/theme.toml">theme.toml</a>.</p>
 <h2 id="tr_path">tr_path</h2>
@@ -84,10 +80,10 @@ Config Variables – Documentation – UI Navigation</title>
 <p>If you set the nav as empty or do not set at all, the navigation menu will be disabled, as well as skip to navigation link.</p>
 <p>Example navigation:</p>
 <pre data-lang="toml" class="language-toml "><code class="language-toml" data-lang="toml">nav = [
-{name = &quot;Home&quot;, url = &quot;&#x2F;&quot;},
-{name = &quot;Blog&quot;, url = &quot;&#x2F;blog&#x2F;&quot;},
-# Translated page
-{name = &quot;Multilingual&quot;, url = &quot;&#x2F;.l.&#x2F;multilingual&#x2F;&quot;}
+  {name = &quot;Home&quot;, url = &quot;&#x2F;&quot;},
+  {name = &quot;Blog&quot;, url = &quot;&#x2F;blog&#x2F;&quot;},
+  # Translated page
+  {name = &quot;Multilingual&quot;, url = &quot;&#x2F;.l.&#x2F;multilingual&#x2F;&quot;}
 ]
 </code></pre>
 
