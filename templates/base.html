@@ -1,6 +1,7 @@
 {%- import "mcs/post.html" as postmc -%}
 {%- import "mcs/content.html" as content -%}
 {%- import "mcs/translator.html" as tran -%}
+{%- import "mcs/general.html" as general -%}
 {%- set tr = load_data(path = config.extra.tr_path ~ "/" ~ lang ~ ".toml", required = false) -%}
 {%- if not tr -%}{%- set tr = load_data(path = "themes/zluinav/" ~ config.extra.tr_path ~ "/" ~ lang ~ ".toml", required = false) -%}{%- endif -%}
 <!doctype html>
@@ -16,9 +17,9 @@
 </head>
 <body>
 {%- block header %}
-{% if config.languages | length > 0 %}<a href="{{ get_url(path = "lang") | safe }}">Change language</a>{%endif%}
+{%- if config.languages | length > 0 %}<a href="{{ get_url(path = "lang") | safe }}">Change language</a>{%endif%}
 <a href="#mainc" class="skip-link">{{tran::get(tr=tr, key="acc_skip_main", def="Skip to main content")}}</a>
-{% if config.extra.nav %}<a href="#navigation" class="skip-link">{{tran::get(tr=tr, key="acc_skip_nav", def="Skip to navigation")}}</a>{%endif%}
+{%- if config.extra.nav %}<a href="#navigation" class="skip-link">{{tran::get(tr=tr, key="acc_skip_nav", def="Skip to navigation")}}</a>{%endif%}
 <a href="#zlfooter" class="skip-link">{{tran::get(tr=tr, key="acc_skip_footer", def="Skip to footer")}}</a>
 {%- endblock header %}
 {%- block nav %}

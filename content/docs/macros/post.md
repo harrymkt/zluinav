@@ -1,6 +1,6 @@
 +++
 title = "Post"
-weight = 10
+weight = 200
 +++
 # post.html
 This is a macro defineing the function to preview the post, for example, in posts list. This is made so you can overwrite post previewing template without modifying a section template.

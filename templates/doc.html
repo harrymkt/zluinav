@@ -1,7 +1,7 @@
 {%- extends "base.html" %}
 {%-block title-%}
 {%-if not docsect-%}{%-set docsect=get_section(path=section["extra"]["section_path"]|default(value="docs/_index.md"))-%}{%-endif-%}
-{{docsect.title}}{{config.extra.title_sep}}{{super()}}
+{{ general::title(titles=[docsect.title]) }}
 {%-endblock title-%}
 {%- block nav %}
 {{ super() }}

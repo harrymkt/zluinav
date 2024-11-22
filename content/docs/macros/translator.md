@@ -1,6 +1,6 @@
 +++
 title = "Translator"
-weight = 20
+weight = 300
 +++
 # translator.html
 This macro defines functions for custom translation.
@@ -18,7 +18,7 @@ This macro has the following properties to pass:
 
 Example:
 ```html
-{%- import "macros/translator.html" as tran -%}
-{%- set translated = tran::get(language = "my", key = "test", def = "Testing") -%}
-{{test}}
+{%- import "macros/translator.html" as tran %}
+{%- set translated = tran::get(language = "my", key = "test", def = "Testing") %}
+{{ test }}
 ```

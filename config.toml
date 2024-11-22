@@ -16,22 +16,20 @@ build_search_index = false
 default_language = "en"
 # Other languages
 [languages.my]
-# Burmese
-title = "UI လမ်းညွှန်"
-
-
+  # Burmese
+  title = "UI လမ်းညွှန်"
 [slugify]
-paths = "on"
-# We don't use Taxonomies for now
-taxonomies = "off"
-anchors = "off"
+  paths = "on"
+  # We don't use Taxonomies for now
+  taxonomies = "off"
+  anchors = "off"
 [extra]
-# The language search path
-tr_path = "langs"
-# Title separator, such as dash (-)
-title_sep = " – "
-nav = [
-{name = "Home", url = "/.l./", key = "H", id = "nav1"},
-{name = "Documentation", url = "/docs/", id = "nav2"},
-{name = "Blog", url = "/.l./blog/", title = "Read the latest news", id = "nav3"}
-]
+  # The language search path
+  tr_path = "langs"
+  # Title separator, such as dash (-)
+  title_sep = " – "
+  nav = [
+    {name = "Home", url = "/.l./", key = "H", id = "nav1"},
+    {name = "Documentation", url = "/docs/", id = "nav2"},
+    {name = "Blog", url = "/.l./blog/", title = "Read the latest news", id = "nav3"}
+  ]

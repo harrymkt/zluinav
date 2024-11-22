@@ -1,5 +1,5 @@
 {%-extends "base.html"-%}
-{%-block title%}404 Not Found{{config.extra.title_sep}}{{super()}}{%endblock title-%}
+{%-block title%}{{ general::title(titles=["404 Not Found"]) }}{%endblock title-%}
 {%-block content-%}
 <h1>404 not found</h1>
 <p>sorry, but the page you are looking for could not be found.{% if config.extra.nav %} Please use navigation menu to access available options if you need it.{% endif %}</p>

@@ -1,19 +1,15 @@
 name = "UI Navigation"
-description = "A multilingual theme designed for accessibility rather than visual, available for Hugo too"
+description = "A multilingual theme designed for accessibility rather than visual."
 license = "MIT"
 homepage = "https://github.com/harrymkt/zluinav"
 min_version = "0.19.2"
 demo = "https://harrymkt.github.io/zluinav"
 
 [extra]
-# The language search path
-tr_path = "langs"
-# Title separator, such as dash (-)
-title_sep = " – "
+  # The language search path
+  tr_path = "langs"
+  # Title separator, such as dash (-)
+  title_sep = " – "
 [author]
-name = "Harry Min Khant"
-homepage = "https://harrymkt.github.io"
-[original]
-author = "Harry Min Khant"
-homepage = "https://harrymkt.github.io"
-repo = "https://github.com/harrymkt/hguinav"
+  name = "Harry Min Khant"
+  homepage = "https://harrymkt.github.io"
