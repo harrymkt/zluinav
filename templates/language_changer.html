@@ -1,7 +1,9 @@
 {%- extends "base.html" %}
-{%- block title %}{{ page.title}}{{config.extra.title_sep}}{{super() }}{%-endblock title %}
+{%- block title %}
+{{- page.title}}{{config.extra.title_sep}}{{super() }}
+{%- endblock title %}
 {%- block footer %}
-{{super()}}
+{{- super() }}
 <script>
 function goToLanguage() {
 	var selectedLanguage = document.getElementById("language").value;

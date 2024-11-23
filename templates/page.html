@@ -1,5 +1,7 @@
 {%- extends "base.html" %}
-{%- block title%}{{page.title}}{{config.extra.title_sep}}{{super()}}{%endblock title %}
+{%- block title %}
+{{- page.title }}{{ config.extra.title_sep }}{{ super() }}
+{%- endblock title %}
 {%- block content %}
-{{content::process(page=page) | safe}}
+{{ content::process(page=page) | safe }}
 {%- endblock content %}

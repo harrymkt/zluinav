@@ -9,10 +9,10 @@ Variables are defined by `%variable_name%`. For example, `This page is named %/*
 You can render the variable name itself by prefixing with `/*` and `*/`. For example, `%/*/*title*/*/%` will be rendered as `%/*title*/%` without replacing its value.
 
 Here is a list of supported variables:
-* `title`: title of the page.
-* `description`: description, if available.
-* `link`: the permalink to the page.
-* `date`: the published date of the page, if available.
-* `updated`: the updated date of the page, if available.
+- `title`: title of the page.
+- `description`: description, if available.
+- `link`: the permalink to the page.
+- `date`: the published date of the page, if available.
+- `updated`: the updated date of the page, if available.
 
 Returned variable will be empty if the variable is not defined or failed to retrieve, so make sure you know it is defined!

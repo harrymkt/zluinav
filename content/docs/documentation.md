@@ -66,4 +66,4 @@ You may then create pages in the test section usually as pages in the main docum
 
 ## Variables
 The following variables may be required to set in the main documentation section if the section isn't named `docs`. All below variables are set in extra object of the main documentation section.
-* `section_path`: the path to the main documentation section. Default: "docs/_index.md"
+- `section_path`: the path to the main documentation section. Default: "docs/_index.md"

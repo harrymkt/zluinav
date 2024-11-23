@@ -1,7 +1,7 @@
 {%- extends "doc.html" %}
 {%- block title %}
-{{ page.title}}{{config.extra.title_sep}}{{super()}}
+{{- page.title}}{{config.extra.title_sep}}{{super()}}
 {%- endblock title %}
 {%- block content %}
-{{content::process(page=page)}}
+{{ content::process(page=page) }}
 {%- endblock content %}

@@ -1,11 +1,11 @@
-{%-macro post_preview(post, tr="", hlevel=3) %}
+{%- macro post_preview(post, tr="", hlevel=3) %}
   {%- set postdesc="" %}
   {%- if post.description and post.description!="" %}
     {%- set postdesc=post.description %}
   {%- endif %}
 <div class="post">
   {%- if post.extra.img %}
-<img src="{{post.extra.img}}"{% if post.extra.alt %} alt="{{post.extra.alt}}"{% endif %}></img>
+<img src="{{post.extra.img | safe }}"{% if post.extra.alt %} alt="{{post.extra.alt}}"{% endif %}></img>
   {%- endif %}
 <h{{hlevel}}><a href="{{post.permalink | safe}}">{{post.title}}</a>{%if not postdesc==""%}{{postdesc}}{%endif%}</h{{hlevel}}>
 {{ self::show_post_authors(post=post, tr=tr) }}
