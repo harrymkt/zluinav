@@ -57,6 +57,7 @@
 <h1 id="Blocks">Blocks</h1>
 <ul>
 <li><code>extrahead</code>: use to add head meta, including your JS scripts. The charset and viewport are already added, so you can call <code>{{super()}}</code> before you add content to this block.</li>
+<li><code>dmeta</code>: use to add per-content meta, such as per-section or per-page. By default, it checks for section then page, from which it will default add description if present.</li>
 <li><code>title</code>: title, default to config. This is best to call <code>{{super()}}</code> after the title set to also add your config site title.</li>
 <li><code>header</code>: use before the main content. By default, this block contains accessibility skip links such as skip to main content, navigation, and footer. If multilingual is present, the "Change Language" icon will also be included.</li>
 <li><code>nav</code>: navigation. This block contains the title called main menu. Rebase the block if you want to modify</li>
