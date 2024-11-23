@@ -13,6 +13,17 @@
 <link href="{{ get_url(path = "css/theme.css") }}">
 <script src="{{ get_url(path = "scripts/theme.js") }}"></script>
 {%- endblock extrahead %}
+{%- block dmeta %}
+{%- if section %}
+{%- if section.description %}
+<meta name="description" content="{{ section.description }}">
+{%- endif %}
+{%- elif page %}
+{%- if page.description %}
+<meta name="description" content="{{ page.description }}">
+{%- endif %}
+{%- endif %}
+{%- endblock dmeta %}
 <title>{%- block title -%}{{ config.title }}{%- endblock title -%}</title>
 </head>
 <body>
