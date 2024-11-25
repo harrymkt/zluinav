@@ -21,6 +21,7 @@ This theme is distributed under the terms of the [MIT License](https://github.co
 - Variables; add variables to your page content to be replaced during the site generate.
 - Local date display; display dates in user's local timezone, no madder what timezone the date is set.
 - Use macros and shortcodes to make your content length shorten.
+- Comprehensive documentation; Zluinav provides a full Comprehensive documentation including possible templates, shortcodes, blocks, configurable parameters, and more, everything as it updates.
 
 ## Installation
 Using git:
