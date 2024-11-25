@@ -19,3 +19,26 @@ This style file is included in Zluinav theme which is distributed under the term
 	overflow: visible;
 	z-index: 1;
 }
+.tab {
+	padding: 10px 20px;
+	background-color: #f0f0f0;
+	border: 1px solid #ccc;
+	margin-right: 5px;
+	cursor: pointer;
+	transition: background-color 0.3s;
+}
+
+.tab:hover {
+	background-color: #ddd;
+}
+
+.tab.active {
+	background-color: #ccc;
+}
+
+.tab-content {
+	padding: 20px;
+	border: 1px solid #ccc;
+	border-top: none;
+	display: none;
+}
