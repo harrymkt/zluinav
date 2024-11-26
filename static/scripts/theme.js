@@ -17,7 +17,7 @@ function ts_to_readable_time(timestamp, showsecond = false, ltext = '', show_ful
 	var months = Math.floor(days / 30);
 	var years = Math.floor(months / 12);
 	var output = '';
-if(!show_full) {
+	if(!show_full) {
 		if (years > 0) {
 			output = years + " year";
 			if (years > 1) output += "s";
@@ -110,21 +110,20 @@ function switchTab(tabId) {
 	contents.forEach(content => {
 		content.style.display = "none";
 	});
-
 	// Remove active class from all tabs
 	const tabs = document.querySelectorAll(".tab");
 	tabs.forEach(tab => {
 		tab.classList.remove("active");
 	});
-
 	// Show the selected tab content and set it as active
-	const selectedContent = document.getElementById("tab-content-" + tabId);
-	if (selectedContent) {
-		selectedContent.style.display = "block";
-	}
-
-	const selectedTab = document.querySelector(`.tab[data-tab-id="${tabId}"]`);
-	if (selectedTab) {
-		selectedTab.classList.add("active");
+	if (id !== null) {
+		const selectedContent = document.getElementById("tab-content-" + tabId);
+		if (selectedContent) {
+			selectedContent.style.display = "block";
+		}
+		const selectedTab = document.querySelector(`.tab[data-tab-id="${tabId}"]`);
+		if (selectedTab) {
+			selectedTab.classList.add("active");
+		}
 	}
 }
