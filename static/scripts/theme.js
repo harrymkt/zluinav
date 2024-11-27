@@ -104,7 +104,7 @@ function get_timestamp(dateString) {
 	// Return the timestamp (milliseconds since epoch)
 	return date.getTime();
 }
-function switchTab(tabId) {
+function switchTab(tab_id) {
 	// Hide all tab contents
 	const contents = document.querySelectorAll(".tab-content");
 	contents.forEach(content => {
@@ -116,12 +116,12 @@ function switchTab(tabId) {
 		tab.classList.remove("active");
 	});
 	// Show the selected tab content and set it as active
-	if (id !== null) {
-		const selectedContent = document.getElementById("tab-content-" + tabId);
+	if (tab_id !== null) {
+		const selectedContent = document.getElementById("tab-content-" + tab_id);
 		if (selectedContent) {
 			selectedContent.style.display = "block";
 		}
-		const selectedTab = document.querySelector(`.tab[data-tab-id="${tabId}"]`);
+		const selectedTab = document.querySelector(`.tab[data-tab-id="${tab_id}"]`);
 		if (selectedTab) {
 			selectedTab.classList.add("active");
 		}
