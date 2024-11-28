@@ -8,6 +8,8 @@ Variables are defined by `%variable_name%`. For example, `This page is named %/*
 
 You can render the variable name itself by prefixing with `/*` and `*/`. For example, `%/*/*title*/*/%` will be rendered as `%/*title*/%` without replacing its value.
 
+Variable rendering is done by [content macro](@/docs/macros/content.md).
+
 Here is a list of supported variables:
 - `title`: title of the page.
 - `description`: description, if available.

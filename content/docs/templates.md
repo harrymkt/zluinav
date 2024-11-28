@@ -4,9 +4,9 @@ weight = 300
 +++
 # Templates
 These are a list of files available in the templates folder.
-- base.html: template for site base. It is where all blocks live, so you can rebase the template by overwriting in your templates folder.
+- base.html: template for site base. It is where all [blocks](@/docs/blocks.md) live, so you can rebase the template by overwriting in your templates folder.
 - blogpage.html: the blog page. You can use the frontmadder `page_template="blogpage.html"` to set in your section.
-- doc.html: the template for documentation.
+- doc.html: the template for [documentation](@/docs/documentation.md).
 - docpage.html: the documentation page template.
 - language_changer.html: used as a template for change language page. Please note that if the config has no more than one language, the change language page in the `header` block will be disabled by default.
 - pagination.html: this is an include template for pagination navigation. This is usually included by include statement in the section_paginated.html.

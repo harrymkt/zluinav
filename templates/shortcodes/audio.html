@@ -1,3 +1,6 @@
+{%- if not source is defined %}
+{{- throw(message = "Audio shortcode requires the source parameter") }}
+{%- endif -%}
 <div>
 <audio controls="controls">
 <source src="{{ source | safe }}">

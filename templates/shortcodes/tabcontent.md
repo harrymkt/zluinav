@@ -1,3 +1,6 @@
+{%- if not id is defined %}
+{{- throw(message = "Did you forget to set the `id` parameter?") }}
+{%- endif -%}
 <div class="tab-content" id="tab-content-{{ id }}" style="display: none;">
 
 {{ body }}

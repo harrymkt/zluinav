@@ -1,1 +1,4 @@
-{{ get_url(path = p, lang = lang) }}
+{%- if not p is defined %}
+{{- throw(message = "Did you forget to set the `p` parameter?") }}
+{%- endif %}
+{{- get_url(path = p, lang = lang) }}
