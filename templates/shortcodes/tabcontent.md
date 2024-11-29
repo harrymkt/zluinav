@@ -5,4 +5,4 @@
 
 {{ body }}
 
-</div>{% if visible is defined and visible == true %}<script>switchTab("{{ id }}");</script>{% endif %}
+</div>{% if visible is defined and visible == true %}<script>switch_tab("{{ id }}");</script>{% endif %}

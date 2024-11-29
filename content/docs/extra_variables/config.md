@@ -31,3 +31,20 @@ nav = [
   {name = "Multilingual", url = "/.l./multilingual/"}
 ]
 ```
+
+You can also use another style, like this, which is the same as the demo configuration:
+```toml
+[[extra.nav]]
+  name = "Home"
+  url = "/.l./"
+  key = "h"
+  id = "nav1"
+[[extra.nav]]
+  name = "Documentation"
+  url = "/.l./docs"
+  id = "nav2"
+[[extra.nav]]
+  name = "Blog"
+  url = "/.l./blog"
+  id = "nav3"
+```

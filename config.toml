@@ -15,9 +15,11 @@ build_search_index = false
 # Default language
 default_language = "en"
 # Other languages
+
 [languages.my]
   # Burmese
   title = "UI လမ်းညွှန်"
+
 [slugify]
   paths = "on"
   # We don't use Taxonomies for now
@@ -28,8 +30,17 @@ default_language = "en"
   tr_path = "langs"
   # Title separator, such as dash (-)
   title_sep = " – "
-  nav = [
-    {name = "Home", url = "/.l./", key = "H", id = "nav1"},
-    {name = "Documentation", url = "/docs/", id = "nav2"},
-    {name = "Blog", url = "/.l./blog/", title = "Read the latest news", id = "nav3"}
-  ]
+
+[[extra.nav]]
+  name = "Home"
+  url = "/.l./"
+  key = "h"
+  id = "nav1"
+[[extra.nav]]
+  name = "Documentation"
+  url = "/.l./docs"
+  id = "nav2"
+[[extra.nav]]
+  name = "Blog"
+  url = "/.l./blog"
+  id = "nav3"
