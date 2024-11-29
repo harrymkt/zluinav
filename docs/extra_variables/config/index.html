@@ -16,9 +16,9 @@
 <nav id="navigation" role="navigation" aria-label="Main menu">
 <h2>Main menu</h2>
 <ul style="list-style-type:none;">
-<li><a href="https://harrymkt.github.io/zluinav" accesskey="H">Home</a></li>
+<li><a href="https://harrymkt.github.io/zluinav" accesskey="h">Home</a></li>
 <li><a href="https://harrymkt.github.io/zluinav/docs">Documentation</a></li>
-<li><a href="https://harrymkt.github.io/zluinav/blog" title="Read the latest news">Blog</a></li>
+<li><a href="https://harrymkt.github.io/zluinav/blog">Blog</a></li>
 </ul>
 </nav>
 
@@ -90,6 +90,21 @@
   # Translated page
   {name = &quot;Multilingual&quot;, url = &quot;&#x2F;.l.&#x2F;multilingual&#x2F;&quot;}
 ]
+</code></pre>
+<p>You can also use another style, like this, which is the same as the demo configuration:</p>
+<pre data-lang="toml" class="language-toml "><code class="language-toml" data-lang="toml">[[extra.nav]]
+  name = &quot;Home&quot;
+  url = &quot;&#x2F;.l.&#x2F;&quot;
+  key = &quot;h&quot;
+  id = &quot;nav1&quot;
+[[extra.nav]]
+  name = &quot;Documentation&quot;
+  url = &quot;&#x2F;.l.&#x2F;docs&quot;
+  id = &quot;nav2&quot;
+[[extra.nav]]
+  name = &quot;Blog&quot;
+  url = &quot;&#x2F;.l.&#x2F;blog&quot;
+  id = &quot;nav3&quot;
 </code></pre>
 </div>
 </main>

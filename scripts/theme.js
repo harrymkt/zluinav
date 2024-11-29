@@ -74,8 +74,8 @@ function ts_to_readable_time(timestamp, showsecond = false, ltext = '', show_ful
 }
 function normalize_iso_datetime(dateString) {
 	// Convert date string into a valid ISO format (inserting colon in the timezone)
-	const validDateString = dateString.replace(/([+-]\d{2})(\d{2})$/, '$1:$2');
-	return validDateString;
+	const valid_dateString = dateString.replace(/([+-]\d{2})(\d{2})$/, '$1:$2');
+	return valid_dateString;
 }
 function local_datetime_string(date_input) {
 	var r = new Date(date_input);
@@ -98,13 +98,13 @@ function local_datetime_string(date_input) {
 }
 function get_timestamp(dateString) {
 	// Convert date string into a valid ISO format (inserting colon in the timezone)
-	const validDateString = normalize_iso_datetime(dateString);
+	const valid_dateString = normalize_iso_datetime(dateString);
 	// Create a new Date object from the valid date string
-	const date = new Date(validDateString);
+	const date = new Date(valid_dateString);
 	// Return the timestamp (milliseconds since epoch)
 	return date.getTime();
 }
-function switchTab(tab_id) {
+function switch_tab(tab_id) {
 	// Hide all tab contents
 	const contents = document.querySelectorAll(".tab-content");
 	contents.forEach(content => {
@@ -119,15 +119,15 @@ function switchTab(tab_id) {
 	});
 	// Show the selected tab content and set it as active
 	if (tab_id !== null) {
-		const selectedContent = document.getElementById("tab-content-" + tab_id);
-		if (selectedContent) {
-			selectedContent.style.display = "block";
+		const selected_content = document.getElementById("tab-content-" + tab_id);
+		if (selected_content) {
+			selected_content.style.display = "block";
 		}
-		const selectedTab = document.querySelector(`.tab[data-tab-id="${tab_id}"]`);
-		if (selectedTab) {
-			selectedTab.classList.add("active");
-			selectedTab.setAttribute("aria-selected", "true");
-			selectedTab.setAttribute("tabindex", "0");
+		const selected_tab = document.querySelector(`.tab[data-tab-id="${tab_id}"]`);
+		if (selected_tab) {
+			selected_tab.classList.add("active");
+			selected_tab.setAttribute("aria-selected", "true");
+			selected_tab.setAttribute("tabindex", "0");
 		}
 	}
 }
