@@ -10,6 +10,7 @@ demo = "https://harrymkt.github.io/zluinav"
   tr_path = "langs"
   # Title separator, such as dash (-)
   title_sep = " – "
+
 [author]
   name = "Harry Min Khant"
   homepage = "https://harrymkt.github.io"

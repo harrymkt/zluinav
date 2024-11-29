@@ -114,6 +114,8 @@ function switchTab(tab_id) {
 	const tabs = document.querySelectorAll(".tab");
 	tabs.forEach(tab => {
 		tab.classList.remove("active");
+		tab.setAttribute("aria-selected", "false");
+		tab.setAttribute("tabindex", "-1");
 	});
 	// Show the selected tab content and set it as active
 	if (tab_id !== null) {
@@ -124,6 +126,8 @@ function switchTab(tab_id) {
 		const selectedTab = document.querySelector(`.tab[data-tab-id="${tab_id}"]`);
 		if (selectedTab) {
 			selectedTab.classList.add("active");
+			selectedTab.setAttribute("aria-selected", "true");
+			selectedTab.setAttribute("tabindex", "0");
 		}
 	}
 }
