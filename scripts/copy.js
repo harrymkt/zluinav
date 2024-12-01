@@ -33,7 +33,7 @@ document.querySelectorAll("pre").forEach(pre => {
 	copy_button.addEventListener("click", () => {
 		navigator.clipboard.writeText(code_content)
 		.then(() => {
-			copy_button.textContent = "Copied " + code_content.length() + " characters";
+			copy_button.textContent = "Copied " + code_content.length + " characters";
 			setTimeout(() => {
 				copy_button.textContent = copy_text;
 			}, 1500);
