@@ -1,5 +1,6 @@
 name = "UI Navigation"
 description = "A multilingual theme designed for accessibility rather than visual."
+tags = ["blind", "multilingual", "accessible", "responsive"]
 license = "MIT"
 homepage = "https://github.com/harrymkt/zluinav"
 min_version = "0.19.2"

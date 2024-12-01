@@ -10,18 +10,23 @@ Enjoy the audio shortcode!
 
 ## Tab
 [Documentation](@/docs/shortcodes/tab.md).
-{{ tab(name="Tab 1", id="1") }}
-{{ tab(name="Tab 2", id="2") }}
-{{ tab(name="Tab 3", id="3") }}
+
+Installation:
+{{ tab(name="Windows", id="1") }}
+{{ tab(name="Android", id="2") }}
+{{ tab(name="Web Browser", id="3") }}
 {% tabcontent(id="1", visible=true) %}
-## Content for Tab 1
-This is the content for the first tab.
+### Windows
+- Click on the EXE file.
+- follow the prompts
 {% end %}
 {% tabcontent(id="2") %}
-## Content for Tab 2
-This is the content for the second tab.
+### Android
+- Click on APK file.
+- Click install button.
 {% end %}
 {% tabcontent(id="3") %}
-## Content for Tab 3
-This is the content for the third tab.
+### Web
+- Open the website.
+- Use it.
 {% end %}
