@@ -5,7 +5,7 @@ weight = 1000
 # Documentation Site
 Zluinav supports built-in documentation template that allows you to create list base documentation pages. Each section, starting at content/, you can create a subsection documentation. You can also look the docs folder of this theme.
 
-**Note**: documentations can be sorted by the method you like. Zluinav documentation uses weight sort style. Please note that when using weight, you also need to set for subsections.
+**Note**: documentations can be sorted by the method you like. Even multiple sort methods can be used in multiple subsections. Zluinav documentation uses weight and title sort styles. Please note that when using weight, you also need to set for subsections.
 
 ## Setup
 First, create first documentation section in content folder, and add _index.md to it containing the following frontmadder. For this documentation, we will create docs folder.

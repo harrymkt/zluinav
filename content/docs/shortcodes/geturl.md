@@ -1,6 +1,5 @@
 +++
 title = "Geturl"
-weight = 1
 +++
 # geturl.html
 This shortcode allows you to retrieve the URL specified by the path and optionally the language. This is useful to add links to markdown files if they depend on the language, useful for custom partials such as footer and header using markdown files.

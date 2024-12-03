@@ -1,6 +1,5 @@
 +++
 title = "Tab Shortcode"
-weight = 20
 +++
 # Tab Shortcode
 This shortcode allows you to create a tab panel. It is to be used with the `tabcontent` shortcode.

@@ -1,6 +1,5 @@
 +++
 title = "Audio"
-weight = 10
 +++
 # audio.html
 This shortcode allows you to play audio files.
