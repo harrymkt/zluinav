@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <link href="https://harrymkt.github.io/zluinav/css/theme.css">
 <script src="https://harrymkt.github.io/zluinav/scripts/theme.js"></script>
-<title>Post – Documentation – UI Navigation</title>
+<title>Details – Documentation – UI Navigation</title>
 </head>
 <body>
 <a href="https://harrymkt.github.io/zluinav/lang">Change language</a>
@@ -41,7 +41,7 @@
 <ul style="list-style-type:none;">
 <li><a href="https://harrymkt.github.io/zluinav/docs/macros/general/">General Macro</a></li>
 <li><a href="https://harrymkt.github.io/zluinav/docs/macros/content/">Content</a></li>
-<li><a aria-current="page"href="https://harrymkt.github.io/zluinav/docs/macros/post/">Post</a></li>
+<li><a href="https://harrymkt.github.io/zluinav/docs/macros/post/">Post</a></li>
 <li><a href="https://harrymkt.github.io/zluinav/docs/macros/translator/">Translator</a></li>
 </ul>
 <h3>Shortcodes</h3>
@@ -49,28 +49,35 @@
 
 <ul style="list-style-type:none;">
 <li><a href="https://harrymkt.github.io/zluinav/docs/shortcodes/audio/">Audio</a></li>
-<li><a href="https://harrymkt.github.io/zluinav/docs/shortcodes/details/">Details</a></li>
+<li><a aria-current="page"href="https://harrymkt.github.io/zluinav/docs/shortcodes/details/">Details</a></li>
 <li><a href="https://harrymkt.github.io/zluinav/docs/shortcodes/geturl/">Geturl</a></li>
 <li><a href="https://harrymkt.github.io/zluinav/docs/shortcodes/tab/">Tab Shortcode</a></li>
 </ul>
 </nav>
 <main>
 <div id="mainc">
-<h1 id="post.html">post.html</h1>
-<p>This is a macro defineing the function to preview the post, for example, in posts list. This is made so you can overwrite post previewing template without modifying a section template.</p>
-<h2 id="post_preview">post_preview</h2>
-<p>This function previews the post, useful in the forloop list.</p>
+<h1 id="details.html">details.html</h1>
+<p>This shortcode allows you to add HTML details tag. Always use % signs.</p>
 <ul>
-<li><code>post</code>(object) required: an object pointing to a post page.</li>
-<li><code>tr</code>(object) optional: the object pointing to the loaded translation data.</li>
+<li><code>summary</code>(string) required: The summary of the detail.</li>
+<li><code>open</code>(bool) optional: Should details tag be expanded by default?</li>
 </ul>
-<h2 id="show_authors">show_authors</h2>
-<p>This method shows the authors of a page. If the page doesn't have set the authors, it will use config page author. If the config still doesn't have set, it will return empty.</p>
+<p>Example:</p>
+<pre data-lang="html" class="language-html "><code class="language-html" data-lang="html">{% details(summary=&quot;Test me&quot;) %}
+# Test
+- item1
+- item2
+{% end %}
+</code></pre>
+<p>Output:</p>
+<details>
+<summary>Test me</summary>
+<h1 id="Test">Test</h1>
 <ul>
-<li><code>post</code>(object) required: an object pointing to a post page.</li>
-<li><code>tr</code>(object) optional: the object pointing to the loaded translation data.</li>
+<li>item1</li>
+<li>item2</li>
 </ul>
-</div>
+</details></div>
 </main>
 <div id="zlfooter">
 <footer>
