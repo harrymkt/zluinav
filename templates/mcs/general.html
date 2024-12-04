@@ -1,4 +1,4 @@
 {%- macro title(titles) %}
   {%- set titles = titles | concat(with = config.title) %}
   {{- titles | join(sep = config.extra.title_sep) }}
-  {%- endmacro title %}
+{%- endmacro title %}

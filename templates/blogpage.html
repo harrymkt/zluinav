@@ -12,4 +12,6 @@
 <p>{{tran::get(tr=tr, key="readtime", def="Reading time: $r$")|replace(from="$r$", to=page.reading_time~"minute")}}</p>
 <br>
 {{ content::process(page=page) | safe }}
+
+{{- postmc::prevnext(page=page, tr=tr) }}
 {%- endblock content %}

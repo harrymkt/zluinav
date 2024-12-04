@@ -26,3 +26,15 @@
 <p>{{tran::get(tr=tr, key=authorkey, def=authorkey | capitalize)}}: {{authors | join(sep=", ")}}</p>
   {%-endif-%}
 {%-endmacro show_post_authors-%}
+{%- macro prevnext(page, tr="") %}
+{%- if page.higher or page.lower %}
+<nav aria-label="Page">
+{%- if page.lower %}
+<a href="{{ page.lower.permalink | safe }}">{{ tran::get(tr=tr, key="pagination_previous", def="Previous page") }}: {{ page.lower.title }}</a>
+{%- endif %}
+{%- if page.higher %}
+<a href="{{ page.higher.permalink | safe }}">{{ tran::get(tr=tr, key="pagination_next", def="Next page") }}: {{ page.higher.title }}</a>
+{%- endif %}
+</nav>
+{% endif %}
+{%- endmacro prevnext %}

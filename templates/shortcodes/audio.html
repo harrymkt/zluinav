@@ -1,4 +1,4 @@
-{%- if not source is defined %}
+{%- if source is not defined %}
 {{- throw(message = "Audio shortcode requires the source parameter") }}
 {%- endif -%}
 <div>

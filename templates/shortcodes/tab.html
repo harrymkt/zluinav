@@ -1,4 +1,4 @@
-{%- if not id is defined or not name is defined %}
+{%- if id is not defined or name is not defined %}
 {{- throw(message = "The tab shortcode requires the name and id parameters to be set") }}
 {%- endif -%}
 <div role="tab" class="tab" data-tab-id="{{ id }}" aria-selected="false" onclick="switch_tab('{{ id }}')">{{ name }}</div>
