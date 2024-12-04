@@ -1,5 +1,7 @@
 /*
 This style file is included in Zluinav theme which is distributed under the terms of the MIT License.
+
+Note: Style is not verified by sighted people, this is best bet for text display.
 */
 //Skip link to be invisible for sighted visitors
 .skip-link {
@@ -27,15 +29,12 @@ This style file is included in Zluinav theme which is distributed under the term
 	cursor: pointer;
 	transition: background-color 0.3s;
 }
-
 .tab:hover {
 	background-color: #ddd;
 }
-
 .tab.active {
 	background-color: #ccc;
 }
-
 .tab-content {
 	padding: 20px;
 	border: 1px solid #ccc;
