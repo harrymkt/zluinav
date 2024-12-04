@@ -7,4 +7,4 @@ date = 2024-09-18T20:15:00+06:30
 
 လင့်ခ်သည် %link% ဖြစ်သည်။
 
-link variable သည် `%/*link*/%` ဖြစ်သည်။
+link variable သည် `%/link%` ဖြစ်သည်။

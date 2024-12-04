@@ -4,6 +4,6 @@
   {%- set pcontent = pcontent | replace(from = "%link%", to = page["permalink"] | as_str) %}
   {%- if page.updated-%}{%-set pcontent = pcontent | replace(from = "%updated%", to = "<script>document.write(local_datetime_string('"~page.updated~"'));</script>")-%}{%-endif %}
   {%- if page.date-%}{%-set pcontent = pcontent | replace(from = "%date%", to = "<script>document.write(local_datetime_string('"~page.date~"'));</script>")-%}{%-endif %}
-  {%- set pcontent = pcontent | replace(from = "%/*", to = "%") | replace(from = "*/%", to = "%") %}
+  {%- set pcontent = pcontent | replace(from = "%/", to = "%") %}
   {{- pcontent | safe }}
 {%- endmacro process %}

@@ -4,9 +4,9 @@ weight = 100
 +++
 # Writing
 In page content, you can add variables that will be replaced with the value when the site builds.
-Variables are defined by `%variable_name%`. For example, `This page is named %/*title*/% and was published on %/*date*/%, and was last updated on %/*updated*/%.`
+Variables are defined by `%variable_name%`. For example, `This page is named %/title% and was published on %/date%, and was last updated on %/updated%.`
 
-You can render the variable name itself by prefixing with `/*` and `*/`. For example, `%/*/*title*/*/%` will be rendered as `%/*title*/%` without replacing its value.
+You can render the variable name itself by prefixing with `/`. For example, `%//title%` will be rendered as `%/title%` without replacing its value.
 
 Variable rendering is done by [content macro](@/docs/macros/content.md).
 

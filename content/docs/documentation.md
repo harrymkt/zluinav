@@ -19,7 +19,7 @@ sort_by = "weight"
 Further content for the main documentation section goes here
 ```
 
-Now, you can create pages with md extention in your documentation folder. Any page within the first section (docs) in this case, is a part of the first section (docs).
+Now, you can create pages with md extention in your documentation folder. Any page within the first section (docs) in this case, is a part of the first section.
 
 You can write documentation as you normally would do, for example:
 ```toml

@@ -7,4 +7,4 @@ Hello from the %title%, date is %date%
 
 Link is %link%
 
-The link variable is `%/*link*/%`
+The link variable is `%/link%`
