@@ -6,9 +6,12 @@ on:
   pull_request:
     paths: ["content/**", "static/**", "langs/**", "templates/**", "config.toml"]
   workflow_dispatch:
+defaults:
+  run:
+    shell: bash
 jobs:
   build-and-deploy:
-    runs-on: windows-latest
+    runs-on: ubuntu-latest
     steps:
       - name: Checkout
         uses: actions/checkout@v4
