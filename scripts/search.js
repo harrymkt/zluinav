@@ -145,7 +145,7 @@ function initSearch() {
 	var index;
 	const base_url = window.location.origin;
 	const language = "en";
-	const resource_path = `/search_index.${language}.json`;
+	const resource_path = `search_index.${language}.json`;
 	var initIndex = async function () {
 		if (index === undefined) {
 			index = fetch(`${base_url}${resource_path}`)
