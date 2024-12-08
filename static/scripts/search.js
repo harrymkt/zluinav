@@ -143,9 +143,9 @@ function initSearch() {
 	};
 	var currentTerm = "";
 	var index;
-	const base_url = window.location.origin;
+	const base_url = document.querySelector("base").href;
 	const language = "en";
-	const resource_path = `search_index.${language}.json`;
+	const resource_path = `/search_index.${language}.json`;
 	var initIndex = async function () {
 		if (index === undefined) {
 			index = fetch(`${base_url}${resource_path}`)
