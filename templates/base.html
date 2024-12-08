@@ -36,6 +36,12 @@
 <a href="#navigation" class="skip-link">{{tran::get(tr=tr, key="acc_skip_nav", def="Skip to navigation")}}</a>
 {%- endif %}
 <a href="#zlfooter" class="skip-link">{{tran::get(tr=tr, key="acc_skip_footer", def="Skip to footer")}}</a>
+<div class="search-container">
+<input id="search" type="search" placeholder="🔎 Search the site">
+<div class="search-results">
+<div class="search-results__items"></div>
+</div>
+</div>
 {%- endblock header %}
 {%- block nav %}
 {%- if config.extra.nav %}
@@ -82,6 +88,8 @@
 </div>
 {%- block extrafoot %}
 <script src="{{ get_url(path = "scripts/copy.js") }}"></script>
+<script type="text/javascript" src="{{ get_url(path = "elasticlunr.min.js") }}"></script>
+<script type="text/javascript" src="{{ get_url(path = "scripts/search.js") }}"></script>
 {%- endblock extrafoot %}
 </body>
 </html>

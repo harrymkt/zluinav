@@ -10,12 +10,13 @@ author = "Harry Min Khant"
 feed_filenames = ["rss.xml"]
 # We don't need Sass
 compile_sass = false
-# Search feature is currently not supported in this theme
-build_search_index = false
+build_search_index = true
 # Default language
 default_language = "en"
-# Other languages
+[search]
+index_format = "elasticlunr_json"
 
+# Other languages
 [languages.my]
   # Burmese
   title = "UI လမ်းညွှန်"
