@@ -2,3 +2,12 @@
   {%- set titles = titles | concat(with = config.title) %}
   {{- titles | join(sep = config.extra.title_sep) }}
 {%- endmacro title %}
+{%- macro get_nav_attributes(attributes) %}
+  {%- set navattr = "" %}
+  {%- set attrs = [] %}
+  {%- for k, v in attributes %}
+    {%- set_global attrs = attrs | concat(with = k ~ `="` ~ v ~ `"`) %}
+  {%- endfor %}
+  {%- set navattr = attrs | join(sep = " ") %}
+  {{- navattr }}
+{%- endmacro get_nav_attributes %}

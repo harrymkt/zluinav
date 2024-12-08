@@ -43,6 +43,10 @@
 <h2>{{tran::get(tr = tr, key = "main_menu", def = "Main menu")}}</h2>
 <ul style="list-style-type:none;">
 {%- for pn in config.extra.nav %}
+{%- set navattr = "" %}
+{%- if pn.attributes %}
+{%- set navattr = general::get_nav_attributes(attributes=pn.attributes) %}
+{%- endif %}
 {%- set nurl = pn.url %}
 {%- set ncurl = "" %}
 {%- if current_path %}{% set ncurl = current_path %}{% endif %}
@@ -57,7 +61,7 @@
 {%- else %}
 {%- set nname = pn.name %}
 {%- endif %}
-<li><a {% if ncurl and ncurl | safe == nurl | safe %}aria-current="page" {% endif %}href="{% if nurl is starting_with("/") and not config.base_url is starting_with("/") %}{{ get_url(path = nurl) | safe }}{% else %}{{ nurl | safe }}{% endif %}"{% if pn.title %} title="{{ pn.title }}"{% endif %}{% if pn.key %} accesskey="{{ pn.key }}"{% endif %}>{{ nname }}</a></li>
+<li><a{% if navattr %} {{ navattr | safe }}{% endif %} {% if ncurl and ncurl | safe == nurl | safe %}aria-current="page" {% endif %}href="{% if nurl is starting_with("/") and not config.base_url is starting_with("/") %}{{ get_url(path = nurl) | safe }}{% else %}{{ nurl | safe }}{% endif %}"{% if pn.title %} title="{{ pn.title }}"{% endif %}{% if pn.key %} accesskey="{{ pn.key }}"{% endif %}>{{ nname }}</a></li>
 {%- endfor %}
 </ul>
 </nav>

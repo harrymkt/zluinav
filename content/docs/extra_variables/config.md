@@ -18,7 +18,8 @@ Each navigation item has the following properties:
 	Use `.l.` to reference the current language, for instance, `/.l./blog/`
 - `key`(string) optional: the access key for the item.
 - `title`(string) optional: the title to set on the title attribute.
-- `id`(string) optional: the translation ID. If this is not provided, the name will be used instead.	
+- `id`(string) optional: the translation ID. If this is not provided, the name will be used instead.
+- `attributes`(object) optional: custom attributes. These are also call tables.
 
 If you set the nav as empty or do not set at all, the navigation menu will be disabled, as well as skip to navigation link.
 
@@ -28,7 +29,7 @@ nav = [
   {name = "Home", url = "/"},
   {name = "Blog", url = "/blog/"},
   # Translated page
-  {name = "Multilingual", url = "/.l./multilingual/"}
+  {name = "Multilingual", url = "/.l./multilingual/"},
 ]
 ```
 
@@ -47,4 +48,7 @@ You can also use another style, like this, which is the same as the demo configu
   name = "Blog"
   url = "/.l./blog"
   id = "nav3"
+  # Lets add class attribute to blog
+  [extra.nav.attributes]
+    class = "blog"
 ```
