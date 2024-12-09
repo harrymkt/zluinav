@@ -32,16 +32,16 @@ index_format = "elasticlunr_json"
   # Title separator, such as dash (-)
   title_sep = " – "
 
-[[extra.nav]]
+[[extra.menus.main]]
   name = "Home"
   url = "/.l./"
   key = "h"
   id = "nav1"
-[[extra.nav]]
+[[extra.menus.main]]
   name = "Documentation"
   url = "/.l./docs"
   id = "nav2"
-[[extra.nav]]
+[[extra.menus.main]]
   name = "Blog"
   url = "/.l./blog"
   id = "nav3"

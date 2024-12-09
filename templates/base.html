@@ -2,8 +2,15 @@
 {%- import "mcs/content.html" as content -%}
 {%- import "mcs/translator.html" as tran -%}
 {%- import "mcs/general.html" as general -%}
+{%- import "mcs/menu.html" as menu -%}
 {%- set tr = load_data(path = config.extra.tr_path ~ "/" ~ lang ~ ".toml", required = false) -%}
 {%- if not tr -%}{%- set tr = load_data(path = "themes/zluinav/" ~ config.extra.tr_path ~ "/" ~ lang ~ ".toml", required = false) -%}{%- endif -%}
+{%- set ctx = "" -%}
+{%- if section -%}
+{%- set ctx = section -%}
+{%- elif page -%}
+{%- set ctx = page -%}
+{%- endif -%}
 <!doctype html>
 <html lang="{{ lang }}">
 <head>
@@ -45,31 +52,12 @@
 </div>
 {%- endblock header %}
 {%- block nav %}
-{%- if config.extra.nav %}
+{%- set navbar = menu::show(menuid="main", tr=tr, ctx=ctx) %}
+{%- if navbar %}
 <nav id="navigation" role="navigation" aria-label="{{tran::get(tr = tr, key = "main_menu", def = "Main menu")}}">
 <h2>{{tran::get(tr = tr, key = "main_menu", def = "Main menu")}}</h2>
 <ul style="list-style-type:none;">
-{%- for pn in config.extra.nav %}
-{%- set navattr = "" %}
-{%- if pn.attributes %}
-{%- set navattr = general::get_nav_attributes(attributes=pn.attributes) %}
-{%- endif %}
-{%- set nurl = pn.url %}
-{%- set ncurl = "" %}
-{%- if current_path %}{% set ncurl = current_path %}{% endif %}
-{%- if ncurl and not ncurl == "" and not ncurl is starting_with("/") %}{% set ncurl = "/" ~ ncurl %}{% endif %}
-{%- if config.default_language %}
-{%- if lang and lang == config.default_language %}{% set nurl = pn.url | replace(from = ".l./", to = "") %}
-{%- else %}{% set nurl = pn.url | replace(from = ".l.", to = lang) %}
-{%- endif %}
-{%- endif %}
-{%- if pn.id %}
-{%- set nname = tran::get(tr = tr, key = pn.id, def = pn.name) %}
-{%- else %}
-{%- set nname = pn.name %}
-{%- endif %}
-<li><a{% if navattr %} {{ navattr | safe }}{% endif %} {% if ncurl and ncurl | safe == nurl | safe %}aria-current="page" {% endif %}href="{% if nurl is starting_with("/") and not config.base_url is starting_with("/") %}{{ get_url(path = nurl) | safe }}{% else %}{{ nurl | safe }}{% endif %}"{% if pn.title %} title="{{ pn.title }}"{% endif %}{% if pn.key %} accesskey="{{ pn.key }}"{% endif %}>{{ nname }}</a></li>
-{%- endfor %}
+{{ navbar | safe }}
 </ul>
 </nav>
 {%- endif %}

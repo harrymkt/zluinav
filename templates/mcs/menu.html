@@ -1,0 +1,40 @@
+{%- macro show(menuid, tr="", ctx="") %}
+{%- set menu = [] %}
+{%- if config.extra.menus[menuid] %}
+{%- set menu = config.extra.menus[menuid] %}
+{%- endif %}
+{%- set merger = ctx.extra.menus[menuid] | default(value = []) %}
+{%- if merger %}
+{%- set menu = menu | concat(with = merger) %}
+{%- endif %}
+{%- if menu %}
+{%- for pn in menu %}
+{%- set navattr = "" %}
+{%- if pn.attributes %}
+{%- set navattr = general::get_nav_attributes(attributes=pn.attributes) %}
+{%- endif %}
+{%- set nurl = "" %}
+{%- if pn.url %}
+{%- set nurl = pn.url %}
+{%- elif merger.url %}
+{%- set nurl = merger.url %}
+{%- elif ctx %}
+{%- set nurl = ctx.path %}
+{%- endif %}
+{%- set ncurl = "" %}
+{%- if current_path %}{% set ncurl = current_path %}{% endif %}
+{%- if ncurl and not ncurl == "" and not ncurl is starting_with("/") %}{% set ncurl = "/" ~ ncurl %}{% endif %}
+{%- if config.default_language %}
+{%- if lang and lang == config.default_language %}{% set nurl = nurl | replace(from = ".l./", to = "") %}
+{%- else %}{% set nurl = nurl | replace(from = ".l.", to = lang) %}
+{%- endif %}
+{%- endif %}
+{%- if pn.id %}
+{%- set nname = tran::get(tr = tr, key = pn.id, def = pn.name) %}
+{%- else %}
+{%- set nname = pn.name %}
+{%- endif %}
+<li><a{% if navattr %} {{ navattr | safe }}{% endif %} {% if ncurl and ncurl | safe == nurl | safe %}aria-current="page" {% endif %}href="{% if nurl is starting_with("/") and not config.base_url is starting_with("/") %}{{ get_url(path = nurl) | safe }}{% else %}{{ nurl | safe }}{% endif %}"{% if pn.title %} title="{{ pn.title }}"{% endif %}{% if pn.key %} accesskey="{{ pn.key }}"{% endif %}>{{ nname }}</a></li>
+{%- endfor %}
+{%- endif %}
+{%- endmacro menu %}

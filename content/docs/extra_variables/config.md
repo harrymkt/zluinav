@@ -8,10 +8,12 @@ These variables must be set under `extra` object of the config. If they are not 
 The path where language TOML files are stored, default is "langs".
 ## title_sep
 Title separator, default is " – ".
-## nav
-A list of inline tables for navigation.
+## menus
+A list of menus that can be shown with the menu macro.
 
-Each navigation item has the following properties:
+Menus are defined like, `extra.menus.main`, etc. Just the main is the custom name for your menu, such as footer, header, navigation. Usually, `main` is the name that uses by default in the site's main navigation.
+
+Each menu item has the following properties:
 - `name`(string) required: the name to display.
 - `url`(string) required: the URL to navigate. Slashes should be used for internal paths.
 	
@@ -21,11 +23,10 @@ Each navigation item has the following properties:
 - `id`(string) optional: the translation ID. If this is not provided, the name will be used instead.
 - `attributes`(object) optional: custom attributes. These are also call tables.
 
-If you set the nav as empty or do not set at all, the navigation menu will be disabled, as well as skip to navigation link.
-
 Example navigation:
 ```toml
-nav = [
+[extra.menus]
+main = [
   {name = "Home", url = "/"},
   {name = "Blog", url = "/blog/"},
   # Translated page
@@ -35,20 +36,20 @@ nav = [
 
 You can also use another style, like this, which is the same as the demo configuration:
 ```toml
-[[extra.nav]]
+[[extra.menus.main]]
   name = "Home"
   url = "/.l./"
   key = "h"
   id = "nav1"
-[[extra.nav]]
+[[extra.menus.main]]
   name = "Documentation"
   url = "/.l./docs"
   id = "nav2"
-[[extra.nav]]
+[[extra.menus.main]]
   name = "Blog"
   url = "/.l./blog"
   id = "nav3"
   # Lets add class attribute to blog
-  [extra.nav.attributes]
+  [extra.menus.main.attributes]
     class = "blog"
 ```
