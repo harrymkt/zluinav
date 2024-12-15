@@ -11,13 +11,16 @@
 <body>
 <a href="https://harrymkt.github.io/zluinav/lang">Change language</a>
 <a href="#mainc" class="skip-link">Skip to main content</a>
+<a href="#navigation" class="skip-link">Skip to navigation</a>
 <a href="#zlfooter" class="skip-link">Skip to footer</a>
-<div class="search-container">
-<input id="search" type="search" placeholder="🔎 Search the site">
-<div class="search-results">
-<div class="search-results__items"></div>
-</div>
-</div>
+<link href="https://harrymkt.github.io/zluinav/pagefind/pagefind-ui.css" rel="stylesheet">
+<script src="https://harrymkt.github.io/zluinav/pagefind/pagefind-ui.js"></script>
+<div id="search"></div>
+<script>
+  window.addEventListener('DOMContentLoaded', (event) => {
+    new PagefindUI({ element: "#search", showSubResults: true });
+  });
+</script>
 
 <nav id="navigation" role="navigation" aria-label="Main menu">
 <h2>Main menu</h2>
@@ -61,7 +64,7 @@
 <li><a href="https://harrymkt.github.io/zluinav/docs/shortcodes/tab/">Tab Shortcode</a></li>
 </ul>
 </nav>
-<main>
+<main data-pagefind-body>
 <div id="mainc">
 <h1 id="general.html">general.html</h1>
 <p>General macros added in general namespace</p>
@@ -78,7 +81,5 @@
 </footer>
 </div>
 <script src="https://harrymkt.github.io/zluinav/scripts/copy.js"></script>
-<script type="text/javascript" src="https://harrymkt.github.io/zluinav/elasticlunr.min.js"></script>
-<script type="text/javascript" src="https://harrymkt.github.io/zluinav/scripts/search.js"></script>
 </body>
 </html>
