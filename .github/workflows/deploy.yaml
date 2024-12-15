@@ -6,6 +6,10 @@ on:
   pull_request:
     paths: ["content/**", "static/**", "langs/**", "templates/**", "config.toml"]
   workflow_dispatch:
+
+env:
+  # Output directory where built files will deploy. This also will be used on Pagefind search generation.
+  outdir: HTML
 defaults:
   run:
     shell: bash
@@ -25,10 +29,10 @@ jobs:
         run: zola build
       # Ignore below name if you do not use pagefind.
       - name: Generate Pagefind Search
-        run: python -m pagefind --site HTML
+        run: python -m pagefind --site ${{ env.outdir }}
       - name: Deploy to GitHub Pages
         if: github.event_name == 'push' || github.event_name == 'workflow_dispatch'
         uses: peaceiris/actions-gh-pages@v4
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
-          publish_dir: HTML
+          publish_dir: ${{ env.outdir }}
