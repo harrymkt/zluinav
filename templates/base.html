@@ -11,6 +11,11 @@
 {%- elif page -%}
 {%- set ctx = page -%}
 {%- endif -%}
+{%- set searchfm = config.extra.search_format | default(value = "default") %}
+{%- set searchfms = ["pagefind", "default", "off"] %}
+{%- if searchfm not in searchfms %}
+{{- throw(message = "Search format is invalid") }}
+{%- endif -%}
 <!doctype html>
 <html lang="{{ lang }}">
 <head>
@@ -40,16 +45,27 @@
 <a href="{{ get_url(path = "lang") | safe }}">Change language</a>
 {%- endif %}
 <a href="#mainc" class="skip-link">{{tran::get(tr=tr, key="acc_skip_main", def="Skip to main content")}}</a>
-{%- if config.extra.nav %}
+{%- if config.extra.menus["main"] %}
 <a href="#navigation" class="skip-link">{{tran::get(tr=tr, key="acc_skip_nav", def="Skip to navigation")}}</a>
 {%- endif %}
 <a href="#zlfooter" class="skip-link">{{tran::get(tr=tr, key="acc_skip_footer", def="Skip to footer")}}</a>
+{%- if searchfm == "pagefind" %}
+<link href="{{ get_url(path = "pagefind/pagefind-ui.css") }}" rel="stylesheet">
+<script src="{{ get_url(path = "pagefind/pagefind-ui.js") }}"></script>
+<div id="search"></div>
+<script>
+  window.addEventListener('DOMContentLoaded', (event) => {
+    new PagefindUI({ element: "#search", showSubResults: true });
+  });
+</script>
+{%- elif searchfm == "default" and config.build_search_index %}
 <div class="search-container">
-<input id="search" type="search" placeholder="🔎 Search the site">
+<input id="search" type="search" placeholder="{{ tran::get(tr=tr, key="search_title", def="Search the site") }}">
 <div class="search-results">
 <div class="search-results__items"></div>
 </div>
 </div>
+{%- endif %}
 {%- endblock header %}
 {%- block nav %}
 {%- set navbar = menu::show(menuid="main", tr=tr, ctx=ctx) %}
@@ -62,7 +78,7 @@
 </nav>
 {%- endif %}
 {%- endblock nav %}
-<main>
+<main data-pagefind-body>
 <div id="mainc">
 {%- block content -%}
 {%- endblock content -%}
@@ -77,8 +93,10 @@
 </div>
 {%- block extrafoot %}
 <script src="{{ get_url(path = "scripts/copy.js") }}"></script>
+{%- if searchfm == "default" and config.build_search_index %}
 <script type="text/javascript" src="{{ get_url(path = "elasticlunr.min.js") }}"></script>
 <script type="text/javascript" src="{{ get_url(path = "scripts/search.js") }}"></script>
+{%- endif %}
 {%- endblock extrafoot %}
 </body>
 </html>

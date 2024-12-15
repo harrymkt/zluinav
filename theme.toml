@@ -11,6 +11,8 @@ demo = "https://harrymkt.github.io/zluinav"
   tr_path = "langs"
   # Title separator, such as dash (-)
   title_sep = " – "
+  # Search format: pagefind | default | off
+  search_format = "pagefind"
 
 [author]
   name = "Harry Min Khant"

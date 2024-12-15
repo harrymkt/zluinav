@@ -26,7 +26,7 @@ This theme is distributed under the terms of the [MIT License](https://github.co
 - Comprehensive documentation; Zluinav provides a full Comprehensive documentation including possible templates, shortcodes, blocks, configurable parameters, and more, everything as it updates.
 
 ## Installation
-Using git:
+Using git clone:
 ```bash
 cd themes
 git clone https://github.com/harrymkt/zluinav.git

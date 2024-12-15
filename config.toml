@@ -10,11 +10,11 @@ author = "Harry Min Khant"
 feed_filenames = ["rss.xml"]
 # We don't need Sass
 compile_sass = false
-build_search_index = true
+build_search_index = false
 # Default language
 default_language = "en"
-[search]
-index_format = "elasticlunr_json"
+#[search]
+  #index_format = "elasticlunr_json"
 
 # Other languages
 [languages.my]
@@ -31,6 +31,8 @@ index_format = "elasticlunr_json"
   tr_path = "langs"
   # Title separator, such as dash (-)
   title_sep = " – "
+  # Search format: pagefind | default | off
+  search_format = "pagefind"
 
 [[extra.menus.main]]
   name = "Home"
