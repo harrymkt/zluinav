@@ -16,6 +16,7 @@ This theme is distributed under the terms of the [MIT License](https://github.co
 - Documentation site; build accessible documentation sites by using built-in 1subsection templates specifically designed for documentation.
 - Multilingual; build your site in multiple languages.
 - Custom Menus; can be set via `config.extra.menus.menu_name`.
+- Taxonomies support.
 - Built-in search, with a variety of search formats to choose.
 - Customizable extrahead, header, navigation, and footer by base templates and blocks.
 - Fast; Zola generates within a few milliseconds. Zluinav is built with HTML using aria whenever possible for accessibility with assistive screen reader as well as using JavaScript. You can rebase the templates, should you wish to add your own content.

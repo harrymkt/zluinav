@@ -3,6 +3,7 @@
 {%- import "mcs/translator.html" as tran -%}
 {%- import "mcs/general.html" as general -%}
 {%- import "mcs/menu.html" as menu -%}
+{%- import "mcs/taxonomy.html" as tmn -%}
 {%- set tr = load_data(path = config.extra.tr_path ~ "/" ~ lang ~ ".toml", required = false) -%}
 {%- if not tr -%}{%- set tr = load_data(path = "themes/zluinav/" ~ config.extra.tr_path ~ "/" ~ lang ~ ".toml", required = false) -%}{%- endif -%}
 {%- set ctx = "" -%}
@@ -11,8 +12,8 @@
 {%- elif page -%}
 {%- set ctx = page -%}
 {%- endif -%}
-{%- set searchfm = config.extra.search_format | default(value = "default") %}
-{%- set searchfms = ["pagefind", "default", "off"] %}
+{%- set searchfm = config.extra.search.format | default(value = "default") %}
+{%- set searchfms = ["pagefind", "default"] %}
 {%- if searchfm not in searchfms %}
 {{- throw(message = "Search format is invalid") }}
 {%- endif -%}
@@ -27,13 +28,9 @@
 <script src="{{ get_url(path = "scripts/theme.js") }}"></script>
 {%- endblock extrahead %}
 {%- block dmeta %}
-{%- if section %}
-{%- if section.description %}
-<meta name="description" content="{{ section.description }}">
-{%- endif %}
-{%- elif page %}
-{%- if page.description %}
-<meta name="description" content="{{ page.description }}">
+{%- if ctx %}
+{%- if ctx.description %}
+<meta name="description" content="{{ ctx.description }}">
 {%- endif %}
 {%- endif %}
 {%- endblock dmeta %}
@@ -49,16 +46,11 @@
 <a href="#navigation" class="skip-link">{{tran::get(tr=tr, key="acc_skip_nav", def="Skip to navigation")}}</a>
 {%- endif %}
 <a href="#zlfooter" class="skip-link">{{tran::get(tr=tr, key="acc_skip_footer", def="Skip to footer")}}</a>
-{%- if searchfm == "pagefind" %}
+{%- if config.extra.searching.enable and searchfm == "pagefind" %}
 <link href="{{ get_url(path = "pagefind/pagefind-ui.css") }}" rel="stylesheet">
 <script src="{{ get_url(path = "pagefind/pagefind-ui.js") }}"></script>
 <div id="search"></div>
-<script>
-  window.addEventListener('DOMContentLoaded', (event) => {
-    new PagefindUI({ element: "#search", showSubResults: true });
-  });
-</script>
-{%- elif searchfm == "default" and config.build_search_index %}
+{%- elif config.extra.searching.enable and searchfm == "default" and config.build_search_index %}
 <div class="search-container">
 <input id="search" type="search" placeholder="{{ tran::get(tr=tr, key="search_title", def="Search the site") }}">
 <div class="search-results">
@@ -93,9 +85,15 @@
 </div>
 {%- block extrafoot %}
 <script src="{{ get_url(path = "scripts/copy.js") }}"></script>
-{%- if searchfm == "default" and config.build_search_index %}
+{%- if config.extra.searching.enable and searchfm == "default" and config.build_search_index %}
 <script type="text/javascript" src="{{ get_url(path = "elasticlunr.min.js") }}"></script>
 <script type="text/javascript" src="{{ get_url(path = "scripts/search.js") }}"></script>
+{%- elif config.extra.searching.enable and searchfm == "pagefind" %}
+<script>
+window.addEventListener('DOMContentLoaded', (event) => {
+  new PagefindUI({ element: "#search", showSubResults: true });
+});
+</script>
 {%- endif %}
 {%- endblock extrafoot %}
 </body>

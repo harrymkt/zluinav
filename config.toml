@@ -4,6 +4,9 @@ output_dir = "HTML"
 title = "UI Navigation"
 base_url = "https://harrymkt.github.io/zluinav"
 #theme = "zluinav"
+taxonomies = [
+  { name = "categories", feed = true }
+]
 # Default author to be used if the page does not have set one.
 author = "Harry Min Khant"
 # Feed filename
@@ -31,8 +34,10 @@ default_language = "en"
   tr_path = "langs"
   # Title separator, such as dash (-)
   title_sep = " – "
-  # Search format: pagefind | default | off
-  search_format = "pagefind"
+
+[extra.searching]
+  enable = true
+  format = "pagefind"
 
 [[extra.menus.main]]
   name = "Home"

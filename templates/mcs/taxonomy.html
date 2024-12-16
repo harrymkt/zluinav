@@ -1,0 +1,14 @@
+{%- macro show(kind, ctx) %}
+{%- set tax = ctx.taxonomies[kind] | default(value = []) %}
+{%- if tax %}
+<div class="taxonomy_item">
+<div>{{ kind }}:</div>
+<ul style="list-style-type: none;">
+{%- for t in tax %}
+{%- set termurl = get_taxonomy_url(kind = kind, name = t, required = false) %}
+<li><a href="{{ termurl }}">{{ t }}</a></li>
+{%- endfor %}
+</ul>
+</div>
+{%- endif %}
+{%- endmacro show %}

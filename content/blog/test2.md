@@ -4,6 +4,8 @@ date = 2024-09-20T23:40:00+06:30
 description = "A test number 2 page!"
 # Custom multiple authors
 authors = ["Harry Min Khant", "Example author"]
+[taxonomies]
+categories = ["News"]
 [extra]
 alt = "Zluinav Logo"
 img = "https://github.com/harrymkt/zluinav/blob/main/screenshot.png"
