@@ -12,7 +12,7 @@
 {%- elif page -%}
 {%- set ctx = page -%}
 {%- endif -%}
-{%- set searchfm = config.extra.search.format | default(value = "default") %}
+{%- set searchfm = config.extra.searching.format | default(value = "default") %}
 {%- set searchfms = ["pagefind", "default"] %}
 {%- if searchfm not in searchfms %}
 {{- throw(message = "Search format is invalid") }}

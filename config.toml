@@ -24,11 +24,6 @@ default_language = "en"
   # Burmese
   title = "UI လမ်းညွှန်"
 
-[slugify]
-  paths = "on"
-  # We don't use Taxonomies for now
-  taxonomies = "off"
-  anchors = "off"
 [extra]
   # The language search path
   tr_path = "langs"
