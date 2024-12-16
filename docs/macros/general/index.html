@@ -13,6 +13,9 @@
 <a href="#mainc" class="skip-link">Skip to main content</a>
 <a href="#navigation" class="skip-link">Skip to navigation</a>
 <a href="#zlfooter" class="skip-link">Skip to footer</a>
+<link href="https://harrymkt.github.io/zluinav/pagefind/pagefind-ui.css" rel="stylesheet">
+<script src="https://harrymkt.github.io/zluinav/pagefind/pagefind-ui.js"></script>
+<div id="search"></div>
 
 <nav id="navigation" role="navigation" aria-label="Main menu">
 <h2>Main menu</h2>
@@ -59,9 +62,9 @@
 </nav>
 <main data-pagefind-body>
 <div id="mainc">
-<h1 id="general.html">general.html</h1>
+<h1 id="general-html">general.html</h1>
 <p>General macros added in general namespace</p>
-<h2 id="title(titles)">title(titles)</h2>
+<h2 id="title-titles">title(titles)</h2>
 <p>Returns the titles, separated by the value set in <code>config.extra.title_sep</code>, with the site title appended after it.</p>
 <ul>
 <li><code>titles</code>(array) required: array of titles.</li>
@@ -74,5 +77,10 @@
 </footer>
 </div>
 <script src="https://harrymkt.github.io/zluinav/scripts/copy.js"></script>
+<script>
+window.addEventListener('DOMContentLoaded', (event) => {
+  new PagefindUI({ element: "#search", showSubResults: true });
+});
+</script>
 </body>
 </html>

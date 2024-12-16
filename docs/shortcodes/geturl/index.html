@@ -13,6 +13,9 @@
 <a href="#mainc" class="skip-link">Skip to main content</a>
 <a href="#navigation" class="skip-link">Skip to navigation</a>
 <a href="#zlfooter" class="skip-link">Skip to footer</a>
+<link href="https://harrymkt.github.io/zluinav/pagefind/pagefind-ui.css" rel="stylesheet">
+<script src="https://harrymkt.github.io/zluinav/pagefind/pagefind-ui.js"></script>
+<div id="search"></div>
 
 <nav id="navigation" role="navigation" aria-label="Main menu">
 <h2>Main menu</h2>
@@ -59,7 +62,7 @@
 </nav>
 <main data-pagefind-body>
 <div id="mainc">
-<h1 id="geturl.html">geturl.html</h1>
+<h1 id="geturl-html">geturl.html</h1>
 <p>This shortcode allows you to retrieve the URL specified by the path and optionally the language. This is useful to add links to markdown files if they depend on the language, useful for custom partials such as footer and header using markdown files.</p>
 <ul>
 <li><code>p</code>(string) required: The path to retrieve.</li>
@@ -79,5 +82,10 @@
 </footer>
 </div>
 <script src="https://harrymkt.github.io/zluinav/scripts/copy.js"></script>
+<script>
+window.addEventListener('DOMContentLoaded', (event) => {
+  new PagefindUI({ element: "#search", showSubResults: true });
+});
+</script>
 </body>
 </html>

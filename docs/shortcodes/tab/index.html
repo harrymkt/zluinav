@@ -13,6 +13,9 @@
 <a href="#mainc" class="skip-link">Skip to main content</a>
 <a href="#navigation" class="skip-link">Skip to navigation</a>
 <a href="#zlfooter" class="skip-link">Skip to footer</a>
+<link href="https://harrymkt.github.io/zluinav/pagefind/pagefind-ui.css" rel="stylesheet">
+<script src="https://harrymkt.github.io/zluinav/pagefind/pagefind-ui.js"></script>
+<div id="search"></div>
 
 <nav id="navigation" role="navigation" aria-label="Main menu">
 <h2>Main menu</h2>
@@ -59,19 +62,19 @@
 </nav>
 <main data-pagefind-body>
 <div id="mainc">
-<h1 id="Tab_Shortcode">Tab Shortcode</h1>
+<h1 id="tab-shortcode">Tab Shortcode</h1>
 <p>This shortcode allows you to create a tab panel. It is to be used with the <code>tabcontent</code> shortcode.</p>
-<h2 id="Tab_Shortcode_(tab.html)">Tab Shortcode (tab.html)</h2>
+<h2 id="tab-shortcode-tab-html">Tab Shortcode (tab.html)</h2>
 <ul>
 <li><code>name</code>(string) required: The name of the tab.</li>
 <li><code>id</code>(string) required: The identifier of the tab.</li>
 </ul>
-<h2 id="Tab_Content_Shortcode(tabcontent.html)">Tab Content Shortcode(tabcontent.html)</h2>
+<h2 id="tab-content-shortcode-tabcontent-html">Tab Content Shortcode(tabcontent.html)</h2>
 <ul>
 <li><code>id</code>(string) required: The identifier of the tab that is previously defined.</li>
 <li><code>visible</code>(bool) optional: Toggles whether this tab should display as soon as the tab content is defined.</li>
 </ul>
-<h2 id="Example">Example</h2>
+<h2 id="example">Example</h2>
 <pre data-lang="markdown" class="language-markdown "><code class="language-markdown" data-lang="markdown">{{ tab(name=&quot;Tab 1&quot;, id=&quot;1&quot;) }}
 {{ tab(name=&quot;Tab 2&quot;, id=&quot;2&quot;) }}
 {{ tab(name=&quot;Tab 3&quot;, id=&quot;3&quot;) }}
@@ -96,5 +99,10 @@ This is the content for the third tab.
 </footer>
 </div>
 <script src="https://harrymkt.github.io/zluinav/scripts/copy.js"></script>
+<script>
+window.addEventListener('DOMContentLoaded', (event) => {
+  new PagefindUI({ element: "#search", showSubResults: true });
+});
+</script>
 </body>
 </html>

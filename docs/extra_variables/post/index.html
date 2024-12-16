@@ -13,6 +13,9 @@
 <a href="#mainc" class="skip-link">Skip to main content</a>
 <a href="#navigation" class="skip-link">Skip to navigation</a>
 <a href="#zlfooter" class="skip-link">Skip to footer</a>
+<link href="https://harrymkt.github.io/zluinav/pagefind/pagefind-ui.css" rel="stylesheet">
+<script src="https://harrymkt.github.io/zluinav/pagefind/pagefind-ui.js"></script>
+<div id="search"></div>
 
 <nav id="navigation" role="navigation" aria-label="Main menu">
 <h2>Main menu</h2>
@@ -59,9 +62,9 @@
 </nav>
 <main data-pagefind-body>
 <div id="mainc">
-<h1 id="Extra_Post_Page_Variables">Extra Post Page Variables</h1>
+<h1 id="extra-post-page-variables">Extra Post Page Variables</h1>
 <p>These variables must be set under <code>extra</code> object of the post page, another word, pages using blogpage.html template.</p>
-<h2 id="Featured_Image_Display">Featured Image Display</h2>
+<h2 id="featured-image-display">Featured Image Display</h2>
 <p>You can display an image as the post's logo.</p>
 <ul>
 <li><code>img</code>(string) optional: the image / image URL. Note that to display an image, this variable must be set. other image variables are optional.</li>
@@ -75,5 +78,10 @@
 </footer>
 </div>
 <script src="https://harrymkt.github.io/zluinav/scripts/copy.js"></script>
+<script>
+window.addEventListener('DOMContentLoaded', (event) => {
+  new PagefindUI({ element: "#search", showSubResults: true });
+});
+</script>
 </body>
 </html>
