@@ -12,8 +12,8 @@
 {%- elif page -%}
 {%- set ctx = page -%}
 {%- endif -%}
-{%- set searchfm = config.extra.searching.format | default(value = "default") %}
-{%- set searchfms = ["pagefind", "default"] %}
+{%- set searchfm = config.extra.searching.format %}
+{%- set searchfms = ["pagefind", "main"] %}
 {%- if searchfm not in searchfms %}
 {{- throw(message = "Search format is invalid") }}
 {%- endif -%}
@@ -50,7 +50,7 @@
 <link href="{{ get_url(path = "pagefind/pagefind-ui.css") }}" rel="stylesheet">
 <script src="{{ get_url(path = "pagefind/pagefind-ui.js") }}"></script>
 <div id="search"></div>
-{%- elif config.extra.searching.enable and searchfm == "default" and config.build_search_index %}
+{%- elif config.extra.searching.enable and searchfm == "main" and config.build_search_index %}
 <div class="search-container">
 <input id="search" type="search" placeholder="{{ tran::get(tr=tr, key="search_title", def="Search the site") }}">
 <div class="search-results">
@@ -70,7 +70,7 @@
 </nav>
 {%- endif %}
 {%- endblock nav %}
-<main data-pagefind-body>
+<main {% if (ctx.extra.search | default(value = config.extra.searching.enable)) %}data-pagefind-body{% endif %}>
 <div id="mainc">
 {%- block content -%}
 {%- endblock content -%}
@@ -85,7 +85,7 @@
 </div>
 {%- block extrafoot %}
 <script src="{{ get_url(path = "scripts/copy.js") }}"></script>
-{%- if config.extra.searching.enable and searchfm == "default" and config.build_search_index %}
+{%- if config.extra.searching.enable and searchfm == "main" and config.build_search_index %}
 <script type="text/javascript" src="{{ get_url(path = "elasticlunr.min.js") }}"></script>
 <script type="text/javascript" src="{{ get_url(path = "scripts/search.js") }}"></script>
 {%- elif config.extra.searching.enable and searchfm == "pagefind" %}

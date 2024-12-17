@@ -6,6 +6,10 @@ homepage = "https://github.com/harrymkt/zluinav"
 min_version = "0.19.2"
 demo = "https://harrymkt.github.io/zluinav"
 
+[author]
+  name = "Harry Min Khant"
+  homepage = "https://harrymkt.github.io"
+
 [extra]
   # The language search path
   tr_path = "langs"
@@ -15,7 +19,3 @@ demo = "https://harrymkt.github.io/zluinav"
 [extra.searching]
   enable = true
   format = "pagefind"
-
-[author]
-  name = "Harry Min Khant"
-  homepage = "https://harrymkt.github.io"
