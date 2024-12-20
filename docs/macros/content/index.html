@@ -20,10 +20,7 @@
 <nav id="navigation" role="navigation" aria-label="Main menu">
 <h2>Main menu</h2>
 <ul style="list-style-type:none;">
-
-<li><a href="https://harrymkt.github.io/zluinav" accesskey="h">Home</a></li>
-<li><a href="https://harrymkt.github.io/zluinav/docs">Documentation</a></li>
-<li><a href="https://harrymkt.github.io/zluinav/blog">Blog</a></li>
+<li><a href="https://harrymkt.github.io/zluinav" accesskey="h">Home</a></li><li><a href="https://harrymkt.github.io/zluinav/docs">Documentation</a></li><li><a href="https://harrymkt.github.io/zluinav/blog">Blog</a></li>
 </ul>
 </nav>
 
@@ -45,8 +42,9 @@
 <p>This is a list of available macros that are located in templates/mcs directory.</p>
 
 <ul style="list-style-type:none;">
-<li><a href="https://harrymkt.github.io/zluinav/docs/macros/general/">General Macro</a></li>
 <li><a aria-current="page"href="https://harrymkt.github.io/zluinav/docs/macros/content/">Content</a></li>
+<li><a href="https://harrymkt.github.io/zluinav/docs/macros/general/">General Macro</a></li>
+<li><a href="https://harrymkt.github.io/zluinav/docs/macros/menu/">Menu</a></li>
 <li><a href="https://harrymkt.github.io/zluinav/docs/macros/post/">Post</a></li>
 <li><a href="https://harrymkt.github.io/zluinav/docs/macros/translator/">Translator</a></li>
 </ul>
@@ -60,8 +58,7 @@
 <li><a href="https://harrymkt.github.io/zluinav/docs/shortcodes/tab/">Tab Shortcode</a></li>
 </ul>
 </nav>
-<main data-pagefind-body>
-<div id="mainc">
+<main id="mainc" data-pagefind-body>
 <h1 id="content-html">content.html</h1>
 <p>This macro defines content processing, because the theme supports variables. Variables are processed by <code>%variable_name%</code>. See <a href="https://harrymkt.github.io/zluinav/docs/writing/">writing</a>.</p>
 <p>Imported as <code>content</code>.</p>
@@ -71,7 +68,6 @@
 <li><code>page</code>(object) required: an object pointing to a page to retrieve the content.</li>
 <li><code>option</code>(string) optional: the option to process, default is "content".</li>
 </ul>
-</div>
 </main>
 <div id="zlfooter">
 <footer>

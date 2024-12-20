@@ -20,10 +20,7 @@
 <nav id="navigation" role="navigation" aria-label="Main menu">
 <h2>Main menu</h2>
 <ul style="list-style-type:none;">
-
-<li><a href="https://harrymkt.github.io/zluinav" accesskey="h">Home</a></li>
-<li><a href="https://harrymkt.github.io/zluinav/docs">Documentation</a></li>
-<li><a href="https://harrymkt.github.io/zluinav/blog">Blog</a></li>
+<li><a href="https://harrymkt.github.io/zluinav" accesskey="h">Home</a></li><li><a href="https://harrymkt.github.io/zluinav/docs">Documentation</a></li><li><a href="https://harrymkt.github.io/zluinav/blog">Blog</a></li>
 </ul>
 </nav>
 
@@ -45,8 +42,9 @@
 <p>This is a list of available macros that are located in templates/mcs directory.</p>
 
 <ul style="list-style-type:none;">
-<li><a href="https://harrymkt.github.io/zluinav/docs/macros/general/">General Macro</a></li>
 <li><a href="https://harrymkt.github.io/zluinav/docs/macros/content/">Content</a></li>
+<li><a href="https://harrymkt.github.io/zluinav/docs/macros/general/">General Macro</a></li>
+<li><a href="https://harrymkt.github.io/zluinav/docs/macros/menu/">Menu</a></li>
 <li><a aria-current="page"href="https://harrymkt.github.io/zluinav/docs/macros/post/">Post</a></li>
 <li><a href="https://harrymkt.github.io/zluinav/docs/macros/translator/">Translator</a></li>
 </ul>
@@ -60,8 +58,7 @@
 <li><a href="https://harrymkt.github.io/zluinav/docs/shortcodes/tab/">Tab Shortcode</a></li>
 </ul>
 </nav>
-<main data-pagefind-body>
-<div id="mainc">
+<main id="mainc" data-pagefind-body>
 <h1 id="post-html">post.html</h1>
 <p>This is a macro defineing the function to preview the post, for example, in posts list. This is made so you can overwrite post previewing template without modifying a section template.</p>
 <p>Imported as <code>postmc</code>.</p>
@@ -83,7 +80,6 @@
 <li><code>page</code>(object) required: an object pointing to a page.</li>
 <li><code>tr</code>(object) optional: the object pointing to the loaded translation data.</li>
 </ul>
-</div>
 </main>
 <div id="zlfooter">
 <footer>
