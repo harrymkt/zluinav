@@ -33,7 +33,7 @@
 {%- set nname = tran::get(tr = tr, key = pn.id, def = pn.name) %}
 {%- else %}
 {%- set nname = pn.name %}
-{%- endif %}
+{%- endif -%}
 <li><a{% if navattr %} {{ navattr | safe }}{% endif %} {% if ncurl and ncurl | safe == nurl | safe %}aria-current="page" {% endif %}href="{% if nurl is starting_with("/") and not config.base_url is starting_with("/") %}{{ get_url(path = nurl) | safe }}{% else %}{{ nurl | safe }}{% endif %}"{% if pn.title %} title="{{ pn.title }}"{% endif %}{% if pn.key %} accesskey="{{ pn.key }}"{% endif %}>{{ nname }}</a></li>
 {%- endfor %}
 {%- endif %}

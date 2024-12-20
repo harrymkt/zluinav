@@ -1,6 +1,5 @@
 +++
 title = "Content"
-weight = 100
 +++
 # content.html
 This macro defines content processing, because the theme supports variables. Variables are processed by `%variable_name%`. See [writing](@/docs/writing.md).

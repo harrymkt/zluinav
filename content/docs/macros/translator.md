@@ -1,9 +1,10 @@
 +++
 title = "Translator"
-weight = 300
 +++
 # translator.html
 This macro defines functions for custom translation.
+
+Imported as `tran`.
 
 ## get
 This method will search the TOML file containing translation for each language set in the config. The folder to search is base on the `config.extra.tr_path`. By default, it's langs. Directory searching is as follows:

@@ -70,11 +70,9 @@
 </nav>
 {%- endif %}
 {%- endblock nav %}
-<main {% if (ctx.extra.search | default(value = config.extra.searching.enable)) %}data-pagefind-body{% endif %}>
-<div id="mainc">
-{%- block content -%}
+<main id="mainc"{% if (ctx.extra.search | default(value = config.extra.searching.enable)) %} data-pagefind-body{% endif %}>
+{%- block content %}
 {%- endblock content -%}
-</div>
 </main>
 <div id="zlfooter">
 {%- block footer %}

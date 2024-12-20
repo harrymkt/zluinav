@@ -1,6 +1,5 @@
 +++
 title = "General Macro"
-weight = 1
 +++
 # general.html
 General macros added in general namespace
