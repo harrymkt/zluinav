@@ -12,19 +12,19 @@ This theme is distributed under the terms of the [MIT License](https://github.co
 
 ## Features of zluinav theme
 - Accessibility; Zluinav is designed to be accessible as possible, especially for blind and visually impaired. This is done by using accessibility tags, such as ARIA, and other possible accessibility features.
-- Configuration; use an extensive configuration parameters to control your site, from the main configuration file to frontmadder configuration, and more.
+- Configuration; use an extensive [configuration](https://harrymkt.github.io/zluinav/docs#extra-variables) parameters to control your site, from the main configuration file to [frontmadder configuration](https://harrymkt.github.io/zluinav/docs/extra/frontmadder), and more.
 - Blog with pagination enabled; multiple blogs can be created by copying the blog directory in the content folder to the new directory for a new blog. This means that you can have multiple blogs in one site. In fact, Zola doesn't have its build-in posts, but it is possible using sections. Please note that directory other than blog will require you to manually set the `template` to `blogpage.html` and `page_template` to `section_paginated.html` in its `_index.md` file.
-- Documentation site; build accessible documentation sites by using built-in 1subsection templates specifically designed for documentation.
+- Documentation site; build accessible [documentation sites](https://harrymkt.github.io/zluinav/docs/documentation) by using built-in 1subsection templates specifically designed for documentation.
 - Multilingual; build your site in multiple languages.
-- Custom Menus; can be set via `config.extra.menus.menu_name`.
+- Custom [Menus](https://harrymkt.github.io/zluinav/docs/extra/config#menus); can be set via `config.extra.menus.menu_name`.
 - Taxonomies support.
-- Built-in search, with a variety of search formats to choose.
+- Built-in [search](https://harrymkt.github.io/zluinav/docs/search), with a variety of search formats to choose.
 - Customizable extrahead, header, navigation, and footer by base templates and blocks.
 - Fast; Zola generates within a few milliseconds. Zluinav is built with HTML using aria whenever possible for accessibility with assistive screen reader as well as using JavaScript. You can rebase the templates, should you wish to add your own content.
 - Copy code blocks; add code blocks which can then be copied using buttons and display the code language if available, helped by JavaScript.
-- Variables; add variables to your page content to be replaced during the site generate.
+- Variables; add [variables](https://harrymkt.github.io/zluinav/docs/writing) to your page content to be replaced during the site generate.
 - Local date display; display dates in user's local timezone, no madder what timezone the date is set.
-- Use extensive macros and shortcodes to make your content length shorten.
+- Use extensive [macros](https://harrymkt.github.io/zluinav/docs#macros) and [shortcodes](https://harrymkt.github.io/zluinav/docs#shortcodes) to make your content length shorten.
 - Comprehensive documentation; Zluinav provides a full Comprehensive documentation including possible templates, shortcodes, blocks, configurable parameters, and more, everything as it updates.
 
 ## Installation

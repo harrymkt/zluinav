@@ -5,6 +5,7 @@ weight = 2000
 # Search
 Zluinav has search built-in. This is a quick overview on how to create your search.
 
+## Configuration
 See [search configuration](@/docs/extra/config.md#searching)
 
 ## Search Formats{#sformats}
@@ -14,7 +15,7 @@ You have a variety of formats to choose for your search.
 This format uses the default searching method configured in search according to Zola's documentation. `search.js` in the static folder provides for `elasticlunr`.
 
 ### pagefind
-This is a third party searching tool, and thus it cannot be used in `zola serve`. Instead, this is best if you run this tool after the build. In short, this tool runs over your HTML files to generate the search, and it only takes up a few seconds.
+This is the default used in Zluinav's demo and is a third party searching tool, and thus it cannot be used in `zola serve`. Instead, this is best if you run this tool after the build. In short, this tool runs over your HTML files to generate the search, and it only takes up a few seconds.
 
 {% details(summary="Setup Pagefind") %}
 #### Setup Pagefind

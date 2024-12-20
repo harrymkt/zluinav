@@ -47,5 +47,5 @@ Example navigation:
 ```
 
 ## searching
-- `enable`(bool): Toggles search.
+- `enable`(bool): Toggles search. Defaults to `true`
 - `format`(string): One of the [search formats](@/docs/search.md#sformats). Defaults to `pagefind`

@@ -11,4 +11,4 @@ You can display an image as the post's logo. These variables are available for t
 - `alt`(string) optional: the alt text of the featured image. Requires the `img` variable to be set.
 
 ## search
-Toggles search indexing for this page. Available for pagefind format. Defaults to what it is set in the `searching` object of the config.
+bool: Toggles search indexing for this page. Available for pagefind format. Defaults to what it is set in the `searching` object of the config.

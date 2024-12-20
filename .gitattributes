@@ -4,4 +4,3 @@
 *.yaml linguist-detectable linguist-vendored=false linguist-generated=false linguist-documentation=false
 *.yml linguist-detectable linguist-vendored=false linguist-generated=false linguist-documentation=false
 *.md linguist-detectable
-*.txt linguist-detectable linguist-documentation=false linguist-vendered=false linguist-generated=false
