@@ -24,7 +24,7 @@ This theme is distributed under the terms of the [MIT License](https://github.co
 - Copy code blocks; add code blocks which can then be copied using buttons and display the code language if available, helped by JavaScript.
 - Variables; add [variables](https://harrymkt.github.io/zluinav/docs/writing) to your page content to be replaced during the site generate.
 - Local date display; display dates in user's local timezone, no madder what timezone the date is set.
-- Use extensive [macros](https://harrymkt.github.io/zluinav/docs#macros) and [shortcodes](https://harrymkt.github.io/zluinav/docs#shortcodes) to make your content length shorten.
+- Use extensive macros and shortcodes to make your content length shorten.
 - Comprehensive documentation; Zluinav provides a full Comprehensive documentation including possible templates, shortcodes, blocks, configurable parameters, and more, everything as it updates.
 
 ## Installation

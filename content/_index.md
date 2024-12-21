@@ -1,5 +1,6 @@
 +++
 title = "Home"
+insert_anchor_links = "heading"
 +++
 # UI Navigation
 UI Navigation, or known as zluinav, is a Zola theme designed for accessibility rather than visual and made as easy as possible using templates and macros. Since I am a blind developer, I'd like to develop with accessibility as possible so visually impaired users can use them.

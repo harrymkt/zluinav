@@ -2,29 +2,14 @@
 {%- block title %}
 {{- page.title}}{{config.extra.title_sep}}{{super() }}
 {%- endblock title %}
-{%- block footer %}
-{{- super() }}
-<script>
-function goToLanguage() {
-	var selectedLanguage = document.getElementById("language").value;
-	if (selectedLanguage) {
-		window.location.href = selectedLanguage;
-	}
-}
-</script>
-{%- endblock footer %}
 {%- block content %}
 <h1>Select Your Language</h1>
-<form onsubmit="goToLanguage(); return false;">
-<label for="language">Choose a language</label>
-<select id="language" name="language">
-<option value="">--Select--</option>
-<option value="{{get_url(path="", lang=config.default_language)}}">{{tran::get(tr=tr, key="name")}}</option>
+<nav aria-label="Language Selector">
+<ul style="list-style-type: none;">
+<li><a href="{{get_url(path="", lang=config.default_language)}}">{{tran::get(tr=tr, key="name")}}</a></li>
 {%- for lname, language in config.languages %}
-<option value="{{get_url(path = "", lang = lname)}}">{{tran::get(language=lname, key="name")}}</option>
+<li><a href="{{get_url(path = "", lang = lname)}}">{{tran::get(language=lname, key="name")}}</a></li>
 {%- endfor %}
-</select>
-<br><br>
-<input type="submit" value="Change">
-</form>
+</ul>
+</nav>
 {%- endblock content %}
