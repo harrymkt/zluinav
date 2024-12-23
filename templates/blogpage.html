@@ -3,7 +3,7 @@
 {%- set section=get_section(path=page.ancestors | last) %}
 {{- general::title(titles=[page.title, section.title]) }}
 {%- endblock title %}
-{%- block content %}
+{%- block main %}
 <h1>{{page.title}}</h1>
 {%- if page.updated %}<p>{{ tran::get(tr = tr, key = "updated", def = "Updated on: %date%") | replace(from = "%date%", to = "<script>document.write(local_datetime_string('" ~ page.updated ~ "'));</script>") | safe }}</p>{% endif %}
 {{ postmc::show_post_authors(post=page, tr=tr) }}
@@ -15,4 +15,4 @@
 {{ content::process(page=page) | safe }}
 
 {{- postmc::prevnext(page=page, tr=tr) }}
-{%- endblock content %}
+{%- endblock main %}

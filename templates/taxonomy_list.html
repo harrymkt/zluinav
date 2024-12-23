@@ -2,11 +2,11 @@
 {%- block title %}
 {{- general::title(titles=[taxonomy.name]) }}
 {%- endblock title %}
-{%- block content %}
+{%- block main %}
 <h1>{{ taxonomy.name }}</h1>
 <ul>
 {%- for term in terms %}
 <li><a href="{{ term.permalink }}">{{ term.name }}</a></li>
 {%- endfor %}
 </ul>
-{%- endblock content %}
+{%- endblock main %}
