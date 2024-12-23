@@ -1,7 +1,7 @@
 <!doctype html>
 <html lang="en">
 <head>
-<base href="https://harrymkt.github.io/zluinav"/>
+<baseurl href="https://harrymkt.github.io/zluinav"/>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <link href="https://harrymkt.github.io/zluinav/css/theme.css">
@@ -65,6 +65,8 @@
 <p>Returns the titles, separated by the value set in <code>config.extra.title_sep</code>, with the site title appended after it.</p>
 <ul>
 <li><code>titles</code>(array) required: array of titles.</li>
+<li><code>sep</code>(string) optional: The title's separator. Defaults to what it is set in <code>title_sep</code> site extra. Passing this string empty will set back to default.</li>
+<li><code>overwrite</code>(bool) optional: <code>false</code> if the site title should be appended after the titles, or <code>true</code> otherwise. Defaults to <code>false</code>.</li>
 </ul>
 </main>
 <div id="zlfooter">
