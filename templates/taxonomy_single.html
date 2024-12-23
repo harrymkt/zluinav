@@ -4,9 +4,7 @@
 {%- endblock title %}
 {%- block content %}
 <h1>{{ term.name }}</h1>
-<ul>
 {%- for page in term.pages %}
-<li><a href="{{ page.permalink }}">{{ page.title }}</a></li>
+{{- postmc::post_preview(post=page, tr=tr) }}
 {%- endfor %}
-</ul>
 {%- endblock content %}

@@ -12,7 +12,7 @@ See [search configuration](@/docs/extra/config.md#searching)
 You have a variety of formats to choose for your search.
 
 ### main
-This format uses the default searching method configured in search according to Zola's documentation. `search.js` in the static folder provides for `elasticlunr`.
+This format uses the default searching method configured in search according to Zola's documentation. `search.js` in the static folder provides for `elasticlunr`. The only disadvantage of this search format is that custom languages cannot be used to index.
 
 ### pagefind
 This is the default used in Zluinav's demo and is a third party searching tool, and thus it cannot be used in `zola serve`. Instead, this is best if you run this tool after the build. In short, this tool runs over your HTML files to generate the search, and it only takes up a few seconds.
@@ -20,7 +20,7 @@ This is the default used in Zluinav's demo and is a third party searching tool, 
 {% details(summary="Setup Pagefind") %}
 #### Setup Pagefind
 Do the following to get up and run Pagefind. We'll asume you have Python installed:
-1. Install Pagefind extended version. You can do this by this command up to the root of this repository. `pip install -r requirements.txt`
+1. Install Pagefind extended version. You can do this by this command. `pip install -r pagefind[extended]`
 2. Set the search format in the `searching` object.
 3. Build the site. `zola build`
 4. Generate the search index. Make sure to replace outputdir with the directory where your built files live. `python -m pagefind --site outputdir`

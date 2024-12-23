@@ -8,8 +8,11 @@ on:
   workflow_dispatch:
 
 env:
+  # Build directory where the website will run its build. Use the dot (period) to use current.
+  builddir: .
   # Output directory where built files will deploy. This also will be used on Pagefind search generation.
   outdir: HTML
+
 defaults:
   run:
     shell: bash
@@ -24,9 +27,9 @@ jobs:
       - name: Install
         uses: taiki-e/install-action@zola
       - name: Install Python Requirements
-        run: pip install -r requirements.txt
+        run: pip install pagefind[extended]
       - name: Build
-        run: zola build
+        run: zola -r "${{ env.builddir }}" build
       # Ignore below name if you do not use pagefind.
       - name: Generate Pagefind Search
         run: python -m pagefind --site ${{ env.outdir }}

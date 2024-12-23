@@ -1,6 +1,11 @@
-{%- macro title(titles) %}
-  {%- set titles = titles | concat(with = config.title) %}
-  {{- titles | join(sep = config.extra.title_sep) }}
+{%- macro title(titles, sep="", overwrite=false) %}
+  {%- if not sep or sep == "" %}
+    {%- set sep = config.extra.title_sep %}
+  {%- endif %}
+  {%- if not overwrite %}
+    {%- set titles = titles | concat(with = config.title) %}
+  {%- endif %}
+  {{- titles | join(sep = sep) }}
 {%- endmacro title %}
 {%- macro get_nav_attributes(attributes) %}
   {%- set navattr = "" %}
