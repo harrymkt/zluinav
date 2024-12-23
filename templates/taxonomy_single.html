@@ -2,9 +2,9 @@
 {%- block title %}
 {{- general::title(titles=[term.name, taxonomy.name]) }}
 {%- endblock title %}
-{%- block content %}
+{%- block main %}
 <h1>{{ term.name }}</h1>
 {%- for page in term.pages %}
 {{- postmc::post_preview(post=page, tr=tr) }}
 {%- endfor %}
-{%- endblock content %}
+{%- endblock main %}

@@ -2,7 +2,7 @@
 {%- block title %}
 {{- page.title}}{{config.extra.title_sep}}{{super() }}
 {%- endblock title %}
-{%- block content %}
+{%- block main %}
 <h1>Select Your Language</h1>
 <nav aria-label="Language Selector">
 <ul style="list-style-type: none;">
@@ -12,4 +12,4 @@
 {%- endfor %}
 </ul>
 </nav>
-{%- endblock content %}
+{%- endblock main %}

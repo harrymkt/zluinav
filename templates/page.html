@@ -2,6 +2,6 @@
 {%- block title %}
 {{- page.title }}{{ config.extra.title_sep }}{{ super() }}
 {%- endblock title %}
-{%- block content %}
+{%- block main %}
 {{ content::process(page=page) | safe }}
-{%- endblock content %}
+{%- endblock main %}
