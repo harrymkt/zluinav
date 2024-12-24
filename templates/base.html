@@ -39,13 +39,13 @@
 <body>
 {%- block header %}
 {%- if config.languages | length > 0 %}
-<a href="{{ get_url(path = "lang") | safe }}">Change language</a>
+<p><a href="{{ get_url(path = "lang") | safe }}">Change language</a></p>
 {%- endif %}
-<a href="#mainc" class="skip-link">{{tran::get(tr=tr, key="acc_skip_main", def="Skip to main content")}}</a>
+<p><a href="#mainc" class="skip-link">{{tran::get(tr=tr, key="acc_skip_main", def="Skip to main content")}}</a></p>
 {%- if config.extra.menus["main"] %}
-<a href="#navigation" class="skip-link">{{tran::get(tr=tr, key="acc_skip_nav", def="Skip to navigation")}}</a>
+<p><a href="#navigation" class="skip-link">{{tran::get(tr=tr, key="acc_skip_nav", def="Skip to navigation")}}</a></p>
 {%- endif %}
-<a href="#zlfooter" class="skip-link">{{tran::get(tr=tr, key="acc_skip_footer", def="Skip to footer")}}</a>
+<p><a href="#zlfooter" class="skip-link">{{tran::get(tr=tr, key="acc_skip_footer", def="Skip to footer")}}</a></p>
 {%- if config.extra.searching.enable and searchfm == "pagefind" %}
 <link href="{{ get_url(path = "pagefind/pagefind-ui.css") }}" rel="stylesheet">
 <script src="{{ get_url(path = "pagefind/pagefind-ui.js") }}"></script>
