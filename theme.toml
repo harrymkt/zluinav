@@ -16,6 +16,7 @@ demo = "https://harrymkt.github.io/zluinav"
   # Title separator, such as dash (-)
   title_sep = " – "
 
-[extra.searching]
+[extra.search]
   enable = true
+  default_enable = true
   format = "pagefind"
