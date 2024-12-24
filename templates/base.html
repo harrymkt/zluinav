@@ -8,14 +8,18 @@
 {%- if not tr -%}{%- set tr = load_data(path = "themes/zluinav/" ~ config.extra.tr_path ~ "/" ~ lang ~ ".toml", required = false) -%}{%- endif -%}
 {%- set ctx = "" -%}
 {%- if section -%}
-{%- set ctx = section -%}
+  {%- set ctx = section -%}
 {%- elif page -%}
-{%- set ctx = page -%}
+  {%- set ctx = page -%}
 {%- endif -%}
-{%- set searchfm = config.extra.searching.format %}
+{%- set searchfm = config.extra.search.format %}
 {%- set searchfms = ["pagefind", "main"] %}
 {%- if searchfm not in searchfms %}
 {{- throw(message = "Search format is invalid") }}
+{%- endif %}
+{%- set search = false %}
+{%- if config.extra.search.enable and (ctx.extra.search | default(value = config.extra.search.default_enable)) %}
+  {%- set search = true %}
 {%- endif -%}
 <!doctype html>
 <html lang="{{ lang }}">
@@ -46,13 +50,13 @@
 <p><a href="#navigation" class="skip-link">{{tran::get(tr=tr, key="acc_skip_nav", def="Skip to navigation")}}</a></p>
 {%- endif %}
 <p><a href="#zlfooter" class="skip-link">{{tran::get(tr=tr, key="acc_skip_footer", def="Skip to footer")}}</a></p>
-{%- if config.extra.searching.enable and searchfm == "pagefind" %}
+{%- if search and searchfm == "pagefind" %}
 <link href="{{ get_url(path = "pagefind/pagefind-ui.css") }}" rel="stylesheet">
 <script src="{{ get_url(path = "pagefind/pagefind-ui.js") }}"></script>
-<div id="search"></div>
-{%- elif config.extra.searching.enable and searchfm == "main" and config.build_search_index %}
+<div id="sitesearch"></div>
+{%- elif search and searchfm == "main" and config.build_search_index %}
 <div class="search-container">
-<input id="search" type="search" placeholder="{{ tran::get(tr=tr, key="search_title", def="Search the site") }}">
+<input id="sitesearch" type="search" placeholder="{{ tran::get(tr=tr, key="search_title", def="Search the site") }}">
 <div class="search-results">
 <div class="search-results__items"></div>
 </div>
@@ -70,7 +74,7 @@
 </nav>
 {%- endif %}
 {%- endblock nav %}
-<main id="mainc"{% if (ctx.extra.search | default(value = config.extra.searching.enable)) %} data-pagefind-body{% endif %}>
+<main id="mainc"{% if search %} data-pagefind-body{% endif %}>
 {%- block main %}
 {%- endblock main -%}
 </main>
@@ -83,13 +87,13 @@
 </div>
 {%- block extrafoot %}
 <script src="{{ get_url(path = "scripts/copy.js") }}"></script>
-{%- if config.extra.searching.enable and searchfm == "main" and config.build_search_index %}
+{%- if search and searchfm == "main" and config.build_search_index %}
 <script type="text/javascript" src="{{ get_url(path = "elasticlunr.min.js") }}"></script>
 <script type="text/javascript" src="{{ get_url(path = "scripts/search.js") }}"></script>
-{%- elif config.extra.searching.enable and searchfm == "pagefind" %}
+{%- elif search and searchfm == "pagefind" %}
 <script>
 window.addEventListener('DOMContentLoaded', (event) => {
-  new PagefindUI({ element: "#search", showSubResults: true });
+  new PagefindUI({ element: "#sitesearch", showSubResults: true });
 });
 </script>
 {%- endif %}

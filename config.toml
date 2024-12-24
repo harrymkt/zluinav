@@ -30,8 +30,9 @@ default_language = "en"
   # Title separator, such as dash (-)
   title_sep = " – "
 
-[extra.searching]
+[extra.search]
   enable = true
+  default_enable = true
   format = "pagefind"
 
 [[extra.menus.main]]

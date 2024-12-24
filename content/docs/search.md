@@ -6,7 +6,7 @@ weight = 2000
 Zluinav has search built-in. This is a quick overview on how to create your search.
 
 ## Configuration
-See [search configuration](@/docs/extra/config.md#searching)
+See [search configuration](@/docs/extra/config.md#search)
 
 ## Search Formats{#sformats}
 You have a variety of formats to choose for your search.
