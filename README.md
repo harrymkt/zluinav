@@ -3,7 +3,7 @@ UI Navigation, or known as zluinav, is a Zola theme designed for accessibility r
 
 This theme is also available for Hugo at [Hguinav](https://github.com/harrymkt/hguinav).
 
-Zola is a fast site generator written in Rust powered by tera as its templating engine and has a powerful theme creation feature.
+[Zola](https://www.getzola.org/) is a fast site generator written in Rust powered by tera as its templating engine and has a powerful theme creation feature.
 
 [Theme demo](https://harrymkt.github.io/zluinav)
 
