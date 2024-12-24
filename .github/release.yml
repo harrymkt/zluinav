@@ -1,0 +1,19 @@
+# Labels: bug, enhancement, noadd
+# .github/release.yml
+changelog:
+  exclude:
+    labels:
+      - noadd
+  categories:
+    - title: Breaking Changes
+      labels:
+        - break
+    - title: Bug fixes
+      labels:
+        - bug
+    - title: New Features
+      labels:
+        - enhancement
+    - title: Miscellaneous
+      labels:
+        - "*"
