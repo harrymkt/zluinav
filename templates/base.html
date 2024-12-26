@@ -13,9 +13,9 @@
   {%- set ctx = page -%}
 {%- endif -%}
 {%- set searchfm = config.extra.search.format %}
-{%- set searchfms = ["pagefind", "main"] %}
+{%- set searchfms = ["pagefind", "lunr"] %}
 {%- if searchfm not in searchfms %}
-{{- throw(message = "Search format is invalid") }}
+{{- throw(message = "Search format (" ~ searchfm ~ ") is invalid.") }}
 {%- endif %}
 {%- set search = false %}
 {%- if config.extra.search.enable and (ctx.extra.search | default(value = config.extra.search.default_enable)) %}
@@ -54,7 +54,7 @@
 <link href="{{ get_url(path = "pagefind/pagefind-ui.css") }}" rel="stylesheet">
 <script src="{{ get_url(path = "pagefind/pagefind-ui.js") }}"></script>
 <div id="sitesearch"></div>
-{%- elif search and searchfm == "main" and config.build_search_index %}
+{%- elif search and searchfm == "lunr" and config.build_search_index %}
 <div class="search-container">
 <input id="sitesearch" type="search" placeholder="{{ tran::get(tr=tr, key="search_title", def="Search the site") }}">
 <div class="search-results">
@@ -87,7 +87,7 @@
 </div>
 {%- block extrafoot %}
 <script src="{{ get_url(path = "scripts/copy.js") }}"></script>
-{%- if search and searchfm == "main" and config.build_search_index %}
+{%- if search and searchfm == "lunr" and config.build_search_index %}
 <script type="text/javascript" src="{{ get_url(path = "elasticlunr.min.js") }}"></script>
 <script type="text/javascript" src="{{ get_url(path = "scripts/search.js") }}"></script>
 {%- elif search and searchfm == "pagefind" %}
