@@ -18,7 +18,7 @@ This theme is distributed under the terms of the [MIT License](https://github.co
 - Multilingual; build your site in multiple languages.
 - Custom [Menus](https://harrymkt.github.io/zluinav/docs/extra/config#menus); can be set via `config.extra.menus.menu_name`.
 - Taxonomies support.
-- Built-in [search](https://harrymkt.github.io/zluinav/docs/search), with a variety of search formats to choose.
+- Built-in [search](https://harrymkt.github.io/zluinav/docs/search) support, with a variety of search formats to choose.
 - Customizable extrahead, header, navigation, and footer by base templates and blocks.
 - Fast; Zola generates within a few milliseconds. Zluinav is built with HTML using aria whenever possible for accessibility with assistive screen reader as well as using JavaScript. You can rebase the templates, should you wish to add your own content.
 - Copy code blocks; add code blocks which can then be copied using buttons and display the code language if available, helped by JavaScript.

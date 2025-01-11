@@ -10,20 +10,20 @@
 <h2>{{docsect.title}}</h2>
 <ul style="list-style-type:none;">
 {%- for doc in docsect.pages %}
-<li><a {%if current_path==doc.path%}aria-current="page"{%endif%}href="{{doc.permalink | safe}}">{{doc.title}}</a></li>
+<li><a {%if current_path== doc.path%}aria-current="page"{%endif%}href="{{ doc.permalink | safe }}">{{ doc.title }}</a></li>
 {%- endfor %}
 </ul>
 {%- if docsect.subsections %}
 {%- for subsect in docsect.subsections %}
 {%- set ss=get_section(path=subsect) -%}
 {%- if ss %}
-<h3>{{ss.title}}</h3>
+<h3 id="{{ ss.extra.hid | default(value = ss.title) | slugify }}">{{ ss.title }}</h3>
 {%- if ss.content %}
 {{ content::process(page=ss)}}
 {%- endif %}
 <ul style="list-style-type:none;">
 {%- for doc in ss.pages %}
-<li><a {%if current_path==doc.path%}aria-current="page"{%endif%}href="{{doc.permalink | safe}}">{{doc.title}}</a></li>
+<li><a {%if current_path == doc.path%}aria-current="page"{%endif%}href="{{ doc.permalink | safe }}">{{ doc.title }}</a></li>
 {%- endfor %}
 </ul>
 {%- endif %}
