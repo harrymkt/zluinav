@@ -12,3 +12,6 @@ You can display an image as the post's logo. These variables are available for t
 
 ## search
 bool: Toggles search indexing for this page. Available for pagefind format. Defaults to what it is set in the `searching` object of the config.
+
+## hid
+The heading ID. This is only for documentation pages. Defaults to the page's title.
