@@ -15,3 +15,6 @@ bool: Toggles search indexing for this page. Available for pagefind format. Defa
 
 ## hid
 The heading ID. This is only for documentation pages. Defaults to the page's title.
+
+## no_js
+Toggles whether JavaScript is disabled for this page. Fall back to config if not set, thus it's usually `false`.

@@ -11,6 +11,9 @@ The path where language TOML files are stored, default is "langs".
 ## title_sep
 Title separator, default is " – ".
 
+## no_js
+Toggles whether JavaScript is disabled. Defaults to `false`.
+
 ## menus
 A list of menus that can be shown with the menu macro.
 

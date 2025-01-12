@@ -20,6 +20,10 @@
 {%- set search = false %}
 {%- if config.extra.search.enable and (ctx.extra.search | default(value = config.extra.search.default_enable)) %}
   {%- set search = true %}
+{%- endif %}
+{%- set nojs = config.extra.no_js | default(value = false) %}
+{%- if ctx and ctx.extra and (ctx.extra.no_js is defined) %}
+{%- set nojs = ctx.extra.no_js %}
 {%- endif -%}
 <!doctype html>
 <html lang="{{ lang }}">
@@ -29,7 +33,9 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <link href="{{ get_url(path = "css/theme.css") }}">
+{%- if not nojs %}
 <script src="{{ get_url(path = "scripts/theme.js") }}"></script>
+{%- endif %}
 {%- endblock extrahead %}
 {%- block dmeta %}
 {%- if ctx %}
@@ -50,11 +56,11 @@
 <p><a href="#navigation" class="skip-link">{{tran::get(tr=tr, key="acc_skip_nav", def="Skip to navigation")}}</a></p>
 {%- endif %}
 <p><a href="#zlfooter" class="skip-link">{{tran::get(tr=tr, key="acc_skip_footer", def="Skip to footer")}}</a></p>
-{%- if search and searchfm == "pagefind" %}
+{%- if search and searchfm == "pagefind" and not nojs %}
 <link href="{{ get_url(path = "pagefind/pagefind-ui.css") }}" rel="stylesheet">
 <script src="{{ get_url(path = "pagefind/pagefind-ui.js") }}"></script>
 <div id="sitesearch"></div>
-{%- elif search and searchfm == "lunr" and config.build_search_index %}
+{%- elif search and searchfm == "lunr" and config.build_search_index and not nojs %}
 <div class="search-container">
 <input id="sitesearch" type="search" placeholder="{{ tran::get(tr=tr, key="search_title", def="Search the site") }}">
 <div class="search-results">
@@ -86,6 +92,7 @@
 {%- endblock footer %}
 </div>
 {%- block extrafoot %}
+{%- if not nojs %}
 <script src="{{ get_url(path = "scripts/copy.js") }}"></script>
 {%- if search and searchfm == "lunr" and config.build_search_index %}
 <script type="text/javascript" src="{{ get_url(path = "elasticlunr.min.js") }}"></script>
@@ -96,6 +103,7 @@ window.addEventListener('DOMContentLoaded', (event) => {
   new PagefindUI({ element: "#sitesearch", showSubResults: true });
 });
 </script>
+{%- endif %}
 {%- endif %}
 {%- endblock extrafoot %}
 </body>
