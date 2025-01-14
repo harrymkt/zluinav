@@ -3,9 +3,17 @@
 <head>
 <baseurl href="https://harrymkt.github.io/zluinav"/>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<link href="https://harrymkt.github.io/zluinav/css/theme.css">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://harrymkt.github.io/zluinav/css/theme.css">
 <script src="https://harrymkt.github.io/zluinav/scripts/theme.js"></script>
+<meta name="robots" content="index, follow">
+<meta property="og:title" content="Blocks">
+<meta property="og:url" content="https://harrymkt.github.io/zluinav/docs/blocks/">
+<meta property="og:type" content="website">
+<meta name="twitter:card" content="">
+<meta name="twitter:title" content="Blocks">
+<link rel="canonical" href="https://harrymkt.github.io/zluinav/docs/blocks/">
+<link rel="icon" href="https://harrymkt.github.io/zluinav/favicon.ico" type="image/x-icon">
 <title>Blocks – Documentation – UI Navigation</title>
 </head>
 <body>
@@ -62,7 +70,7 @@
 <h1 id="blocks"><a class="zola-anchor" href="#blocks">Blocks</a></h1>
 <ul>
 <li><code>extrahead</code>: use to add head meta, including your JS scripts. The charset and viewport are already added, so you can call <code>{{super()}}</code> before you add content to this block.</li>
-<li><code>dmeta</code>: use to add per-content meta, such as per-section or per-page. By default, it checks for section then page, from which it will default add description if present.</li>
+<li><code>seo</code>: SEO optimization.</li>
 <li><code>title</code>: title, default to config. This is best to call <code>{{super()}}</code> after the title set to also add your config site title.</li>
 <li><code>header</code>: use before the main content. By default, this block contains accessibility skip links such as skip to main content, navigation, and footer. If multilingual is present, the "Change Language" icon will also be included.</li>
 <li><code>nav</code>: navigation. This block contains the title called main menu. Rebase the block if you want to modify</li>
