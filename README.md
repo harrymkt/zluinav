@@ -12,6 +12,7 @@ This theme is distributed under the terms of the [MIT License](https://github.co
 
 ## Features of zluinav theme
 - Accessibility; Zluinav is designed to be accessible as possible, especially for blind and visually impaired. This is done by using accessibility tags, such as ARIA, and other possible accessibility features.
+- SEO friendly.
 - Configuration; use an extensive [configuration](https://harrymkt.github.io/zluinav/docs#extra-variables) parameters to control your site, from the main configuration file to [frontmadder configuration](https://harrymkt.github.io/zluinav/docs/extra/frontmadder), and more.
 - Blog with pagination enabled; multiple blogs can be created by copying the blog directory in the content folder to the new directory for a new blog. This means that you can have multiple blogs in one site. In fact, Zola doesn't have its build-in posts, but it is possible using sections. Please note that directory other than blog will require you to manually set the `template` to `blogpage.html` and `page_template` to `section_paginated.html` in its `_index.md` file.
 - Documentation site; build accessible [documentation sites](https://harrymkt.github.io/zluinav/docs/documentation) by using built-in 1subsection templates specifically designed for documentation.

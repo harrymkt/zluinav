@@ -31,19 +31,40 @@
 <baseurl href="{{ get_url(path = "", lang = lang) }}"/>
 {%- block extrahead %}
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<link href="{{ get_url(path = "css/theme.css") }}">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="{{ get_url(path = "css/theme.css") }}">
 {%- if not nojs %}
 <script src="{{ get_url(path = "scripts/theme.js") }}"></script>
 {%- endif %}
 {%- endblock extrahead %}
-{%- block dmeta %}
+{%- block seo %}
+{%- if current_path %}
+<meta name="robots" content="index, follow">
+{%- else %}
+<meta name="robots" content="noindex, nofollow">
+{%- endif %}
 {%- if ctx %}
+<meta property="og:title" content="{{ ctx.title }}">
 {%- if ctx.description %}
-<meta name="description" content="{{ ctx.description }}">
+<meta property="og:description" content="{{ ctx.description }}">
 {%- endif %}
+<meta property="og:url" content="{{ ctx.permalink | safe }}">
+{%- if ctx.extra.img %}
+<meta property="og:image" content="{{ ctx.extra.img | safe }}">
 {%- endif %}
-{%- endblock dmeta %}
+<meta property="og:type" content="website">
+<meta name="twitter:card" content="{{ ctx.summary | default(value = ctx.description) | default(value = "") | safe }}">
+<meta name="twitter:title" content="{{ ctx.title }}">
+{%- if ctx.description %}
+<meta name="twitter:description" content="Description for Twitter users.">
+{%- endif %}
+{%- if ctx.extra.img %}
+<meta name="twitter:image" content="{{ ctx.extra.img | safe }}">
+{%- endif %}
+<link rel="canonical" href="{{ ctx.permalink | safe }}">
+{%- endif %}
+<link rel="icon" href="{{ get_url(path = "favicon.ico") | safe }}" type="image/x-icon">
+{%- endblock seo %}
 <title>{%- block title -%}{{ config.title }}{%- endblock title -%}</title>
 </head>
 <body>

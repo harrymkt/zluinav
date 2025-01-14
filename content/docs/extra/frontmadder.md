@@ -18,3 +18,6 @@ The heading ID. This is only for documentation pages. Defaults to the page's tit
 
 ## no_js
 Toggles whether JavaScript is disabled for this page. Fall back to config if not set, thus it's usually `false`.
+
+## link_title
+string: A friendly title to display in the listings. Defaults to title.
