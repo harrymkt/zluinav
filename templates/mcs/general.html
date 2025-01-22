@@ -16,3 +16,11 @@
   {%- set navattr = attrs | join(sep = " ") %}
   {{- navattr }}
 {%- endmacro get_nav_attributes %}
+{%- macro errorable(id) %}
+  {%- set ignores = config.extra.ignore_logs | default(value = []) %}
+  {%- if id not in ignores %}
+    {{- true }}
+  {%- else %}
+    {{- false }}
+  {%- endif %}
+{%- endmacro error %}

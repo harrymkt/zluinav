@@ -11,6 +11,10 @@ The path where language TOML files are stored, default is "langs".
 ## title_sep
 Title separator, default is " – ".
 
+## ignore_logs
+string array: A list of identifiers to ignore. Possible values are:
+- `nojs`: JavaScript is disabled Error.
+
 ## no_js
 Toggles whether JavaScript is disabled. Defaults to `false`.
 

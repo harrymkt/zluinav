@@ -1,8 +1,10 @@
-{%- if summary is not defined %}
-{{- throw(message = "`summary` parameter is required") }}
-{%- endif -%}
-<details{% if open is defined and open == true %} open{% endif %}>
-<summary>{{ summary }}</summary>
+<details
+{%- if class %} class="{{ class }}" {%- endif %}
+{%- if name %} name="{{ name }}" {%- endif %}
+{%- if open is defined and open == true %} open {%- endif %}
+{%- if title %} title="{{ title }}" {%- endif -%}
+>
+<summary>{{ summary | default(value = "") }}</summary>
 
 {{ body }}
 

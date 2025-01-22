@@ -10,11 +10,12 @@ You can render the variable name itself by prefixing with `/`. For example, `%//
 
 Variable rendering is done by [content macro](@/docs/macros/content.md).
 
-Here is a list of supported variables:
-- `title`: title of the page.
-- `description`: description, if available.
-- `link`: the permalink to the page.
-- `date`: the published date of the page, if available.
-- `updated`: the updated date of the page, if available.
-
 Returned variable will be empty if the variable is not defined or failed to retrieve, so make sure you know it is defined!
+
+## Supported variables
+- `title`: Title of the page.
+- `description`: Description, if available.
+- `link`: The permalink to the page.
+- `date`: The published date of the page, if available.
+- `updated`: The updated date of the page, if available.
+- `linktitle`: The friendly title of the page. Falls back to title if not set.
