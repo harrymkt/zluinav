@@ -57,6 +57,5 @@ Contributions to this theme are welcome, provided that the following requirement
 - Photos are not required in this theme. You may design with CSS for visual if you so wish.
 - When creating a pull request it is advised that you:
 	- Use different branch other than main; this avoids issues with updating in case your pull request gets rejected.
-	- Add label if possible.
 
 Thank you!
