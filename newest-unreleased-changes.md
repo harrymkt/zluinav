@@ -6,3 +6,4 @@
 - Added `link_title` frontmadder to separate between the title and the friendly title for the display in listings. Falls back to title if not set.
 - Added `linktitle` content variable.
 - Details shortcode has received significant changes. Added name, title, and class attributes.
+- Added `overflow: auto;` to `pre` element to allow horizontal scrolling when content overflows.
