@@ -50,5 +50,5 @@ Note: Style is not verified by sighted people, this is best bet for text display
 
 /* Enable horizontal scrolling on pre elements if content overflows */
 pre {
-    overflow: auto;       
+	overflow: auto;       
 }
