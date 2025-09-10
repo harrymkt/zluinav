@@ -7,7 +7,7 @@ This macro defines functions for custom translation.
 Imported as `tran`.
 
 ## get
-This method will search the TOML file containing translation for each language set in the config. The folder to search is base on the `config.extra.tr_path`. By default, it's langs. Directory searching is as follows:
+This method will search the TOML file containing translation for each language set in the config. The folder to search is base on the `config.extra.tr_path`. By default, it is langs. Directory searching is as follows:
 - Searches in the directory where the config.toml file is located.
 - If it is not found, searches in the theme directory. The theme directory means the directory which your current theme lives.
 

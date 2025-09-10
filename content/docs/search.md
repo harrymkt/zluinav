@@ -19,7 +19,7 @@ This is the default used in Zluinav's demo and is a third party searching tool, 
 
 {% details(summary="Setup Pagefind") %}
 #### Setup Pagefind
-Do the following to get up and run Pagefind. We'll asume you have Python installed:
+Do the following to get up and run Pagefind. We will asume you have Python installed:
 1. Install Pagefind extended version. You can do this by this command. `pip install -r pagefind[extended]`
 2. Set the search format in the `search` object.
 3. Build the site. `zola build`

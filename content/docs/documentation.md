@@ -31,7 +31,7 @@ Hello!
 ```
 
 ## Sections
-You can also have subsections inside the main one. However, you cannot have more than 1 sections inside a subsection. For example, you can't have docs/a/b, but you can have docs/a, and docs/b, etc.
+You can also have subsections inside the main one. However, you cannot have more than 1 sections inside a subsection. For example, you cannot have docs/a/b, but you can have docs/a, and docs/b, etc.
 
 Lets create a subfolder name test inside the main documentation section (docs) in this case.
 
@@ -65,5 +65,5 @@ I am a test section, so you know displaying in first.
 You may then create pages in the test section usually as pages in the main documentation section.
 
 ## Variables
-The following variables may be required to set in the main documentation section if the section isn't named `docs`. All below variables are set in extra object of the main documentation section.
+The following variables may be required to set in the main documentation section if the section is not named `docs`. All below variables are set in extra object of the main documentation section.
 - `section_path`: the path to the main documentation section. Default: "docs/_index.md"
